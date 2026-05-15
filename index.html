@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Paletas de Colores</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Trade+Winds&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="./css/style.css">
+    
+</head>
+<body>
+    <nav>
+        <div class="logo">CATASTRONG</div> 
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Horarios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h1>Bienvenido a CATASTRONG </h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore impedit dolore possimus illum labore ad autem fugiat at repudiandae, pariatur expedita repellendus? Cupiditate quidem nihil tempore! Maiores, commodi minus. Eligendi?
+            Eaque nesciunt quas modi incidunt est sed, rem quia iste cumque suscipit distinctio sequi. Repellat dolorem voluptates, accusantium vel qui facere temporibus similique odit quae architecto velit alias, error nobis.</p>
+        </section>
+        <section>
+            <h2>Horarios de Atención</h2>
+            <table class="tabla-horarios">
+                <thead>
+                    <tr>
+                        <th>Día</th>
+                        <th>Horario de Apertura</th>
+                        <th>Horario de Cierre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lunes</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Martes</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Miércoles</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Jueves</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Viernes</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <tr>
+                        <td>Sábado</td>
+                        <td>09:00</td>
+                        <td>13:00</td>
+                    </tr>
+                    <tr>
+                        <td>Domingo</td>
+                        <td>Cerrado</td>
+                        <td>Cerrado</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <button class="btn-paleta"><span class="material-symbols-outlined">search</span> Probar botón </button>
+        </section>
+        <section>
+            <p style="max-width: 420px; color: var(--color-texto); font-size: 1.08rem;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis tenetur omnis hic ipsam molestiae, cum inventore, delectus, odit aut officia excepturi quas. Recusandae distinctio eligendi alias quas possimus dolorem atque?
+            </p>
+            <form class="form-ejemplo">
+                <h2>Formulario de ejemplo</h2>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" min="0" max="120">
+
+                <label for="color">Color favorito:</label>
+                <input type="color" id="color" name="color">
+
+                <label for="fecha">Fecha de nacimiento:</label>
+                <div class="input-date-wrapper">
+                    <input type="date" id="fecha" name="fecha">
+                    <span class="material-symbols-outlined">calendar_today</span>
+                </div>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="3" placeholder="Escribe tu mensaje..."></textarea>
+
+                <label for="opcion">Selecciona una opción:</label>
+                <select id="opcion" name="opcion">
+                    <option value="">-- Elige --</option>
+                    <option value="1">Opción 1</option>
+                    <option value="2">Opción 2</option>
+                    <option value="3">Opción 3</option>
+                </select>
+
+                <div class="form-checks">
+                    <label><input type="checkbox" name="suscribir"> Suscribirse al boletín</label>
+                    <label><input type="radio" name="genero" value="masculino"> Masculino</label>
+                    <label><input type="radio" name="genero" value="femenino"> Femenino</label>
+                </div>
+
+                <button type="submit" class="btn-paleta"><span class="material-symbols-outlined">send</span> Enviar</button>
+            </form>
+        </section>
+        <section>
+            <div class="card">
+                <img src="catastrong.png" alt="Gym">
+
+                <div class="card-content">
+                <div class="card-title">Entrenamiento Funcional</div>
+
+                <div class="card-description">
+                    Mejora tu resistencia, fuerza y coordinación con rutinas dinámicas adaptadas a tu nivel.
+                </div>
+
+                <a href="#" class="card-button">Ver más</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2026 Prueba de Paletas de Colores. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
