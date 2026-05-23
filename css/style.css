@@ -475,3 +475,435 @@
     margin: 2rem 0;
     justify-content: center;
 }
+
+/* ===== PANEL DE RESPUESTAS A CONSULTAS ===== */
+
+/* Barra de acciones y filtros */
+.barra-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background: var(--color-primario);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    flex: 1;
+}
+
+.filtros select,
+.filtros input {
+    padding: 0.6rem 1rem;
+    background: var(--color-fondo);
+    border: 1px solid var(--color-terciario);
+    border-radius: 6px;
+    color: var(--color-texto);
+    font-family: 'Amaranth', Arial, sans-serif;
+    cursor: pointer;
+}
+
+.filtros select:focus,
+.filtros input:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+}
+
+.filtros input {
+    flex: 1;
+    min-width: 180px;
+}
+
+.btn-secundario {
+    background: transparent;
+    border: 1px solid var(--color-secundario);
+    color: var(--color-secundario);
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.btn-secundario:hover {
+    background: var(--color-secundario);
+    color: var(--color-primario);
+}
+
+.btn-secundario .material-symbols-outlined {
+    font-size: 1.2rem;
+    color: inherit;
+}
+
+/* Lista de consultas */
+.lista-consultas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.loading, .sin-consultas {
+    text-align: center;
+    padding: 3rem;
+    color: #888;
+    background: var(--color-primario);
+    border-radius: 12px;
+}
+
+/* Tarjeta de cada consulta */
+.consulta-card {
+    background: var(--color-primario);
+    border-radius: 12px;
+    padding: 1.2rem;
+    border-left: 4px solid var(--color-secundario);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.consulta-card:hover {
+    transform: translateX(4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.consulta-card.respondida {
+    border-left-color: #4CAF50;
+    opacity: 0.85;
+}
+
+.consulta-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.consulta-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.8rem;
+}
+
+.consulta-nombre {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--color-texto);
+}
+
+.consulta-email {
+    color: #aaa;
+    font-size: 0.85rem;
+}
+
+.consulta-tipo {
+    background: rgba(255, 106, 0, 0.15);
+    color: var(--color-secundario);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.consulta-fecha {
+    font-size: 0.75rem;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.badge-pendiente {
+    background: #FF6A00;
+    color: #000;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.badge-respondida {
+    background: #4CAF50;
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.consulta-mensaje-preview {
+    color: #ccc;
+    margin: 0.8rem 0;
+    padding: 0.5rem;
+    background: var(--color-fondo);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.consulta-respuesta-preview {
+    background: rgba(76, 175, 80, 0.1);
+    border-left: 3px solid #4CAF50;
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 0.8rem;
+}
+
+.consulta-acciones {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.btn-responder, .btn-ver-respuesta {
+    background: transparent;
+    border: 1px solid var(--color-terciario);
+    color: var(--color-texto);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'Amaranth', Arial, sans-serif;
+    transition: all 0.2s;
+}
+
+.btn-responder:hover {
+    background: var(--color-secundario);
+    border-color: var(--color-secundario);
+    color: var(--color-primario);
+}
+
+.btn-ver-respuesta:hover {
+    background: #4CAF50;
+    border-color: #4CAF50;
+    color: #fff;
+}
+
+.btn-responder .material-symbols-outlined,
+.btn-ver-respuesta .material-symbols-outlined {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.activo {
+    display: flex;
+}
+
+.modal-contenido {
+    background: var(--color-primario);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 85vh;
+    overflow-y: auto;
+    border: 1px solid var(--color-terciario);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    border-bottom: 1px solid var(--color-terciario);
+}
+
+.modal-header h2 {
+    color: var(--color-secundario);
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.cerrar-modal {
+    background: none;
+    border: none;
+    color: var(--color-texto);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.cerrar-modal:hover {
+    color: var(--color-secundario);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.consulta-original {
+    background: var(--color-fondo);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.consulta-original p {
+    margin: 0.5rem 0;
+}
+
+.mensaje-original {
+    background: var(--color-terciario);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 0.8rem;
+    white-space: pre-wrap;
+}
+
+.respuesta-area label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--color-texto);
+}
+
+.respuesta-area textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--color-fondo);
+    border: 1px solid var(--color-terciario);
+    border-radius: 8px;
+    color: var(--color-texto);
+    font-family: 'Amaranth', Arial, sans-serif;
+    resize: vertical;
+}
+
+.respuesta-area textarea:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+}
+
+.opciones-respuesta {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.modal-botones {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+}
+
+.btn-cancelar {
+    background: transparent;
+    border: 1px solid var(--color-terciario);
+    color: var(--color-texto);
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-cancelar:hover {
+    background: var(--color-terciario);
+}
+
+.btn-enviar-respuesta {
+    background: var(--color-secundario);
+    border: none;
+    color: var(--color-primario);
+    padding: 0.6rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-enviar-respuesta:hover {
+    background: var(--color-terciario);
+    color: var(--color-secundario);
+}
+
+/* TOAST (notificaciones) */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--color-primario);
+    color: var(--color-texto);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-secundario);
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    z-index: 1100;
+    font-weight: bold;
+}
+
+.toast.mostrar {
+    transform: translateX(0);
+}
+
+.toast.success {
+    border-left-color: #4CAF50;
+}
+
+.toast.error {
+    border-left-color: #f44336;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .barra-acciones {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filtros {
+        flex-direction: column;
+    }
+    
+    .consulta-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .consulta-info {
+        flex-wrap: wrap;
+    }
+    
+    .modal-contenido {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .modal-botones {
+        flex-direction: column;
+    }
+    
+    .toast {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        text-align: center;
+    }
+}

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Consultas - PowerFit Gym</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Trade+Winds&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,1">
+</head>
+<body>
+    <nav>
+        <div class="logo">🏋️‍♂️ CATASTRONG GYM | ADMIN</div>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="#">Horarios</a></li>
+            <li><a href="./pages/formulario.html">Contacto</a></li>
+            <li><a href="./pages/respuestaFormulario.html">Responder</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>📬 Bandeja de consultas</h1>
+        <p style="margin-bottom: 2rem;">Gestioná y respondé los mensajes de tus clientes.</p>
+
+        <!-- Barra de filtros y acciones -->
+        <div class="barra-acciones">
+            <div class="filtros">
+                <select id="filtroEstado">
+                    <option value="todas">Todas las consultas</option>
+                    <option value="pendiente">Pendientes</option>
+                    <option value="respondida">Respondidas</option>
+                </select>
+                <select id="filtroConsulta">
+                    <option value="todas">Todos los tipos</option>
+                    <option value="precios">💰 Precios y horarios</option>
+                    <option value="clase-gratis">🏋️ Clase gratis</option>
+                    <option value="socio">👥 Socio / incidencia</option>
+                    <option value="convenios">🤝 Convenios</option>
+                    <option value="personalizado">🎯 Personalizado</option>
+                    <option value="pileta">📅 Pileta</option>
+                    <option value="baja">❌ Baja</option>
+                    <option value="cambio">🔄 Cambio de plan</option>
+                    <option value="sugerencia">⭐ Sugerencia</option>
+                    <option value="otra">❓ Otra</option>
+                </select>
+                <input type="text" id="buscador" placeholder="🔍 Buscar por nombre o email...">
+            </div>
+            <button class="btn-secundario" id="btnRefrescar">
+                <span class="material-symbols-outlined">refresh</span> Refrescar
+            </button>
+        </div>
+
+        <!-- Listado de consultas -->
+        <div class="lista-consultas" id="listaConsultas">
+            <!-- Las consultas se cargan dinámicamente con JavaScript -->
+            <div class="loading">Cargando consultas...</div>
+        </div>
+
+        <!-- Modal de respuesta (oculto inicialmente) -->
+        <div id="modalRespuesta" class="modal">
+            <div class="modal-contenido">
+                <div class="modal-header">
+                    <h2>Responder consulta</h2>
+                    <button class="cerrar-modal" id="cerrarModal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="consulta-original">
+                        <p><strong>De:</strong> <span id="modalNombre"></span> (<span id="modalEmail"></span>)</p>
+                        <p><strong>Teléfono:</strong> <span id="modalTelefono"></span></p>
+                        <p><strong>Tipo:</strong> <span id="modalTipo"></span></p>
+                        <p><strong>Mensaje:</strong></p>
+                        <div class="mensaje-original" id="modalMensaje"></div>
+                    </div>
+                    
+                    <div class="respuesta-area">
+                        <label for="respuestaTexto">Tu respuesta:</label>
+                        <textarea id="respuestaTexto" rows="5" placeholder="Escribí acá tu respuesta..."></textarea>
+                        
+                        <div class="opciones-respuesta">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="enviarCopia"> Enviar copia al email del cliente
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="marcarComoRespondida" checked> Marcar como respondida
+                            </label>
+                        </div>
+                        
+                        <div class="modal-botones">
+                            <button class="btn-cancelar" id="cancelarRespuesta">Cancelar</button>
+                            <button class="btn-enviar-respuesta" id="enviarRespuesta">
+                                <span class="material-symbols-outlined">send</span> Enviar respuesta
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notificación flotante -->
+        <div id="toast-notificacion" class="toast"></div>
+    </main>
+
+    <footer>
+        <p>© 2026 CataStrong Gym - Panel de administración de consultas</p>
+    </footer>
+
+    <script>
+        // ========== DATOS DE EJEMPLO (simulando consultas de usuarios) ==========
+        let consultas = [
+            {
+                id: 1,
+                nombre: "Juan Pérez",
+                email: "juan.perez@email.com",
+                telefono: "+54 11 2345-6789",
+                tipo: "precios",
+                tipoTexto: "💰 Precios y horarios",
+                mensaje: "Hola, quería saber los precios de la membresía mensual y los horarios de apertura. También si hay descuentos para estudiantes.",
+                fecha: "2026-05-23 10:30",
+                estado: "pendiente",
+                respuesta: null,
+                fechaRespuesta: null
+            },
+            {
+                id: 2,
+                nombre: "María González",
+                email: "maria.g@email.com",
+                telefono: "+54 11 3456-7890",
+                tipo: "clase-gratis",
+                tipoTexto: "🏋️ Clase gratis",
+                mensaje: "Me interesaría probar una clase de funcional. ¿Cómo hago para reservar? ¿Hay algún requisito?",
+                fecha: "2026-05-22 15:45",
+                estado: "pendiente",
+                respuesta: null,
+                fechaRespuesta: null
+            },
+            {
+                id: 3,
+                nombre: "Carlos Rodríguez",
+                email: "carlos.rodri@email.com",
+                telefono: "+54 11 4567-8901",
+                tipo: "socio",
+                tipoTexto: "👥 Socio / incidencia",
+                mensaje: "Soy socio hace 2 meses y tengo un problema con la app, no me deja reservar clases. ¿Me pueden ayudar? Mi número de socio es 12345.",
+                fecha: "2026-05-21 09:15",
+                estado: "respondida",
+                respuesta: "Hola Carlos, te ayudamos con la app. Por favor reiniciá sesión y si sigue el problema, escribinos a soporte@gym.com con tu número de socio.",
+                fechaRespuesta: "2026-05-21 14:30"
+            },
+            {
+                id: 4,
+                nombre: "Laura Fernández",
+                email: "laura.f@email.com",
+                telefono: "+54 11 5678-9012",
+                tipo: "convenios",
+                tipoTexto: "🤝 Convenios",
+                mensaje: "Tengo una empresa con 15 empleados. ¿Tienen convenios corporativos? Quisiera recibir información sobre tarifas especiales.",
+                fecha: "2026-05-23 08:20",
+                estado: "pendiente",
+                respuesta: null,
+                fechaRespuesta: null
+            },
+            {
+                id: 5,
+                nombre: "Diego Martínez",
+                email: "diego.m@email.com",
+                telefono: "+54 11 6789-0123",
+                tipo: "baja",
+                tipoTexto: "❌ Baja",
+                mensaje: "Por motivos personales necesito dar de baja mi membresía. ¿Cuál es el procedimiento?",
+                fecha: "2026-05-20 18:00",
+                estado: "pendiente",
+                respuesta: null,
+                fechaRespuesta: null
+            },
+            {
+                id: 6,
+                nombre: "Sofía López",
+                email: "sofia.l@email.com",
+                telefono: "+54 11 7890-1234",
+                tipo: "sugerencia",
+                tipoTexto: "⭐ Sugerencia",
+                mensaje: "Muy contenta con las clases de yoga, pero sugeriría que haya más horarios a la noche, a las 20hs se llena mucho.",
+                fecha: "2026-05-22 20:30",
+                estado: "pendiente",
+                respuesta: null,
+                fechaRespuesta: null
+            }
+        ];
+
+        let consultaActualId = null;
+
+        // ========== FUNCIONES DE RENDERIZADO ==========
+        function renderizarConsultas() {
+            const filtroEstado = document.getElementById('filtroEstado').value;
+            const filtroConsulta = document.getElementById('filtroConsulta').value;
+            const busqueda = document.getElementById('buscador').value.toLowerCase();
+            
+            let filtradas = consultas.filter(consulta => {
+                // Filtro por estado
+                if (filtroEstado !== 'todas' && consulta.estado !== filtroEstado) return false;
+                // Filtro por tipo de consulta
+                if (filtroConsulta !== 'todas' && consulta.tipo !== filtroConsulta) return false;
+                // Búsqueda por nombre o email
+                if (busqueda && !consulta.nombre.toLowerCase().includes(busqueda) && !consulta.email.toLowerCase().includes(busqueda)) return false;
+                return true;
+            });
+            
+            // Ordenar por fecha (más recientes primero)
+            filtradas.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+            
+            const container = document.getElementById('listaConsultas');
+            
+            if (filtradas.length === 0) {
+                container.innerHTML = '<div class="sin-consultas">📭 No hay consultas que coincidan con los filtros</div>';
+                return;
+            }
+            
+            container.innerHTML = filtradas.map(consulta => `
+                <div class="consulta-card ${consulta.estado === 'respondida' ? 'respondida' : ''}">
+                    <div class="consulta-header">
+                        <div class="consulta-info">
+                            <span class="consulta-nombre">${escapeHtml(consulta.nombre)}</span>
+                            <span class="consulta-email">${escapeHtml(consulta.email)}</span>
+                            <span class="consulta-tipo">${consulta.tipoTexto}</span>
+                        </div>
+                        <div class="consulta-fecha">
+                            ${consulta.fecha}
+                            ${consulta.estado === 'respondida' ? '<span class="badge-respondida">✓ Respondida</span>' : '<span class="badge-pendiente">⏳ Pendiente</span>'}
+                        </div>
+                    </div>
+                    <div class="consulta-mensaje-preview">
+                        ${escapeHtml(consulta.mensaje.substring(0, 150))}${consulta.mensaje.length > 150 ? '...' : ''}
+                    </div>
+                    ${consulta.estado === 'respondida' ? `
+                        <div class="consulta-respuesta-preview">
+                            <strong>📨 Tu respuesta:</strong> ${escapeHtml(consulta.respuesta.substring(0, 100))}...
+                        </div>
+                    ` : ''}
+                    <div class="consulta-acciones">
+                        <button class="btn-responder" onclick="abrirModal(${consulta.id})">
+                            <span class="material-symbols-outlined">reply</span> Responder
+                        </button>
+                        ${consulta.estado === 'respondida' ? `
+                            <button class="btn-ver-respuesta" onclick="verRespuestaCompleta(${consulta.id})">
+                                <span class="material-symbols-outlined">visibility</span> Ver respuesta
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function escapeHtml(texto) {
+            if (!texto) return '';
+            return texto.replace(/[&<>]/g, function(m) {
+                if (m === '&') return '&amp;';
+                if (m === '<') return '&lt;';
+                if (m === '>') return '&gt;';
+                return m;
+            });
+        }
+        
+        // ========== MODAL DE RESPUESTA ==========
+        function abrirModal(id) {
+            const consulta = consultas.find(c => c.id === id);
+            if (!consulta) return;
+            
+            consultaActualId = id;
+            
+            document.getElementById('modalNombre').textContent = consulta.nombre;
+            document.getElementById('modalEmail').textContent = consulta.email;
+            document.getElementById('modalTelefono').textContent = consulta.telefono || 'No especificado';
+            document.getElementById('modalTipo').textContent = consulta.tipoTexto;
+            document.getElementById('modalMensaje').textContent = consulta.mensaje;
+            document.getElementById('respuestaTexto').value = consulta.respuesta || '';
+            document.getElementById('marcarComoRespondida').checked = consulta.estado !== 'respondida';
+            document.getElementById('enviarCopia').checked = true;
+            
+            document.getElementById('modalRespuesta').classList.add('activo');
+        }
+        
+        function cerrarModal() {
+            document.getElementById('modalRespuesta').classList.remove('activo');
+            consultaActualId = null;
+        }
+        
+        function enviarRespuesta() {
+            if (!consultaActualId) return;
+            
+            const respuestaTexto = document.getElementById('respuestaTexto').value.trim();
+            if (!respuestaTexto) {
+                mostrarToast('❌ Escribí una respuesta antes de enviar', 'error');
+                return;
+            }
+            
+            const consulta = consultas.find(c => c.id === consultaActualId);
+            const marcarRespondida = document.getElementById('marcarComoRespondida').checked;
+            const enviarCopia = document.getElementById('enviarCopia').checked;
+            
+            // Actualizar la consulta
+            consulta.respuesta = respuestaTexto;
+            consulta.estado = marcarRespondida ? 'respondida' : 'pendiente';
+            consulta.fechaRespuesta = new Date().toLocaleString('es-AR');
+            
+            // Simular envío de email
+            if (enviarCopia) {
+                console.log(`📧 Enviando email a ${consulta.email} con respuesta: ${respuestaTexto}`);
+            }
+            
+            cerrarModal();
+            renderizarConsultas();
+            
+            mostrarToast(`✅ Respuesta enviada a ${consulta.nombre}`, 'success');
+        }
+        
+        function verRespuestaCompleta(id) {
+            const consulta = consultas.find(c => c.id === id);
+            if (!consulta || !consulta.respuesta) return;
+            
+            alert(`Respuesta enviada a ${consulta.nombre}:\n\n${consulta.respuesta}\n\nFecha: ${consulta.fechaRespuesta}`);
+        }
+        
+        function mostrarToast(mensaje, tipo) {
+            const toast = document.getElementById('toast-notificacion');
+            toast.textContent = mensaje;
+            toast.className = `toast ${tipo} mostrar`;
+            setTimeout(() => {
+                toast.classList.remove('mostrar');
+            }, 3000);
+        }
+        
+        // ========== EVENTOS E INICIALIZACIÓN ==========
+        document.addEventListener('DOMContentLoaded', () => {
+            renderizarConsultas();
+            
+            document.getElementById('filtroEstado').addEventListener('change', renderizarConsultas);
+            document.getElementById('filtroConsulta').addEventListener('change', renderizarConsultas);
+            document.getElementById('buscador').addEventListener('input', renderizarConsultas);
+            document.getElementById('btnRefrescar').addEventListener('click', renderizarConsultas);
+            document.getElementById('cerrarModal').addEventListener('click', cerrarModal);
+            document.getElementById('cancelarRespuesta').addEventListener('click', cerrarModal);
+            document.getElementById('enviarRespuesta').addEventListener('click', enviarRespuesta);
+            
+            // Cerrar modal al hacer clic fuera
+            window.addEventListener('click', (e) => {
+                const modal = document.getElementById('modalRespuesta');
+                if (e.target === modal) cerrarModal();
+            });
+        });
+    </script>
+</body>
+</html>
