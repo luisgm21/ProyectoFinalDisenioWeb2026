@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prueba de Paletas de Colores</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Trade+Winds&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Trade+Winds&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="./css/style.css">
-    
+
 </head>
+
 <body>
     <nav>
-        <div class="logo">CATASTRONG</div> 
+        <div class="logo">CATASTRONG</div>
         <ul>
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Horarios</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="./pages/formulario.html">Contacto</a></li>
         </ul>
     </nav>
     <main>
         <section>
             <h1>Bienvenido a CATASTRONG </h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore impedit dolore possimus illum labore ad autem fugiat at repudiandae, pariatur expedita repellendus? Cupiditate quidem nihil tempore! Maiores, commodi minus. Eligendi?
-            Eaque nesciunt quas modi incidunt est sed, rem quia iste cumque suscipit distinctio sequi. Repellat dolorem voluptates, accusantium vel qui facere temporibus similique odit quae architecto velit alias, error nobis.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore impedit dolore possimus illum labore
+                ad autem fugiat at repudiandae, pariatur expedita repellendus? Cupiditate quidem nihil tempore! Maiores,
+                commodi minus. Eligendi?
+                Eaque nesciunt quas modi incidunt est sed, rem quia iste cumque suscipit distinctio sequi. Repellat
+                dolorem voluptates, accusantium vel qui facere temporibus similique odit quae architecto velit alias,
+                error nobis.</p>
         </section>
         <section>
             <h2>Horarios de Atención</h2>
@@ -80,7 +88,9 @@
         </section>
         <section>
             <p style="max-width: 420px; color: var(--color-texto); font-size: 1.08rem;">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis tenetur omnis hic ipsam molestiae, cum inventore, delectus, odit aut officia excepturi quas. Recusandae distinctio eligendi alias quas possimus dolorem atque?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis tenetur omnis hic ipsam molestiae, cum
+                inventore, delectus, odit aut officia excepturi quas. Recusandae distinctio eligendi alias quas possimus
+                dolorem atque?
             </p>
             <form class="form-ejemplo">
                 <h2>Formulario de ejemplo</h2>
@@ -119,7 +129,8 @@
                     <label><input type="radio" name="genero" value="femenino"> Femenino</label>
                 </div>
 
-                <button type="submit" class="btn-paleta"><span class="material-symbols-outlined">send</span> Enviar</button>
+                <button type="submit" class="btn-paleta"><span class="material-symbols-outlined">send</span>
+                    Enviar</button>
             </form>
         </section>
         <section>
@@ -127,19 +138,74 @@
                 <img src="catastrong.png" alt="Gym">
 
                 <div class="card-content">
-                <div class="card-title">Entrenamiento Funcional</div>
+                    <div class="card-title">Entrenamiento Funcional</div>
 
-                <div class="card-description">
-                    Mejora tu resistencia, fuerza y coordinación con rutinas dinámicas adaptadas a tu nivel.
-                </div>
+                    <div class="card-description">
+                        Mejora tu resistencia, fuerza y coordinación con rutinas dinámicas adaptadas a tu nivel.
+                    </div>
 
-                <a href="#" class="card-button">Ver más</a>
+                    <a href="#" class="card-button">Ver más</a>
                 </div>
             </div>
         </section>
+        <!-- Tabla de horarios de ejemplo -->
+        <section>
+            <h2>⚡ Horarios destacados</h2>
+            <table class="tabla-horarios">
+                <thead>
+                    <tr>
+                        <th>Clase</th>
+                        <th>Lunes</th>
+                        <th>Miércoles</th>
+                        <th>Viernes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Funcional</td>
+                        <td>09:00 / 18:00</td>
+                        <td>09:00 / 18:00</td>
+                        <td>09:00 / 17:00</td>
+                    </tr>
+                    <tr>
+                        <td>Spinning</td>
+                        <td>08:00 / 19:00</td>
+                        <td>08:00 / 19:00</td>
+                        <td>08:00 / 19:00</td>
+                    </tr>
+                    <tr>
+                        <td>Yoga</td>
+                        <td>11:00 / 20:00</td>
+                        <td>11:00 / 20:30</td>
+                        <td>11:00 / 20:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Cards de actividades -->
+        <div class="cards-demo">
+            <div class="card">
+                <img src="https://placehold.co/600x400/2B2B2B/FF6A00?text=ENTRENAMIENTO" alt="entrenamiento">
+                <div class="card-content">
+                    <div class="card-title">Power Training</div>
+                    <div class="card-description">Rutinas intensas para ganar fuerza.</div>
+                    <a href="#" class="card-button">Ver más →</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://placehold.co/600x400/000000/FF6A00?text=NUTRICIÓN" alt="nutrición">
+                <div class="card-content">
+                    <div class="card-title">Asesoría Nutricional</div>
+                    <div class="card-description">Planes personalizados para tus metas.</div>
+                    <a href="#" class="card-button">Consultar →</a>
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
-        &copy; 2026 Prueba de Paletas de Colores. Todos los derechos reservados.
+        <p>© 2026 PowerFit Gym - Transformá tu vida.</p>
     </footer>
 </body>
+
 </html>
