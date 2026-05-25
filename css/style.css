@@ -226,6 +226,7 @@
         }
 
         .card {
+            min-height: 240px;
             width: 320px;
             background-color: #0A0A0A;
             border-radius: 16px;
@@ -906,4 +907,10 @@
         bottom: 20px;
         text-align: center;
     }
+}
+/* ===== ESTILOS PARA LA SECCION CLASES DESTACADAS ===== */
+.clases-destacadas{
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
 }
