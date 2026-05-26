@@ -20,13 +20,16 @@
             background: var(--color-primario);
             color: var(--color-texto);
             padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
             align-items: center;
         }
         nav .logo {
+            color: var(--color-secundario);
+            font-family: 'Trade Winds', 'sans-serif';
             font-weight: bold;
-            font-size: 1.3rem;
+            font-size: 1.45rem;
+            text-decoration: none;
         }
         nav ul {
             list-style: none;
@@ -34,6 +37,8 @@
             gap: 1.5rem;
             margin: 0;
             padding: 0;
+            grid-column: 2;
+            justify-content: center;
         }
         nav ul li {
             display: inline;
@@ -918,4 +923,264 @@
 /* Imagen de entrenadores */
 .card-entrenador img {
     height: 400px;
+}
+
+/* ===== ESTILOS PARA LA PAGINA DE INICIO ===== */
+.inicio {
+    margin: 0;
+}
+
+.inicio section {
+    margin-bottom: 0;
+}
+
+.hero-inicio {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+    gap: 2rem;
+    align-items: center;
+    min-height: 520px;
+    padding: 4rem 3.125rem;
+    background: linear-gradient(120deg, #000 0%, #0A0A0A 48%, #2B2B2B 100%);
+}
+
+.hero-contenido {
+    max-width: 720px;
+}
+
+.hero-etiqueta {
+    color: var(--color-secundario);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    margin-bottom: 1rem;
+}
+
+.hero-inicio h1 {
+    margin-bottom: 1.5rem;
+    line-height: 1;
+}
+
+.hero-texto {
+    max-width: 620px;
+    color: #ddd;
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+.hero-acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.hero-acciones .btn-paleta,
+.hero-acciones .btn-contorno,
+.horario-inicio .btn-paleta,
+.cta-inicio .btn-paleta {
+    display: inline-block;
+    margin-top: 0;
+    text-decoration: none;
+}
+
+.btn-contorno {
+    display: inline-block;
+    background: transparent;
+    color: var(--color-secundario);
+    border: 1px solid var(--color-secundario);
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.btn-contorno:hover {
+    background: var(--color-secundario);
+    color: var(--color-primario);
+}
+
+.hero-imagen {
+    border: 1px solid var(--color-terciario);
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 360px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+}
+
+.hero-imagen img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    display: block;
+}
+
+.presentacion-inicio,
+.horario-inicio,
+.cta-inicio {
+    padding: 3.5rem 3.125rem;
+}
+
+.presentacion-inicio {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+    gap: 2rem;
+    align-items: center;
+    background: #111;
+}
+
+.presentacion-inicio h2,
+.horario-inicio h2,
+.cta-inicio h2 {
+    color: var(--color-secundario);
+    margin-bottom: 1rem;
+}
+
+.presentacion-inicio p,
+.horario-inicio p,
+.cta-inicio p {
+    color: #ddd;
+    line-height: 1.6;
+    font-size: 1.08rem;
+}
+
+.datos-inicio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.datos-inicio div {
+    background: var(--color-primario);
+    border: 1px solid var(--color-terciario);
+    border-left: 4px solid var(--color-secundario);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.datos-inicio strong {
+    display: block;
+    color: var(--color-secundario);
+    font-family: 'Trade Winds', 'sans-serif';
+    font-size: 2rem;
+    margin-bottom: 0.4rem;
+}
+
+.datos-inicio span {
+    color: #ddd;
+}
+
+.servicios-inicio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 0 3.125rem 3.5rem;
+}
+
+.inicio > section > h2 {
+    padding: 3.5rem 3.125rem 2rem;
+    color: var(--color-secundario);
+}
+
+.servicios-inicio article {
+    background: var(--color-primario);
+    border: 1px solid var(--color-terciario);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.servicios-inicio .material-symbols-outlined {
+    color: var(--color-secundario);
+    font-size: 2.3rem;
+    margin: 0 0 1rem 0;
+}
+
+.servicios-inicio h3 {
+    color: var(--color-texto);
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.servicios-inicio p {
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.horario-inicio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    background: var(--color-terciario);
+}
+
+.horario-inicio div {
+    max-width: 760px;
+}
+
+.cta-inicio {
+    text-align: center;
+    background: #0A0A0A;
+}
+
+.cta-inicio p {
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .hero-inicio,
+    .presentacion-inicio {
+        grid-template-columns: 1fr;
+    }
+
+    .servicios-inicio,
+    .datos-inicio {
+        grid-template-columns: 1fr;
+    }
+
+    .horario-inicio {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        display: flex;
+        gap: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-inicio,
+    .presentacion-inicio,
+    .horario-inicio,
+    .cta-inicio {
+        padding: 2.5rem 1.25rem;
+    }
+
+    .inicio > section > h2 {
+        padding: 2.5rem 1.25rem 1.5rem;
+        font-size: 2rem;
+    }
+
+    .servicios-inicio {
+        padding: 0 1.25rem 2.5rem;
+    }
+
+    .hero-inicio h1 {
+        font-size: 3rem;
+    }
+
+    .hero-texto {
+        font-size: 1.05rem;
+    }
 }

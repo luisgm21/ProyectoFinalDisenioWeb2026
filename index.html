@@ -12,12 +12,11 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="./css/style.css">
-
 </head>
 
 <body>
     <nav>
-        <div class="logo">CATASTRONG</div>
+        <a href="./index.html" class="logo">CATASTRONG</a>
         <ul>
             <li><a href="./index.html">Inicio</a></li>
             <li><a href="./pages/HorariosClases.html">Horarios</a></li>
@@ -25,307 +24,92 @@
             <li><a href="./pages/formularioDeRespuesta.html">Responder</a></li>
         </ul>
     </nav>
-    <main>
-        <section>
-            <h1>Bienvenido a CATASTRONG </h1>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore impedit dolore possimus illum labore
-                ad autem fugiat at repudiandae, pariatur expedita repellendus? Cupiditate quidem nihil tempore! Maiores,
-                commodi minus. Eligendi?
-                Eaque nesciunt quas modi incidunt est sed, rem quia iste cumque suscipit distinctio sequi. Repellat
-                dolorem voluptates, accusantium vel qui facere temporibus similique odit quae architecto velit alias,
-                error nobis.</p>
-        </section>
-        <section>
-            <h2>Horarios de Atención</h2>
-            <table class="tabla-horarios">
-                <thead>
-                    <tr>
-                        <th>Día</th>
-                        <th>Horario de Apertura</th>
-                        <th>Horario de Cierre</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Lunes</td>
-                        <td>08:00</td>
-                        <td>00:00</td>
-                    </tr>
-                    <tr>
-                        <td>Martes</td>
-                        <td>08:00</td>
-                        <td>00:00</td>
-                    </tr>
-                    <tr>
-                        <td>Miércoles</td>
-                        <td>08:00</td>
-                        <td>00:00</td>
-                    </tr>
-                    <tr>
-                        <td>Jueves</td>
-                        <td>08:00</td>
-                        <td>00:00</td>
-                    </tr>
-                    <tr>
-                        <td>Viernes</td>
-                        <td>08:00</td>
-                        <td>00:00</td>
-                    </tr>
-                    <tr>
-                        <td>Sábado</td>
-                        <td>09:00</td>
-                        <td>20:00</td>
-                    </tr>
-                    <tr>
-                        <td>Domingo</td>
-                        <td>Cerrado</td>
-                        <td>Cerrado</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section>
-            <button class="btn-paleta"><span class="material-symbols-outlined">search</span> Probar botón </button>
-        </section>
-        <section>
-            <p style="max-width: 420px; color: var(--color-texto); font-size: 1.08rem;">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis tenetur omnis hic ipsam molestiae, cum
-                inventore, delectus, odit aut officia excepturi quas. Recusandae distinctio eligendi alias quas possimus
-                dolorem atque?
-            </p>
-            <form class="form-ejemplo">
-                <h2>Formulario de ejemplo</h2>
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
 
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
-
-                <label for="edad">Edad:</label>
-                <input type="number" id="edad" name="edad" min="0" max="120">
-
-                <label for="color">Color favorito:</label>
-                <input type="color" id="color" name="color">
-
-                <label for="fecha">Fecha de nacimiento:</label>
-                <div class="input-date-wrapper">
-                    <input type="date" id="fecha" name="fecha">
-                    <span class="material-symbols-outlined">calendar_today</span>
-                </div>
-
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="3" placeholder="Escribe tu mensaje..."></textarea>
-
-                <label for="opcion">Selecciona una opción:</label>
-                <select id="opcion" name="opcion">
-                    <option value="">-- Elige --</option>
-                    <option value="1">Opción 1</option>
-                    <option value="2">Opción 2</option>
-                    <option value="3">Opción 3</option>
-                </select>
-
-                <div class="form-checks">
-                    <label><input type="checkbox" name="suscribir"> Suscribirse al boletín</label>
-                    <label><input type="radio" name="genero" value="masculino"> Masculino</label>
-                    <label><input type="radio" name="genero" value="femenino"> Femenino</label>
-                </div>
-
-                <button type="submit" class="btn-paleta"><span class="material-symbols-outlined">send</span>
-                    Enviar</button>
-            </form>
-        </section>
-        <section class="clases-destacadas">
-            <section>
-                <div class="card">
-                    <img src="catastrong.png" alt="Gym">
-
-                    <div class="card-content">
-                        <div class="card-title">Entrenamiento Funcional</div>
-
-                        <div class="card-description">
-                            Mejora tu resistencia, fuerza y coordinación con rutinas dinámicas adaptadas a tu nivel.
-                        </div>
-
-                        <a href="#" class="card-button">Ver más</a>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="card">
-                    <img src="catastrong.png" alt="Gym">
-
-                    <div class="card-content">
-                        <div class="card-title">Pilates</div>
-
-                        <div class="card-description">
-                            Fortalecé tu cuerpo y mejorá tu postura con ejercicios de control, equilibrio y
-                            flexibilidad.
-                        </div>
-
-                        <a href="#" class="card-button">Ver más</a>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="card">
-                    <img src="catastrong.png" alt="Gym">
-
-                    <div class="card-content">
-                        <div class="card-title">HIIT</div>
-
-                        <div class="card-description">
-                            Entrenamientos intensos y explosivos para quemar calorías, mejorar tu rendimiento y superar
-                            tus límites.
-                        </div>
-
-                        <a href="#" class="card-button">Ver más</a>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="card">
-                    <img src="catastrong.png" alt="Gym">
-
-                    <div class="card-content">
-                        <div class="card-title">Spinning</div>
-
-                        <div class="card-description">
-                            Viví una experiencia llena de energía sobre la bicicleta, mejorando tu resistencia
-                            cardiovascular al ritmo de la música.
-                        </div>
-
-                        <a href="#" class="card-button">Ver más</a>
-                    </div>
-                </div>
-            </section>
-        </section>
-
-        <!-- Tabla de horarios de ejemplo -->
-        <section>
-            <h2>Horarios destacados</h2>
-            <!-- Tabla de horarios -->
-            <section>
-                <h2>Horarios de Clases</h2>
-                <table class="tabla-horarios">
-                    <thead>
-                        <tr>
-                            <th>Clase</th>
-                            <th>Lunes</th>
-                            <th>Martes</th>
-                            <th>Miércoles</th>
-                            <th>Jueves</th>
-                            <th>Viernes</th>
-                            <th>Sábado</th>
-                            <th>Domingo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Musculación</td>
-                            <td>8:00 a 00:00</td>
-                            <td>8:00 a 00:00</td>
-                            <td>8:00 a 00:00</td>
-                            <td>8:00 a 00:00</td>
-                            <td>8:00 a 00:00</td>
-                            <td>9:00 a 20:00</td>
-                            <td>Cerrado</td>
-                        </tr>
-                        <tr>
-                            <td>Spinning</td>
-                            <td></td>
-                            <td>8:00 a 10:00</td>
-                            <td></td>
-                            <td>8:00 a 10:00</td>
-                            <td></td>
-                            <td>10:00 a 12:00</td>
-                            <td>Cerrado</td>
-                        </tr>
-                        <tr>
-                            <td>HIIT</td>
-                            <td>9:00 a 11:00</td>
-                            <td></td>
-                            <td>9:00 a 11:00</td>
-                            <td></td>
-                            <td>9:00 a 11:00</td>
-                            <td></td>
-                            <td>Cerrado</td>
-                        </tr>
-                        <tr>
-                            <td>Pilates</td>
-                            <td></td>
-                            <td>10:00 a 12:00</td>
-                            <td></td>
-                            <td>10:00 a 12:00</td>
-                            <td></td>
-                            <td></td>
-                            <td>Cerrado</td>
-                        </tr>
-                        <tr>
-                            <td>Funcional</td>
-                            <td>11:00 a 13:00</td>
-                            <td></td>
-                            <td>11:00 a 13:00</td>
-                            <td></td>
-                            <td>11:00 a 13:00</td>
-                            <td>11:00 a 13:00</td>
-                            <td>Cerrado</td>
-                        </tr>
-                        <tr>
-                            <td>Spinning</td>
-                            <td></td>
-                            <td>16:00 a 18:00</td>
-                            <td></td>
-                            <td>16:00 a 18:00</td>
-                            <td></td>
-                            <td></td>
-                            <td>Cerrado</td>
-                        </tr>
-                        <tr>
-                            <td>HIIT</td>
-                            <td>20:00 a 22:00</td>
-                            <td></td>
-                            <td>20:00 a 22:00</td>
-                            <td></td>
-                            <td>20:00 a 22:00</td>
-                            <td></td>
-                            <td>Cerrado</td>
-                        </tr>
-                        <tr>
-                            <td>Pilates</td>
-                            <td></td>
-                            <td>18:00 a 20:00</td>
-                            <td></td>
-                            <td>18:00 a 20:00</td>
-                            <td></td>
-                            <td>18:00 a 20:00</td>
-                            <td>Cerrado</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <!-- Cards de actividades -->
-            <div class="cards-demo">
-                <div class="card">
-                    <img src="https://placehold.co/600x400/2B2B2B/FF6A00?text=ENTRENAMIENTO" alt="entrenamiento">
-                    <div class="card-content">
-                        <div class="card-title">Power Training</div>
-                        <div class="card-description">Rutinas intensas para ganar fuerza.</div>
-                        <a href="#" class="card-button">Ver más →</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://placehold.co/600x400/000000/FF6A00?text=NUTRICIÓN" alt="nutrición">
-                    <div class="card-content">
-                        <div class="card-title">Asesoría Nutricional</div>
-                        <div class="card-description">Planes personalizados para tus metas.</div>
-                        <a href="#" class="card-button">Consultar →</a>
-                    </div>
+    <main class="inicio">
+        <section class="hero-inicio">
+            <div class="hero-contenido">
+                <p class="hero-etiqueta">Gimnasio integral</p>
+                <h1>CATASTRONG</h1>
+                <p class="hero-texto">
+                    Entrena fuerte, mejora tu energia y alcanza tus objetivos con clases, sala de musculacion y
+                    acompanamiento profesional.
+                </p>
+                <div class="hero-acciones">
+                    <a href="./pages/HorariosClases.html" class="btn-paleta">Ver horarios</a>
+                    <a href="./pages/formularioDeContacto.html" class="btn-contorno">Consultar</a>
                 </div>
             </div>
+            <div class="hero-imagen">
+                <img src="./img/CataStrong.png" alt="Gimnasio CataStrong">
+            </div>
+        </section>
+
+        <section class="presentacion-inicio">
+            <div>
+                <h2>Tu punto de partida</h2>
+                <p>
+                    En CataStrong combinamos entrenamiento, constancia y buena energia para que cada persona pueda
+                    progresar a su ritmo. Tenemos propuestas para quienes recien empiezan y para quienes quieren llevar
+                    su rendimiento al siguiente nivel.
+                </p>
+            </div>
+            <div class="datos-inicio">
+                <div>
+                    <strong>08:00</strong>
+                    <span>Apertura semanal</span>
+                </div>
+                <div>
+                    <strong>4</strong>
+                    <span>Clases destacadas</span>
+                </div>
+                <div>
+                    <strong>3</strong>
+                    <span>Entrenadores</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Entrenamiento para cada objetivo</h2>
+            <div class="servicios-inicio">
+                <article>
+                    <span class="material-symbols-outlined">fitness_center</span>
+                    <h3>Sala de musculacion</h3>
+                    <p>Equipamiento para fuerza, resistencia y rutinas personalizadas durante todo el dia.</p>
+                </article>
+                <article>
+                    <span class="material-symbols-outlined">groups</span>
+                    <h3>Clases grupales</h3>
+                    <p>Funcional, HIIT, pilates y spinning para entrenar con energia y acompanamiento.</p>
+                </article>
+                <article>
+                    <span class="material-symbols-outlined">monitoring</span>
+                    <h3>Seguimiento</h3>
+                    <p>Profesores que orientan tu tecnica, tu progreso y la forma de llegar a tus metas.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="horario-inicio">
+            <div>
+                <h2>Horarios amplios</h2>
+                <p>
+                    Abrimos de lunes a viernes de 08:00 a 00:00 y los sabados de 09:00 a 20:00. Tambien podes consultar
+                    los horarios de cada clase en la pagina de horarios.
+                </p>
+            </div>
+            <a href="./pages/HorariosClases.html" class="btn-paleta">Ver clases</a>
+        </section>
+
+        <section class="cta-inicio">
+            <h2>Empeza hoy</h2>
+            <p>Escribinos y te ayudamos a elegir la actividad que mejor se adapte a tus objetivos.</p>
+            <a href="./pages/formularioDeContacto.html" class="btn-paleta">Contactar</a>
+        </section>
     </main>
+
     <footer>
-        <p>© 2026 CataStrong Gym - Transformá tu vida.</p>
+        <p>© 2026 CataStrong Gym - Transforma tu vida.</p>
     </footer>
 </body>
 
