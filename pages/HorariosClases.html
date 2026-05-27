@@ -33,8 +33,9 @@
                 Contamos con clases para todos los niveles, guiadas por profesionales que te ayudarán a alcanzar tus
                 objetivos en un ambiente dinámico y motivador.</p>
         </section>
+        
         <section>
-            <h2>Horarios de Atencion</h2>
+            <h2>Horarios de Atencion</h2>            
             <table class="tabla-horarios">
                 <thead>
                     <tr>
@@ -153,6 +154,23 @@
         <!-- Tabla de horarios -->
         <section>
             <h2>Horarios de Clases</h2>
+            <!-- Se implemennta los filtros con tabla de horarios -->
+            <input type="radio" id="btn-todas" name="filtro-clases" class="radio-oculto" checked>
+            <input type="radio" id="btn-musculacion" name="filtro-clases" class="radio-oculto">
+            <input type="radio" id="btn-hiit" name="filtro-clases" class="radio-oculto">
+            <input type="radio" id="btn-funcional" name="filtro-clases" class="radio-oculto">
+            <input type="radio" id="btn-spinning" name="filtro-clases" class="radio-oculto">
+            <input type="radio" id="btn-pilates" name="filtro-clases" class="radio-oculto">
+            <input type="radio" id="btn-yoga" name="filtro-clases" class="radio-oculto">
+
+            <div class="botones-filtro">
+                <label for="btn-todas" class="boton-filtro">Todas Las Clases</label>
+                <label for="btn-musculacion" class="boton-filtro">Musculación</label>
+                <label for="btn-hiit" class="boton-filtro">HIIT</label>
+                <label for="btn-funcional" class="boton-filtro">Funcional</label>
+                <label for="btn-spinning" class="boton-filtro">Spinning</label>
+                <label for="btn-pilates" class="boton-filtro">Pilates</label>
+            </div>
             <table class="tabla-horarios">
                 <thead>
                     <tr>
@@ -167,7 +185,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="fila-musculacion">
                         <td>Musculación</td>
                         <td>8:00 a 00:00</td>
                         <td>8:00 a 00:00</td>
@@ -177,7 +195,7 @@
                         <td>9:00 a 20:00</td>
                         <td>Cerrado</td>
                     </tr>
-                    <tr>
+                    <tr class="fila-spinning">
                         <td>Spinning</td>
                         <td></td>
                         <td>8:00 a 10:00</td>
@@ -187,7 +205,7 @@
                         <td>10:00 a 12:00</td>
                         <td>Cerrado</td>
                     </tr>
-                    <tr>
+                    <tr class="fila-hiit">
                         <td>HIIT</td>
                         <td>9:00 a 11:00</td>
                         <td></td>
@@ -197,7 +215,7 @@
                         <td></td>
                         <td>Cerrado</td>
                     </tr>
-                    <tr>
+                    <tr class="fila-pilates">
                         <td>Pilates</td>
                         <td></td>
                         <td>10:00 a 12:00</td>
@@ -207,7 +225,7 @@
                         <td></td>
                         <td>Cerrado</td>
                     </tr>
-                    <tr>
+                    <tr class="fila-funcional">
                         <td>Funcional</td>
                         <td>11:00 a 13:00</td>
                         <td></td>
@@ -217,7 +235,7 @@
                         <td>11:00 a 13:00</td>
                         <td>Cerrado</td>
                     </tr>
-                    <tr>
+                    <tr class="fila-spinning">
                         <td>Spinning</td>
                         <td></td>
                         <td>16:00 a 18:00</td>
@@ -227,7 +245,7 @@
                         <td></td>
                         <td>Cerrado</td>
                     </tr>
-                    <tr>
+                    <tr class="fila-hiit">
                         <td>HIIT</td>
                         <td>20:00 a 22:00</td>
                         <td></td>
@@ -237,7 +255,7 @@
                         <td></td>
                         <td>Cerrado</td>
                     </tr>
-                    <tr>
+                    <tr class="fila-pilates">
                         <td>Pilates</td>
                         <td></td>
                         <td>18:00 a 20:00</td>

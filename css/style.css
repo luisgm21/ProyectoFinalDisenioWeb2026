@@ -1131,6 +1131,71 @@
     margin: 0 auto 1.5rem;
 }
 
+
+/* ===== FILTRADO DE LOS HORARIOS DE CLASES ===== */
+ /* --- LÓGICA DE LOS BOTONES --- */
+.radio-oculto {
+    display: none;
+}
+
+.botones-filtro {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.boton-filtro {
+    /* Tamaño y forma más cuadrada */
+    padding: 14px;                   
+    min-width: 90px;                
+    text-align: center;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    border: 2px solid var(--color-secundario);
+    border-radius: 10px;          
+    font-weight: bold;
+    font-family: 'Amaranth', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+
+/* Efecto cuando el botón está SELECCIONADO */
+#btn-todas:checked ~ .botones-filtro label[for="btn-todas"],
+#btn-musculacion:checked ~ .botones-filtro label[for="btn-musculacion"],
+#btn-spinning:checked ~ .botones-filtro label[for="btn-spinning"],
+#btn-hiit:checked ~ .botones-filtro label[for="btn-hiit"],
+#btn-pilates:checked ~ .botones-filtro label[for="btn-pilates"],
+#btn-funcional:checked ~ .botones-filtro label[for="btn-funcional"]{
+    background-color: var(--color-secundario); 
+    color: var(--color-primario); 
+}
+
+/* --- LÓGICA DE FILTRADO DE LA TABLA --- */
+
+#btn-musculacion:checked ~ .tabla-horarios tbody tr:not(.fila-musculacion) {
+    display: none;
+}
+
+#btn-spinning:checked ~ .tabla-horarios tbody tr:not(.fila-spinning) {
+    display: none;
+}
+
+#btn-hiit:checked ~ .tabla-horarios tbody tr:not(.fila-hiit) {
+    display: none;
+}
+
+#btn-pilates:checked ~ .tabla-horarios tbody tr:not(.fila-pilates) {
+    display: none;
+}
+
+#btn-funcional:checked ~ .tabla-horarios tbody tr:not(.fila-funcional) {
+    display: none;
+}
+
+
 @media (max-width: 900px) {
     .hero-inicio,
     .presentacion-inicio {
