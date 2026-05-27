@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de Turnos - CATASTRONG</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Trade+Winds&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html" class="logo">CATASTRONG</a>
+
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="./HorariosClases.html">Horarios</a></li>
+            <li><a href="./ReservaDeTurno.html">Reservas</a></li>
+            <li><a href="./formularioDeContacto.html">Contacto</a></li>
+            <li><a href="./formularioDeRespuesta.html">Responder</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section>
+            <h1>Reserva de Turnos</h1>
+
+            <p class="texto-reserva">
+                Reservá tu lugar para entrenar en el horario que más te convenga.
+                Los siguientes turnos corresponden a las actividades disponibles en CATASTRONG.
+            </p>
+        </section>
+
+        <section>
+
+            <h2>Turnos Disponibles</h2>
+
+            <p class="texto-reserva">
+                A continuación se muestran algunos de los turnos disponibles según las actividades
+                ofrecidas por CATASTRONG. Para consultar todos los horarios de clases, visitá la
+                sección de Horarios.
+            </p>
+
+            <table class="tabla-horarios">
+
+                <thead>
+                    <tr>
+                        <th>Actividad</th>
+                        <th>Día</th>
+                        <th>Horario</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>Musculación</td>
+                        <td>Lunes a Viernes</td>
+                        <td>08:00 a 00:00</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                    <tr>
+                        <td>Musculación</td>
+                        <td>Sábado</td>
+                        <td>09:00 a 20:00</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                    <tr>
+                        <td>Spinning</td>
+                        <td>Martes y Jueves</td>
+                        <td>08:00 a 10:00</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                    <tr>
+                        <td>Spinning</td>
+                        <td>Martes y Jueves</td>
+                        <td>16:00 a 18:00</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                    <tr>
+                        <td>Spinning</td>
+                        <td>Sábado</td>
+                        <td>10:00 a 12:00</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                    <tr>
+                        <td>HIIT</td>
+                        <td>Lunes, Miércoles y Viernes</td>
+                        <td>09:00 a 11:00</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                    <tr>
+                        <td>HIIT</td>
+                        <td>Lunes, Miércoles y Viernes</td>
+                        <td>20:00 a 22:00</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pilates</td>
+                        <td>Martes y Jueves</td>
+                        <td>10:00 a 12:00</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pilates</td>
+                        <td>Martes y Jueves</td>
+                        <td>18:00 a 20:00</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                    <tr>
+                        <td>Pilates</td>
+                        <td>Sábado</td>
+                        <td>18:00 a 20:00</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                    <tr>
+                        <td>Funcional</td>
+                        <td>Lunes, Miércoles y Viernes</td>
+                        <td>11:00 a 13:00</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                    <tr>
+                        <td>Funcional</td>
+                        <td>Sábado</td>
+                        <td>11:00 a 13:00</td>
+                        <td>Disponible</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <section class="form-reserva">
+
+            <h2>Reservar Turno</h2>
+
+            <form id="formReserva">
+
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" required>
+
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" required>
+
+                <label for="actividad">Actividad</label>
+                <select id="actividad" required>
+                    <option value="">Seleccionar actividad</option>
+                    <option>Musculación</option>
+                    <option>Funcional</option>
+                    <option>Spinning</option>
+                    <option>HIIT</option>
+                    <option>Pilates</option>
+                </select>
+
+                <label for="turno">Turno disponible</label>
+                <select id="turno" required>
+                    <option value="">Seleccionar turno</option>
+                    <option>Lunes a Viernes - 08:00 a 00:00</option>
+                    <option>Sábado - 09:00 a 20:00</option>
+                    <option>Martes y Jueves - 08:00 a 10:00</option>
+                    <option>Martes y Jueves - 16:00 a 18:00</option>
+                    <option>Sábado - 10:00 a 12:00</option>
+                    <option>Lunes, Miércoles y Viernes - 09:00 a 11:00</option>
+                    <option>Lunes, Miércoles y Viernes - 20:00 a 22:00</option>
+                    <option>Martes y Jueves - 10:00 a 12:00</option>
+                    <option>Martes y Jueves - 18:00 a 20:00</option>
+                    <option>Sábado - 18:00 a 20:00</option>
+                    <option>Lunes, Miércoles y Viernes - 11:00 a 13:00</option>
+                </select>
+
+                <button type="submit" class="btn-paleta">
+                    Confirmar Reserva
+                </button>
+
+            </form>
+
+            <div id="mensajeReserva"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 CataStrong Gym - Transformá tu vida.</p>
+    </footer>
+
+    <!-- Javascript minimo -->
+    <script>
+        document.getElementById("formReserva")
+            .addEventListener("submit", function (e) {
+
+                e.preventDefault();
+
+                document.getElementById("mensajeReserva").innerHTML =
+                    "<p class='mensaje-exito'>✅ Turno reservado correctamente.</p>";
+
+                this.reset();
+            });
+    </script>
+
+</body>
+
+</html>
