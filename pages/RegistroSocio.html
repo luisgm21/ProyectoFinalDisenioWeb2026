@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Socio - CATASTRONG</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Trade+Winds&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <a href="../index.html" class="logo">CATASTRONG</a>
+
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="./HorariosClases.html">Horarios</a></li>
+            <li><a href="./reservaTurno.html">Reservas</a></li>
+            <li><a href="./RegistroSocio.html">Registro</a></li>
+            <li><a href="./formularioDeContacto.html">Contacto</a></li>
+            <li><a href="./formularioDeRespuesta.html">Responder</a></li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section>
+            <h1>Registro de Socio</h1>
+
+            <p class="texto-registro">
+                Completá tus datos para registrarte como socio de CATASTRONG y acceder a nuestros servicios.
+            </p>
+        </section>
+
+        <!-- REGISTRO -->
+
+        <section class="form-registro">
+
+            <h2>Crear Cuenta</h2>
+
+            <form id="formRegistro">
+
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre">
+
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido">
+
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo">
+
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena">
+
+                <label for="confirmar">Confirmar Contraseña</label>
+                <input type="password" id="confirmar">
+
+                <button type="submit" class="btn-paleta">
+                    Registrarme
+                </button>
+
+            </form>
+
+            <div id="mensajeRegistro"></div>
+
+        </section>
+
+        <!-- LOGIN -->
+
+        <section class="form-registro">
+
+            <h2>Iniciar Sesión</h2>
+
+            <form id="formLogin">
+
+                <label for="loginCorreo">Correo Electrónico</label>
+                <input type="email" id="loginCorreo">
+
+                <label for="loginContrasena">Contraseña</label>
+                <input type="password" id="loginContrasena">
+
+                <button type="submit" class="btn-paleta">
+                    Ingresar
+                </button>
+
+            </form>
+
+            <div id="mensajeLogin"></div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 CataStrong Gym - Transformá tu vida.</p>
+    </footer>
+
+    <script>
+
+        let usuarioRegistrado = null;
+
+        // REGISTRO
+
+        document.getElementById("formRegistro")
+            .addEventListener("submit", function (e) {
+
+                e.preventDefault();
+
+                const nombre = document.getElementById("nombre").value;
+                const apellido = document.getElementById("apellido").value;
+                const correo = document.getElementById("correo").value;
+                const contrasena = document.getElementById("contrasena").value;
+                const confirmar = document.getElementById("confirmar").value;
+
+                if (
+                    nombre === "" ||
+                    apellido === "" ||
+                    correo === "" ||
+                    contrasena === "" ||
+                    confirmar === ""
+                ) {
+
+                    document.getElementById("mensajeRegistro").innerHTML =
+                        "<p class='mensaje-error'>⚠ Debe completar todos los campos obligatorios.</p>";
+
+                    return;
+                }
+
+                if (correo === "socio@catastrong.com") {
+
+                    document.getElementById("mensajeRegistro").innerHTML =
+                        "<p class='mensaje-error'>⚠ El usuario ya existe.</p>";
+
+                    return;
+                }
+
+                if (contrasena !== confirmar) {
+
+                    document.getElementById("mensajeRegistro").innerHTML =
+                        "<p class='mensaje-error'>⚠ Las contraseñas no coinciden.</p>";
+
+                    return;
+                }
+
+                usuarioRegistrado = {
+                    correo: correo,
+                    contrasena: contrasena
+                };
+
+                document.getElementById("mensajeRegistro").innerHTML =
+                    "<p class='mensaje-exito'>✅ Registro realizado correctamente.</p>";
+
+                this.reset();
+
+            });
+
+        // LOGIN
+
+        document.getElementById("formLogin")
+            .addEventListener("submit", function (e) {
+
+                e.preventDefault();
+
+                const correo = document.getElementById("loginCorreo").value;
+                const contrasena = document.getElementById("loginContrasena").value;
+
+                if (
+                    usuarioRegistrado &&
+                    correo === usuarioRegistrado.correo &&
+                    contrasena === usuarioRegistrado.contrasena
+                ) {
+
+                    document.getElementById("mensajeLogin").innerHTML =
+                        "<p class='mensaje-exito'>✅ Bienvenido socio. Acceso concedido.</p>";
+
+                } else {
+
+                    document.getElementById("mensajeLogin").innerHTML =
+                        "<p class='mensaje-error'>⚠ Credenciales incorrectas.</p>";
+
+                }
+
+            });
+
+    </script>
+
+</body>
+
+</html>
