@@ -1,1403 +1,1491 @@
- * { 
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        :root {
-            --color-primario: #000000; /* Negro */
-            --color-secundario: #FF6A00; /* Naranja intenso */
-            --color-terciario: #2B2B2B; /* Gris oscuro para énfasis/alertas */
-            --color-fondo: #0A0A0A; /* Negro suave */
-            --color-texto: #FFFFFF; /* Blanco */
-        }
-        body {
-            margin: 0;
-            font-family: 'Amaranth', 'Arial', sans-serif;
-            background: var(--color-fondo);
-            color: var(--color-texto);
-        }
-        nav {
-            background: var(--color-primario);
-            color: var(--color-texto);
-            padding: 1rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-        }
-        nav .logo {
-            color: var(--color-secundario);
-            font-family: 'Trade Winds', 'sans-serif';
-            font-weight: bold;
-            font-size: 1.45rem;
-            text-decoration: none;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            margin: 0;
-            padding: 0;
-            grid-column: 2;
-            justify-content: center;
-        }
-        nav ul li {
-            display: inline;
-        }
-        nav ul li a {
-            color: var(--color-texto);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        nav ul li a:hover {
-            color: var(--color-secundario);
-        }
-        main {
-            min-height: 60vh;
-            margin: 3.125rem;
-        }
-        h1 {
-            color: var(--color-secundario);
-            margin-bottom: 3.125rem;
-        }
-
-        section {
-            margin-bottom: 2.5rem;
-        }
-
-        .tabla-horarios {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 2rem;
-            background: var(--color-primario);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-        .tabla-horarios th, .tabla-horarios td {
-            border: 1px solid var(--color-terciario);
-            padding: 0.75rem 1rem;
-            text-align: center;
-            color: var(--color-texto);
-        }
-        .tabla-horarios th {
-            background: var(--color-secundario);
-            color: var(--color-primario);
-        }
-        .tabla-horarios tr:nth-child(even) {
-            background: var(--color-terciario);
-        }
-        footer {
-            background: var(--color-terciario);
-            color: var(--color-texto);
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-
-        .btn-paleta {
-            background: var(--color-secundario);
-            color: var(--color-primario);
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 2rem;
-            transition: background 0.2s, color 0.2s;
-        }
-        .btn-paleta:hover {
-            background: var(--color-terciario);
-            color: var(--color-secundario);
-        }
-        h1 {
-            font-family: 'Trade Winds', 'sans-serif';
-            font-size: 66px;
-        }
-
-        h2 {
-            font-family: 'Trade Winds', 'sans-serif';
-            font-size: 36px;
-        }
-
-        .material-symbols-outlined {
-            font-family: 'Material Symbols Outlined', 'Amaranth', Arial, sans-serif;
-            font-size: 1.2em;
-            vertical-align: middle;
-            color: var(--color-primario);
-            margin-right: 0.5em;
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 700,
-                'GRAD' 0,
-                'opsz' 48;
-        }
-        .btn-paleta .material-symbols-outlined {
-            color: var(--color-primario);
-            transition: color 0.2s;
-        }
-        .btn-paleta:hover .material-symbols-outlined {
-            color: var(--color-secundario);
-        }
-
-                .form-ejemplo {
-            margin-top: 2.5rem;
-            background: var(--color-primario);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-            max-width: 420px;
-            color: var(--color-texto);
-        }
-        .form-ejemplo h2 {
-            color: var(--color-secundario);
-            font-family: 'Trade Winds', 'sans-serif';
-            margin-top: 0;
-        }
-        .form-ejemplo label {
-            display: block;
-            margin-top: 1rem;
-            margin-bottom: 0.3rem;
-            font-weight: 500;
-        }
-        .form-ejemplo input,
-        .form-ejemplo textarea,
-        .form-ejemplo select {
-            width: 100%;
-            padding: 0.5rem;
-            border: 1px solid var(--color-terciario);
-            border-radius: 4px;
-            background: var(--color-fondo);
-            color: var(--color-texto);
-            font-family: 'Amaranth', Arial, sans-serif;
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            box-sizing: border-box;
-        }
-
-        /* Personalización input date */
-        .input-date-wrapper {
-            position: relative;
-            width: 100%;
-        }
-        .input-date-wrapper input[type="date"] {
-            width: 100%;
-            padding-right: 2.5rem;
-        }
-        /* Ocultar icono nativo del input date en Chrome, Edge, Safari */
-        .input-date-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
-            opacity: 0;
-            width: 2.5rem;
-            cursor: pointer;
-        }
-        /* Ocultar icono nativo en Firefox */
-        .input-date-wrapper input[type="date"]::-moz-calendar-picker-indicator {
-            opacity: 0;
-        }
-        /* Icono personalizado */
-        .input-date-wrapper .material-symbols-outlined {
-            position: absolute;
-            right: 0.3rem;
-            top: 50%;
-            transform: translateY(-50%);
-            pointer-events: none;
-            color: var(--color-secundario);
-            font-size: 1.7em;
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-        
-        .form-ejemplo input[type="color"] {
-            padding: 0.2rem;
-            height: 2.2rem;
-        }
-        .form-ejemplo textarea {
-            resize: vertical;
-        }
-        .form-ejemplo .form-checks {
-            margin-top: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-        /* Personalización de radio y checkbox */
-        .form-ejemplo input[type="checkbox"],
-        .form-ejemplo input[type="radio"] {
-            accent-color: #000;
-        }
-        .form-ejemplo .btn-paleta {
-            width: 100%;
-            margin-top: 1.5rem;
-        }
-
-        .card {
-            min-height: 240px;
-            width: 320px;
-            background-color: #0A0A0A;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.8);
-            border: 1px solid #2B2B2B;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 20px;
-        }
-
-        .card-title {
-            color: #FFFFFF;
-            font-family: 'Trade Winds', 'sans-serif';
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .card-description {
-                color: #ffffff;
-                font-size: 14px;
-                margin-bottom: 20px;
-                line-height: 1.4;
-        }
-
-        .card-button {
-            display: inline-block;
-            padding: 10px 16px;
-            background-color: #FF6A00;
-            color: #FFFFFF;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .card-button:hover {
-            background-color: #FFFFFF;
-            color: #000000;
-        }
-
-/* ===== ESTILOS NUEVOS PARA EL FORMULARIO DE CONSULTA ===== */
-
-/* Contenedor principal del formulario + info */
-.contenedor-formulario {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: space-between;
-    margin-bottom: 2rem;
-}
-
-/* Formulario propiamente dicho */
-.form-consulta {
-    flex: 2;
-    min-width: 280px;
-    background: var(--color-primario);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-.form-consulta h2 {
-    color: var(--color-secundario);
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-    font-family: 'Trade Winds', 'sans-serif';
-}
-
-.form-consulta label {
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: 0.4rem;
-    font-weight: 600;
-    color: var(--color-texto);
-}
-
-.form-consulta input,
-.form-consulta select,
-.form-consulta textarea {
-    width: 100%;
-    padding: 0.7rem;
-    background: var(--color-fondo);
-    border: 1px solid var(--color-terciario);
-    border-radius: 6px;
-    color: var(--color-texto);
-    font-family: 'Amaranth', Arial, sans-serif;
-    font-size: 1rem;
-    transition: border 0.2s;
-}
-
-.form-consulta input:focus,
-.form-consulta select:focus,
-.form-consulta textarea:focus {
-    outline: none;
-    border-color: var(--color-secundario);
-}
-
-.form-consulta textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-/* Checkbox personalizado */
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-top: 1.2rem;
-    font-weight: normal !important;
-    cursor: pointer;
-}
-
-.checkbox-label input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--color-secundario);
-    margin: 0;
-}
-
-.checkbox-label a {
-    color: var(--color-secundario);
-    text-decoration: none;
-}
-
-.checkbox-label a:hover {
-    text-decoration: underline;
-}
-
-/* Botón enviar */
-.btn-enviar {
-    background: var(--color-secundario);
-    color: var(--color-primario);
-    border: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 1.8rem;
-    width: 100%;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.btn-enviar:hover {
-    background: var(--color-terciario);
-    color: var(--color-secundario);
-}
-
-.btn-enviar .material-symbols-outlined {
-    color: inherit;
-    font-size: 1.2rem;
-}
-
-/* Aviso legal pequeño */
-.aviso-legal {
-    font-size: 0.7rem;
-    text-align: center;
-    margin-top: 1rem;
-    color: #aaa;
-}
-
-/* Bloque de información de contacto */
-.info-contacto {
-    flex: 1;
-    min-width: 240px;
-    background: rgba(43, 43, 43, 0.4);
-    border-left: 4px solid var(--color-secundario);
-    border-radius: 12px;
-    padding: 1.5rem;
-    height: fit-content;
-}
-
-.info-contacto h3 {
-    color: var(--color-secundario);
-    margin-top: 0;
-    margin-bottom: 1.2rem;
-    font-family: 'Trade Winds', 'sans-serif';
-    font-size: 1.3rem;
-}
-
-.info-contacto p {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    margin: 1rem 0;
-}
-
-.info-contacto .material-symbols-outlined {
-    color: var(--color-secundario);
-    margin-right: 0;
-}
-
-/* Campo honeypot (oculto para humanos, visible para bots) */
-.honeypot {
-    position: absolute;
-    left: -9999px;
-    top: -9999px;
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* Feedback de envío */
-#formFeedback {
-    margin-top: 1rem;
-    text-align: center;
-    font-weight: bold;
-}
-
-/* Responsive para el formulario */
-@media (max-width: 768px) {
-    .contenedor-formulario {
-        flex-direction: column;
-    }
-    
-    .form-consulta {
-        padding: 1.5rem;
-    }
-    
-    .info-contacto {
-        width: 100%;
-    }
-}
-
-/* Ajustes menores a las cards existentes (opcional, ya las tenés) */
-.cards-demo {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin: 2rem 0;
-    justify-content: center;
-}
-
-/* ===== PANEL DE RESPUESTAS A CONSULTAS ===== */
-
-/* Barra de acciones y filtros */
-.barra-acciones {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    background: var(--color-primario);
-    padding: 1rem;
-    border-radius: 10px;
-}
-
-.filtros {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    flex: 1;
-}
-
-.filtros select,
-.filtros input {
-    padding: 0.6rem 1rem;
-    background: var(--color-fondo);
-    border: 1px solid var(--color-terciario);
-    border-radius: 6px;
-    color: var(--color-texto);
-    font-family: 'Amaranth', Arial, sans-serif;
-    cursor: pointer;
-}
-
-.filtros select:focus,
-.filtros input:focus {
-    outline: none;
-    border-color: var(--color-secundario);
-}
-
-.filtros input {
-    flex: 1;
-    min-width: 180px;
-}
-
-.btn-secundario {
-    background: transparent;
-    border: 1px solid var(--color-secundario);
-    color: var(--color-secundario);
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.2s;
-}
-
-.btn-secundario:hover {
-    background: var(--color-secundario);
-    color: var(--color-primario);
-}
-
-.btn-secundario .material-symbols-outlined {
-    font-size: 1.2rem;
-    color: inherit;
-}
-
-/* Lista de consultas */
-.lista-consultas {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-}
-
-.loading, .sin-consultas {
-    text-align: center;
-    padding: 3rem;
-    color: #888;
-    background: var(--color-primario);
-    border-radius: 12px;
-}
-
-/* Tarjeta de cada consulta */
-.consulta-card {
-    background: var(--color-primario);
-    border-radius: 12px;
-    padding: 1.2rem;
-    border-left: 4px solid var(--color-secundario);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.consulta-card:hover {
-    transform: translateX(4px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-
-.consulta-card.respondida {
-    border-left-color: #4CAF50;
-    opacity: 0.85;
-}
-
-.consulta-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.8rem;
-}
-
-.consulta-info {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.8rem;
-}
-
-.consulta-nombre {
-    font-weight: bold;
-    font-size: 1.1rem;
-    color: var(--color-texto);
-}
-
-.consulta-email {
-    color: #aaa;
-    font-size: 0.85rem;
-}
-
-.consulta-tipo {
-    background: rgba(255, 106, 0, 0.15);
-    color: var(--color-secundario);
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: bold;
-}
-
-.consulta-fecha {
-    font-size: 0.75rem;
-    color: #888;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-}
-
-.badge-pendiente {
-    background: #FF6A00;
-    color: #000;
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: bold;
-}
-
-.badge-respondida {
-    background: #4CAF50;
-    color: #fff;
-    padding: 0.2rem 0.6rem;
-    border-radius: 20px;
-    font-size: 0.7rem;
-    font-weight: bold;
-}
-
-.consulta-mensaje-preview {
-    color: #ccc;
-    margin: 0.8rem 0;
-    padding: 0.5rem;
-    background: var(--color-fondo);
-    border-radius: 6px;
-    font-size: 0.9rem;
-}
-
-.consulta-respuesta-preview {
-    background: rgba(76, 175, 80, 0.1);
-    border-left: 3px solid #4CAF50;
-    padding: 0.6rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    color: #ccc;
-    margin-bottom: 0.8rem;
-}
-
-.consulta-acciones {
-    display: flex;
-    gap: 0.8rem;
-    margin-top: 0.5rem;
-}
-
-.btn-responder, .btn-ver-respuesta {
-    background: transparent;
-    border: 1px solid var(--color-terciario);
-    color: var(--color-texto);
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: 'Amaranth', Arial, sans-serif;
-    transition: all 0.2s;
-}
-
-.btn-responder:hover {
-    background: var(--color-secundario);
-    border-color: var(--color-secundario);
-    color: var(--color-primario);
-}
-
-.btn-ver-respuesta:hover {
-    background: #4CAF50;
-    border-color: #4CAF50;
-    color: #fff;
-}
-
-.btn-responder .material-symbols-outlined,
-.btn-ver-respuesta .material-symbols-outlined {
-    font-size: 1rem;
-    margin: 0;
-}
-
-/* MODAL */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.85);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal.activo {
-    display: flex;
-}
-
-.modal-contenido {
-    background: var(--color-primario);
-    border-radius: 16px;
-    width: 90%;
-    max-width: 700px;
-    max-height: 85vh;
-    overflow-y: auto;
-    border: 1px solid var(--color-terciario);
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2rem 1.5rem;
-    border-bottom: 1px solid var(--color-terciario);
-}
-
-.modal-header h2 {
-    color: var(--color-secundario);
-    margin: 0;
-    font-size: 1.5rem;
-}
-
-.cerrar-modal {
-    background: none;
-    border: none;
-    color: var(--color-texto);
-    font-size: 2rem;
-    cursor: pointer;
-    line-height: 1;
-}
-
-.cerrar-modal:hover {
-    color: var(--color-secundario);
-}
-
-.modal-body {
-    padding: 1.5rem;
-}
-
-.consulta-original {
-    background: var(--color-fondo);
-    padding: 1rem;
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-}
-
-.consulta-original p {
-    margin: 0.5rem 0;
-}
-
-.mensaje-original {
-    background: var(--color-terciario);
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 0.8rem;
-    white-space: pre-wrap;
-}
-
-.respuesta-area label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    color: var(--color-texto);
-}
-
-.respuesta-area textarea {
-    width: 100%;
-    padding: 0.8rem;
-    background: var(--color-fondo);
-    border: 1px solid var(--color-terciario);
-    border-radius: 8px;
-    color: var(--color-texto);
-    font-family: 'Amaranth', Arial, sans-serif;
-    resize: vertical;
-}
-
-.respuesta-area textarea:focus {
-    outline: none;
-    border-color: var(--color-secundario);
-}
-
-.opciones-respuesta {
-    margin: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-}
-
-.modal-botones {
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-end;
-    margin-top: 1.5rem;
-}
-
-.btn-cancelar {
-    background: transparent;
-    border: 1px solid var(--color-terciario);
-    color: var(--color-texto);
-    padding: 0.6rem 1.5rem;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.btn-cancelar:hover {
-    background: var(--color-terciario);
-}
-
-.btn-enviar-respuesta {
-    background: var(--color-secundario);
-    border: none;
-    color: var(--color-primario);
-    padding: 0.6rem 1.5rem;
-    border-radius: 6px;
-    font-weight: bold;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.btn-enviar-respuesta:hover {
-    background: var(--color-terciario);
-    color: var(--color-secundario);
-}
-
-/* TOAST (notificaciones) */
-.toast {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--color-primario);
-    color: var(--color-texto);
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    border-left: 4px solid var(--color-secundario);
-    transform: translateX(400px);
-    transition: transform 0.3s ease;
-    z-index: 1100;
-    font-weight: bold;
-}
-
-.toast.mostrar {
-    transform: translateX(0);
-}
-
-.toast.success {
-    border-left-color: #4CAF50;
-}
-
-.toast.error {
-    border-left-color: #f44336;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .barra-acciones {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .filtros {
-        flex-direction: column;
-    }
-    
-    .consulta-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
-    
-    .consulta-info {
-        flex-wrap: wrap;
-    }
-    
-    .modal-contenido {
-        width: 95%;
-        margin: 1rem;
-    }
-    
-    .modal-botones {
-        flex-direction: column;
-    }
-    
-    .toast {
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
-        text-align: center;
-    }
-}
-/* ===== ESTILOS PARA LA SECCION CLASES DESTACADAS ===== */
-.clases-destacadas{
-    display: flex;
-    justify-content: space-around;
-    margin: 2rem 0;
-}
-
-/* Imagen de entrenadores */
-.card-entrenador img {
-    height: 400px;
-}
-
-/* ===== ESTILOS PARA LA PAGINA DE INICIO ===== */
-.inicio {
-    margin: 0;
-}
-
-.inicio section {
-    margin-bottom: 0;
-}
-
-.hero-inicio {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-    gap: 2rem;
-    align-items: center;
-    min-height: 520px;
-    padding: 4rem 3.125rem;
-    background: linear-gradient(120deg, #000 0%, #0A0A0A 48%, #2B2B2B 100%);
-}
-
-.hero-contenido {
-    max-width: 720px;
-}
-
-.hero-etiqueta {
-    color: var(--color-secundario);
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0;
-    margin-bottom: 1rem;
-}
-
-.hero-inicio h1 {
-    margin-bottom: 1.5rem;
-    line-height: 1;
-}
-
-.hero-texto {
-    max-width: 620px;
-    color: #ddd;
-    font-size: 1.25rem;
-    line-height: 1.6;
-}
-
-.hero-acciones {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.hero-acciones .btn-paleta,
-.hero-acciones .btn-contorno,
-.horario-inicio .btn-paleta,
-.cta-inicio .btn-paleta {
-    display: inline-block;
-    margin-top: 0;
-    text-decoration: none;
-}
-
-.btn-contorno {
-    display: inline-block;
-    background: transparent;
-    color: var(--color-secundario);
-    border: 1px solid var(--color-secundario);
-    padding: 0.75rem 2rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-}
-
-.btn-contorno:hover {
-    background: var(--color-secundario);
-    color: var(--color-primario);
-}
-
-.hero-imagen {
-    border: 1px solid var(--color-terciario);
-    border-radius: 8px;
-    overflow: hidden;
-    min-height: 360px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.45);
-}
-
-.hero-imagen img {
-    width: 100%;
-    height: 100%;
-    min-height: 360px;
-    object-fit: cover;
-    display: block;
-}
-
-.presentacion-inicio,
-.horario-inicio,
-.cta-inicio {
-    padding: 3.5rem 3.125rem;
-}
-
-.presentacion-inicio {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
-    gap: 2rem;
-    align-items: center;
-    background: #111;
-}
-
-.presentacion-inicio h2,
-.horario-inicio h2,
-.cta-inicio h2 {
-    color: var(--color-secundario);
-    margin-bottom: 1rem;
-}
-
-.presentacion-inicio p,
-.horario-inicio p,
-.cta-inicio p {
-    color: #ddd;
-    line-height: 1.6;
-    font-size: 1.08rem;
-}
-
-.datos-inicio {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-}
-
-.datos-inicio div {
-    background: var(--color-primario);
-    border: 1px solid var(--color-terciario);
-    border-left: 4px solid var(--color-secundario);
-    border-radius: 8px;
-    padding: 1rem;
-}
-
-.datos-inicio strong {
-    display: block;
-    color: var(--color-secundario);
-    font-family: 'Trade Winds', 'sans-serif';
-    font-size: 2rem;
-    margin-bottom: 0.4rem;
-}
-
-.datos-inicio span {
-    color: #ddd;
-}
-
-.servicios-inicio {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    padding: 0 3.125rem 3.5rem;
-}
-
-.inicio > section > h2 {
-    padding: 3.5rem 3.125rem 2rem;
-    color: var(--color-secundario);
-}
-
-.servicios-inicio article {
-    background: var(--color-primario);
-    border: 1px solid var(--color-terciario);
-    border-radius: 8px;
-    padding: 1.5rem;
-}
-
-.servicios-inicio .material-symbols-outlined {
-    color: var(--color-secundario);
-    font-size: 2.3rem;
-    margin: 0 0 1rem 0;
-}
-
-.servicios-inicio h3 {
-    color: var(--color-texto);
-    font-size: 1.3rem;
-    margin-bottom: 0.8rem;
-}
-
-.servicios-inicio p {
-    color: #ccc;
-    line-height: 1.5;
-}
-
-.horario-inicio {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2rem;
-    background: var(--color-terciario);
-}
-
-.horario-inicio div {
-    max-width: 760px;
-}
-
-.cta-inicio {
-    text-align: center;
-    background: #0A0A0A;
-}
-
-.cta-inicio p {
-    max-width: 520px;
-    margin: 0 auto 1.5rem;
-}
-
-
-/* ===== FILTRADO DE LOS HORARIOS DE CLASES ===== */
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ :root {
+     --color-primario: #000000;
+     /* Negro */
+     --color-secundario: #FF6A00;
+     /* Naranja intenso */
+     --color-terciario: #2B2B2B;
+     /* Gris oscuro para énfasis/alertas */
+     --color-fondo: #0A0A0A;
+     /* Negro suave */
+     --color-texto: #FFFFFF;
+     /* Blanco */
+ }
+
+ body {
+     margin: 0;
+     font-family: 'Amaranth', 'Arial', sans-serif;
+     background: var(--color-fondo);
+     color: var(--color-texto);
+ }
+
+ nav {
+     background: var(--color-primario);
+     color: var(--color-texto);
+     padding: 1rem 2rem;
+     display: grid;
+     grid-template-columns: 1fr auto 1fr;
+     align-items: center;
+ }
+
+ nav .logo {
+     color: var(--color-secundario);
+     font-family: 'Trade Winds', 'sans-serif';
+     font-weight: bold;
+     font-size: 1.45rem;
+     text-decoration: none;
+ }
+
+ nav ul {
+     list-style: none;
+     display: flex;
+     gap: 1.5rem;
+     margin: 0;
+     padding: 0;
+     grid-column: 2;
+     justify-content: center;
+ }
+
+ nav ul li {
+     display: inline;
+ }
+
+ nav ul li a {
+     color: var(--color-texto);
+     text-decoration: none;
+     font-weight: 500;
+     transition: color 0.2s;
+ }
+
+ nav ul li a:hover {
+     color: var(--color-secundario);
+ }
+
+ main {
+     min-height: 60vh;
+     margin: 3.125rem;
+ }
+
+ h1 {
+     color: var(--color-secundario);
+     margin-bottom: 3.125rem;
+ }
+
+ section {
+     margin-bottom: 2.5rem;
+ }
+
+ .tabla-horarios {
+     width: 100%;
+     border-collapse: collapse;
+     margin-top: 2rem;
+     background: var(--color-primario);
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+ }
+
+ .tabla-horarios th,
+ .tabla-horarios td {
+     border: 1px solid var(--color-terciario);
+     padding: 0.75rem 1rem;
+     text-align: center;
+     color: var(--color-texto);
+ }
+
+ .tabla-horarios th {
+     background: var(--color-secundario);
+     color: var(--color-primario);
+ }
+
+ .tabla-horarios tr:nth-child(even) {
+     background: var(--color-terciario);
+ }
+
+ footer {
+     background: var(--color-terciario);
+     color: var(--color-texto);
+     text-align: center;
+     padding: 1rem 0;
+     margin-top: 2rem;
+ }
+
+ .btn-paleta {
+     background: var(--color-secundario);
+     color: var(--color-primario);
+     border: none;
+     padding: 0.75rem 2rem;
+     border-radius: 4px;
+     font-size: 1rem;
+     font-weight: bold;
+     cursor: pointer;
+     margin-top: 2rem;
+     transition: background 0.2s, color 0.2s;
+ }
+
+ .btn-paleta:hover {
+     background: var(--color-terciario);
+     color: var(--color-secundario);
+ }
+
+ h1 {
+     font-family: 'Trade Winds', 'sans-serif';
+     font-size: 66px;
+ }
+
+ h2 {
+     font-family: 'Trade Winds', 'sans-serif';
+     font-size: 36px;
+ }
+
+ .material-symbols-outlined {
+     font-family: 'Material Symbols Outlined', 'Amaranth', Arial, sans-serif;
+     font-size: 1.2em;
+     vertical-align: middle;
+     color: var(--color-primario);
+     margin-right: 0.5em;
+     font-variation-settings:
+         'FILL' 0,
+         'wght' 700,
+         'GRAD' 0,
+         'opsz' 48;
+ }
+
+ .btn-paleta .material-symbols-outlined {
+     color: var(--color-primario);
+     transition: color 0.2s;
+ }
+
+ .btn-paleta:hover .material-symbols-outlined {
+     color: var(--color-secundario);
+ }
+
+ .form-ejemplo {
+     margin-top: 2.5rem;
+     background: var(--color-primario);
+     padding: 2rem;
+     border-radius: 8px;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+     max-width: 420px;
+     color: var(--color-texto);
+ }
+
+ .form-ejemplo h2 {
+     color: var(--color-secundario);
+     font-family: 'Trade Winds', 'sans-serif';
+     margin-top: 0;
+ }
+
+ .form-ejemplo label {
+     display: block;
+     margin-top: 1rem;
+     margin-bottom: 0.3rem;
+     font-weight: 500;
+ }
+
+ .form-ejemplo input,
+ .form-ejemplo textarea,
+ .form-ejemplo select {
+     width: 100%;
+     padding: 0.5rem;
+     border: 1px solid var(--color-terciario);
+     border-radius: 4px;
+     background: var(--color-fondo);
+     color: var(--color-texto);
+     font-family: 'Amaranth', Arial, sans-serif;
+     font-size: 1rem;
+     margin-bottom: 0.5rem;
+     box-sizing: border-box;
+ }
+
+ /* Personalización input date */
+ .input-date-wrapper {
+     position: relative;
+     width: 100%;
+ }
+
+ .input-date-wrapper input[type="date"] {
+     width: 100%;
+     padding-right: 2.5rem;
+ }
+
+ /* Ocultar icono nativo del input date en Chrome, Edge, Safari */
+ .input-date-wrapper input[type="date"]::-webkit-calendar-picker-indicator {
+     opacity: 0;
+     width: 2.5rem;
+     cursor: pointer;
+ }
+
+ /* Ocultar icono nativo en Firefox */
+ .input-date-wrapper input[type="date"]::-moz-calendar-picker-indicator {
+     opacity: 0;
+ }
+
+ /* Icono personalizado */
+ .input-date-wrapper .material-symbols-outlined {
+     position: absolute;
+     right: 0.3rem;
+     top: 50%;
+     transform: translateY(-50%);
+     pointer-events: none;
+     color: var(--color-secundario);
+     font-size: 1.7em;
+     height: 100%;
+     display: flex;
+     align-items: center;
+ }
+
+ .form-ejemplo input[type="color"] {
+     padding: 0.2rem;
+     height: 2.2rem;
+ }
+
+ .form-ejemplo textarea {
+     resize: vertical;
+ }
+
+ .form-ejemplo .form-checks {
+     margin-top: 1rem;
+     display: flex;
+     flex-direction: column;
+     gap: 0.5rem;
+ }
+
+ /* Personalización de radio y checkbox */
+ .form-ejemplo input[type="checkbox"],
+ .form-ejemplo input[type="radio"] {
+     accent-color: #000;
+ }
+
+ .form-ejemplo .btn-paleta {
+     width: 100%;
+     margin-top: 1.5rem;
+ }
+
+ .card {
+     min-height: 240px;
+     width: 320px;
+     background-color: #0A0A0A;
+     border-radius: 16px;
+     overflow: hidden;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+     border: 1px solid #2B2B2B;
+     transition: transform 0.3s ease;
+ }
+
+ .card:hover {
+     transform: translateY(-5px);
+ }
+
+ .card img {
+     width: 100%;
+     height: 180px;
+     object-fit: cover;
+ }
+
+ .card-content {
+     padding: 20px;
+ }
+
+ .card-title {
+     color: #FFFFFF;
+     font-family: 'Trade Winds', 'sans-serif';
+     font-size: 22px;
+     font-weight: bold;
+     margin-bottom: 10px;
+ }
+
+ .card-description {
+     color: #ffffff;
+     font-size: 14px;
+     margin-bottom: 20px;
+     line-height: 1.4;
+ }
+
+ .card-button {
+     display: inline-block;
+     padding: 10px 16px;
+     background-color: #FF6A00;
+     color: #FFFFFF;
+     text-decoration: none;
+     border-radius: 8px;
+     font-weight: bold;
+     transition: all 0.3s ease;
+ }
+
+ .card-button:hover {
+     background-color: #FFFFFF;
+     color: #000000;
+ }
+
+ /* ===== ESTILOS NUEVOS PARA EL FORMULARIO DE CONSULTA ===== */
+
+ /* Contenedor principal del formulario + info */
+ .contenedor-formulario {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 2rem;
+     justify-content: space-between;
+     margin-bottom: 2rem;
+ }
+
+ /* Formulario propiamente dicho */
+ .form-consulta {
+     flex: 2;
+     min-width: 280px;
+     background: var(--color-primario);
+     padding: 2rem;
+     border-radius: 12px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+ }
+
+ .form-consulta h2 {
+     color: var(--color-secundario);
+     margin-top: 0;
+     margin-bottom: 1.5rem;
+     font-family: 'Trade Winds', 'sans-serif';
+ }
+
+ .form-consulta label {
+     display: block;
+     margin-top: 1rem;
+     margin-bottom: 0.4rem;
+     font-weight: 600;
+     color: var(--color-texto);
+ }
+
+ .form-consulta input,
+ .form-consulta select,
+ .form-consulta textarea {
+     width: 100%;
+     padding: 0.7rem;
+     background: var(--color-fondo);
+     border: 1px solid var(--color-terciario);
+     border-radius: 6px;
+     color: var(--color-texto);
+     font-family: 'Amaranth', Arial, sans-serif;
+     font-size: 1rem;
+     transition: border 0.2s;
+ }
+
+ .form-consulta input:focus,
+ .form-consulta select:focus,
+ .form-consulta textarea:focus {
+     outline: none;
+     border-color: var(--color-secundario);
+ }
+
+ .form-consulta textarea {
+     resize: vertical;
+     min-height: 100px;
+ }
+
+ /* Checkbox personalizado */
+ .checkbox-label {
+     display: flex;
+     align-items: center;
+     gap: 0.6rem;
+     margin-top: 1.2rem;
+     font-weight: normal !important;
+     cursor: pointer;
+ }
+
+ .checkbox-label input[type="checkbox"] {
+     width: 18px;
+     height: 18px;
+     accent-color: var(--color-secundario);
+     margin: 0;
+ }
+
+ .checkbox-label a {
+     color: var(--color-secundario);
+     text-decoration: none;
+ }
+
+ .checkbox-label a:hover {
+     text-decoration: underline;
+ }
+
+ /* Botón enviar */
+ .btn-enviar {
+     background: var(--color-secundario);
+     color: var(--color-primario);
+     border: none;
+     padding: 0.8rem 1.5rem;
+     border-radius: 6px;
+     font-size: 1rem;
+     font-weight: bold;
+     cursor: pointer;
+     margin-top: 1.8rem;
+     width: 100%;
+     transition: all 0.2s ease;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 0.5rem;
+ }
+
+ .btn-enviar:hover {
+     background: var(--color-terciario);
+     color: var(--color-secundario);
+ }
+
+ .btn-enviar .material-symbols-outlined {
+     color: inherit;
+     font-size: 1.2rem;
+ }
+
+ /* Aviso legal pequeño */
+ .aviso-legal {
+     font-size: 0.7rem;
+     text-align: center;
+     margin-top: 1rem;
+     color: #aaa;
+ }
+
+ /* Bloque de información de contacto */
+ .info-contacto {
+     flex: 1;
+     min-width: 240px;
+     background: rgba(43, 43, 43, 0.4);
+     border-left: 4px solid var(--color-secundario);
+     border-radius: 12px;
+     padding: 1.5rem;
+     height: fit-content;
+ }
+
+ .info-contacto h3 {
+     color: var(--color-secundario);
+     margin-top: 0;
+     margin-bottom: 1.2rem;
+     font-family: 'Trade Winds', 'sans-serif';
+     font-size: 1.3rem;
+ }
+
+ .info-contacto p {
+     display: flex;
+     align-items: center;
+     gap: 0.8rem;
+     margin: 1rem 0;
+ }
+
+ .info-contacto .material-symbols-outlined {
+     color: var(--color-secundario);
+     margin-right: 0;
+ }
+
+ /* Campo honeypot (oculto para humanos, visible para bots) */
+ .honeypot {
+     position: absolute;
+     left: -9999px;
+     top: -9999px;
+     opacity: 0;
+     pointer-events: none;
+ }
+
+ /* Feedback de envío */
+ #formFeedback {
+     margin-top: 1rem;
+     text-align: center;
+     font-weight: bold;
+ }
+
+ /* Responsive para el formulario */
+ @media (max-width: 768px) {
+     .contenedor-formulario {
+         flex-direction: column;
+     }
+
+     .form-consulta {
+         padding: 1.5rem;
+     }
+
+     .info-contacto {
+         width: 100%;
+     }
+ }
+
+ /* Ajustes menores a las cards existentes (opcional, ya las tenés) */
+ .cards-demo {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 1.5rem;
+     margin: 2rem 0;
+     justify-content: center;
+ }
+
+ /* ===== PANEL DE RESPUESTAS A CONSULTAS ===== */
+
+ /* Barra de acciones y filtros */
+ .barra-acciones {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     align-items: center;
+     gap: 1rem;
+     margin-bottom: 2rem;
+     background: var(--color-primario);
+     padding: 1rem;
+     border-radius: 10px;
+ }
+
+ .filtros {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 0.8rem;
+     flex: 1;
+ }
+
+ .filtros select,
+ .filtros input {
+     padding: 0.6rem 1rem;
+     background: var(--color-fondo);
+     border: 1px solid var(--color-terciario);
+     border-radius: 6px;
+     color: var(--color-texto);
+     font-family: 'Amaranth', Arial, sans-serif;
+     cursor: pointer;
+ }
+
+ .filtros select:focus,
+ .filtros input:focus {
+     outline: none;
+     border-color: var(--color-secundario);
+ }
+
+ .filtros input {
+     flex: 1;
+     min-width: 180px;
+ }
+
+ .btn-secundario {
+     background: transparent;
+     border: 1px solid var(--color-secundario);
+     color: var(--color-secundario);
+     padding: 0.6rem 1.2rem;
+     border-radius: 6px;
+     font-weight: bold;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+     transition: all 0.2s;
+ }
+
+ .btn-secundario:hover {
+     background: var(--color-secundario);
+     color: var(--color-primario);
+ }
+
+ .btn-secundario .material-symbols-outlined {
+     font-size: 1.2rem;
+     color: inherit;
+ }
+
+ /* Lista de consultas */
+ .lista-consultas {
+     display: flex;
+     flex-direction: column;
+     gap: 1.2rem;
+ }
+
+ .loading,
+ .sin-consultas {
+     text-align: center;
+     padding: 3rem;
+     color: #888;
+     background: var(--color-primario);
+     border-radius: 12px;
+ }
+
+ /* Tarjeta de cada consulta */
+ .consulta-card {
+     background: var(--color-primario);
+     border-radius: 12px;
+     padding: 1.2rem;
+     border-left: 4px solid var(--color-secundario);
+     transition: transform 0.2s, box-shadow 0.2s;
+ }
+
+ .consulta-card:hover {
+     transform: translateX(4px);
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+ }
+
+ .consulta-card.respondida {
+     border-left-color: #4CAF50;
+     opacity: 0.85;
+ }
+
+ .consulta-header {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     align-items: center;
+     margin-bottom: 0.8rem;
+ }
+
+ .consulta-info {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: baseline;
+     gap: 0.8rem;
+ }
+
+ .consulta-nombre {
+     font-weight: bold;
+     font-size: 1.1rem;
+     color: var(--color-texto);
+ }
+
+ .consulta-email {
+     color: #aaa;
+     font-size: 0.85rem;
+ }
+
+ .consulta-tipo {
+     background: rgba(255, 106, 0, 0.15);
+     color: var(--color-secundario);
+     padding: 0.2rem 0.6rem;
+     border-radius: 20px;
+     font-size: 0.75rem;
+     font-weight: bold;
+ }
+
+ .consulta-fecha {
+     font-size: 0.75rem;
+     color: #888;
+     display: flex;
+     align-items: center;
+     gap: 0.8rem;
+ }
+
+ .badge-pendiente {
+     background: #FF6A00;
+     color: #000;
+     padding: 0.2rem 0.6rem;
+     border-radius: 20px;
+     font-size: 0.7rem;
+     font-weight: bold;
+ }
+
+ .badge-respondida {
+     background: #4CAF50;
+     color: #fff;
+     padding: 0.2rem 0.6rem;
+     border-radius: 20px;
+     font-size: 0.7rem;
+     font-weight: bold;
+ }
+
+ .consulta-mensaje-preview {
+     color: #ccc;
+     margin: 0.8rem 0;
+     padding: 0.5rem;
+     background: var(--color-fondo);
+     border-radius: 6px;
+     font-size: 0.9rem;
+ }
+
+ .consulta-respuesta-preview {
+     background: rgba(76, 175, 80, 0.1);
+     border-left: 3px solid #4CAF50;
+     padding: 0.6rem;
+     border-radius: 6px;
+     font-size: 0.85rem;
+     color: #ccc;
+     margin-bottom: 0.8rem;
+ }
+
+ .consulta-acciones {
+     display: flex;
+     gap: 0.8rem;
+     margin-top: 0.5rem;
+ }
+
+ .btn-responder,
+ .btn-ver-respuesta {
+     background: transparent;
+     border: 1px solid var(--color-terciario);
+     color: var(--color-texto);
+     padding: 0.5rem 1rem;
+     border-radius: 6px;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     gap: 0.4rem;
+     font-family: 'Amaranth', Arial, sans-serif;
+     transition: all 0.2s;
+ }
+
+ .btn-responder:hover {
+     background: var(--color-secundario);
+     border-color: var(--color-secundario);
+     color: var(--color-primario);
+ }
+
+ .btn-ver-respuesta:hover {
+     background: #4CAF50;
+     border-color: #4CAF50;
+     color: #fff;
+ }
+
+ .btn-responder .material-symbols-outlined,
+ .btn-ver-respuesta .material-symbols-outlined {
+     font-size: 1rem;
+     margin: 0;
+ }
+
+ /* MODAL */
+ .modal {
+     display: none;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.85);
+     z-index: 1000;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .modal.activo {
+     display: flex;
+ }
+
+ .modal-contenido {
+     background: var(--color-primario);
+     border-radius: 16px;
+     width: 90%;
+     max-width: 700px;
+     max-height: 85vh;
+     overflow-y: auto;
+     border: 1px solid var(--color-terciario);
+ }
+
+ .modal-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 1.2rem 1.5rem;
+     border-bottom: 1px solid var(--color-terciario);
+ }
+
+ .modal-header h2 {
+     color: var(--color-secundario);
+     margin: 0;
+     font-size: 1.5rem;
+ }
+
+ .cerrar-modal {
+     background: none;
+     border: none;
+     color: var(--color-texto);
+     font-size: 2rem;
+     cursor: pointer;
+     line-height: 1;
+ }
+
+ .cerrar-modal:hover {
+     color: var(--color-secundario);
+ }
+
+ .modal-body {
+     padding: 1.5rem;
+ }
+
+ .consulta-original {
+     background: var(--color-fondo);
+     padding: 1rem;
+     border-radius: 10px;
+     margin-bottom: 1.5rem;
+ }
+
+ .consulta-original p {
+     margin: 0.5rem 0;
+ }
+
+ .mensaje-original {
+     background: var(--color-terciario);
+     padding: 1rem;
+     border-radius: 8px;
+     margin-top: 0.8rem;
+     white-space: pre-wrap;
+ }
+
+ .respuesta-area label {
+     display: block;
+     margin-bottom: 0.5rem;
+     font-weight: bold;
+     color: var(--color-texto);
+ }
+
+ .respuesta-area textarea {
+     width: 100%;
+     padding: 0.8rem;
+     background: var(--color-fondo);
+     border: 1px solid var(--color-terciario);
+     border-radius: 8px;
+     color: var(--color-texto);
+     font-family: 'Amaranth', Arial, sans-serif;
+     resize: vertical;
+ }
+
+ .respuesta-area textarea:focus {
+     outline: none;
+     border-color: var(--color-secundario);
+ }
+
+ .opciones-respuesta {
+     margin: 1rem 0;
+     display: flex;
+     flex-direction: column;
+     gap: 0.6rem;
+ }
+
+ .modal-botones {
+     display: flex;
+     gap: 1rem;
+     justify-content: flex-end;
+     margin-top: 1.5rem;
+ }
+
+ .btn-cancelar {
+     background: transparent;
+     border: 1px solid var(--color-terciario);
+     color: var(--color-texto);
+     padding: 0.6rem 1.5rem;
+     border-radius: 6px;
+     cursor: pointer;
+ }
+
+ .btn-cancelar:hover {
+     background: var(--color-terciario);
+ }
+
+ .btn-enviar-respuesta {
+     background: var(--color-secundario);
+     border: none;
+     color: var(--color-primario);
+     padding: 0.6rem 1.5rem;
+     border-radius: 6px;
+     font-weight: bold;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     gap: 0.5rem;
+ }
+
+ .btn-enviar-respuesta:hover {
+     background: var(--color-terciario);
+     color: var(--color-secundario);
+ }
+
+ /* TOAST (notificaciones) */
+ .toast {
+     position: fixed;
+     bottom: 30px;
+     right: 30px;
+     background: var(--color-primario);
+     color: var(--color-texto);
+     padding: 0.8rem 1.5rem;
+     border-radius: 8px;
+     border-left: 4px solid var(--color-secundario);
+     transform: translateX(400px);
+     transition: transform 0.3s ease;
+     z-index: 1100;
+     font-weight: bold;
+ }
+
+ .toast.mostrar {
+     transform: translateX(0);
+ }
+
+ .toast.success {
+     border-left-color: #4CAF50;
+ }
+
+ .toast.error {
+     border-left-color: #f44336;
+ }
+
+ /* Responsive */
+ @media (max-width: 768px) {
+     .barra-acciones {
+         flex-direction: column;
+         align-items: stretch;
+     }
+
+     .filtros {
+         flex-direction: column;
+     }
+
+     .consulta-header {
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 0.5rem;
+     }
+
+     .consulta-info {
+         flex-wrap: wrap;
+     }
+
+     .modal-contenido {
+         width: 95%;
+         margin: 1rem;
+     }
+
+     .modal-botones {
+         flex-direction: column;
+     }
+
+     .toast {
+         left: 20px;
+         right: 20px;
+         bottom: 20px;
+         text-align: center;
+     }
+ }
+
+ /* ===== ESTILOS PARA LA SECCION CLASES DESTACADAS ===== */
+ .clases-destacadas {
+     display: flex;
+     justify-content: space-around;
+     margin: 2rem 0;
+ }
+
+ /* Imagen de entrenadores */
+ .card-entrenador {
+     max-width: 100%;
+ }
+
+ .card-entrenador img {
+     height: 400px;
+     object-fit: cover;
+ }
+
+ @media (max-width: 768px) {
+     .card-entrenador img {
+         height: 280px;
+     }
+ }
+
+ /* ===== ESTILOS PARA LA PAGINA DE INICIO ===== */
+ .inicio {
+     margin: 0;
+ }
+
+ .inicio section {
+     margin-bottom: 0;
+ }
+
+ .hero-inicio {
+     display: grid;
+     grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+     gap: 2rem;
+     align-items: center;
+     min-height: 520px;
+     padding: 4rem 3.125rem;
+     background: linear-gradient(120deg, #000 0%, #0A0A0A 48%, #2B2B2B 100%);
+ }
+
+ .hero-contenido {
+     max-width: 720px;
+ }
+
+ .hero-etiqueta {
+     color: var(--color-secundario);
+     font-weight: bold;
+     text-transform: uppercase;
+     letter-spacing: 0;
+     margin-bottom: 1rem;
+ }
+
+ .hero-inicio h1 {
+     margin-bottom: 1.5rem;
+     line-height: 1;
+ }
+
+ .hero-texto {
+     max-width: 620px;
+     color: #ddd;
+     font-size: 1.25rem;
+     line-height: 1.6;
+ }
+
+ .hero-acciones {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 1rem;
+     margin-top: 2rem;
+ }
+
+ .hero-acciones .btn-paleta,
+ .hero-acciones .btn-contorno,
+ .horario-inicio .btn-paleta,
+ .cta-inicio .btn-paleta {
+     display: inline-block;
+     margin-top: 0;
+     text-decoration: none;
+ }
+
+ .btn-contorno {
+     display: inline-block;
+     background: transparent;
+     color: var(--color-secundario);
+     border: 1px solid var(--color-secundario);
+     padding: 0.75rem 2rem;
+     border-radius: 4px;
+     font-size: 1rem;
+     font-weight: bold;
+     cursor: pointer;
+     transition: background 0.2s, color 0.2s;
+ }
+
+ .btn-contorno:hover {
+     background: var(--color-secundario);
+     color: var(--color-primario);
+ }
+
+ .hero-imagen {
+     border: 1px solid var(--color-terciario);
+     border-radius: 8px;
+     overflow: hidden;
+     min-height: 360px;
+     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+ }
+
+ .hero-imagen img {
+     width: 100%;
+     height: 100%;
+     min-height: 360px;
+     object-fit: cover;
+     display: block;
+ }
+
+ .presentacion-inicio,
+ .horario-inicio,
+ .cta-inicio {
+     padding: 3.5rem 3.125rem;
+ }
+
+ .presentacion-inicio {
+     display: grid;
+     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+     gap: 2rem;
+     align-items: center;
+     background: #111;
+ }
+
+ .presentacion-inicio h2,
+ .horario-inicio h2,
+ .cta-inicio h2 {
+     color: var(--color-secundario);
+     margin-bottom: 1rem;
+ }
+
+ .presentacion-inicio p,
+ .horario-inicio p,
+ .cta-inicio p {
+     color: #ddd;
+     line-height: 1.6;
+     font-size: 1.08rem;
+ }
+
+ .datos-inicio {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 1rem;
+ }
+
+ .datos-inicio div {
+     background: var(--color-primario);
+     border: 1px solid var(--color-terciario);
+     border-left: 4px solid var(--color-secundario);
+     border-radius: 8px;
+     padding: 1rem;
+ }
+
+ .datos-inicio strong {
+     display: block;
+     color: var(--color-secundario);
+     font-family: 'Trade Winds', 'sans-serif';
+     font-size: 2rem;
+     margin-bottom: 0.4rem;
+ }
+
+ .datos-inicio span {
+     color: #ddd;
+ }
+
+ .servicios-inicio {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 1.5rem;
+     padding: 0 3.125rem 3.5rem;
+ }
+
+ .inicio>section>h2 {
+     padding: 3.5rem 3.125rem 2rem;
+     color: var(--color-secundario);
+ }
+
+ .servicios-inicio article {
+     background: var(--color-primario);
+     border: 1px solid var(--color-terciario);
+     border-radius: 8px;
+     padding: 1.5rem;
+ }
+
+ .servicios-inicio .material-symbols-outlined {
+     color: var(--color-secundario);
+     font-size: 2.3rem;
+     margin: 0 0 1rem 0;
+ }
+
+ .servicios-inicio h3 {
+     color: var(--color-texto);
+     font-size: 1.3rem;
+     margin-bottom: 0.8rem;
+ }
+
+ .servicios-inicio p {
+     color: #ccc;
+     line-height: 1.5;
+ }
+
+ .horario-inicio {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 2rem;
+     background: var(--color-terciario);
+ }
+
+ .horario-inicio div {
+     max-width: 760px;
+ }
+
+ .cta-inicio {
+     text-align: center;
+     background: #0A0A0A;
+ }
+
+ .cta-inicio p {
+     max-width: 520px;
+     margin: 0 auto 1.5rem;
+ }
+
+
+ /* ===== FILTRADO DE LOS HORARIOS DE CLASES ===== */
  /* --- LÓGICA DE LOS BOTONES --- */
-.radio-oculto {
-    display: none;
-}
+ .radio-oculto {
+     display: none;
+ }
 
-.botones-filtro {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 2rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+ .botones-filtro {
+     display: flex;
+     gap: 10px;
+     margin-bottom: 2rem;
+     justify-content: center;
+     flex-wrap: wrap;
+ }
 
-.boton-filtro {
-    /* Tamaño y forma más cuadrada */
-    padding: 14px;                   
-    min-width: 90px;                
-    text-align: center;
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-    border: 2px solid var(--color-secundario);
-    border-radius: 10px;          
-    font-weight: bold;
-    font-family: 'Amaranth', sans-serif;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-
-/* Efecto cuando el botón está SELECCIONADO */
-#btn-todas:checked ~ .botones-filtro label[for="btn-todas"],
-#btn-musculacion:checked ~ .botones-filtro label[for="btn-musculacion"],
-#btn-spinning:checked ~ .botones-filtro label[for="btn-spinning"],
-#btn-hiit:checked ~ .botones-filtro label[for="btn-hiit"],
-#btn-pilates:checked ~ .botones-filtro label[for="btn-pilates"],
-#btn-funcional:checked ~ .botones-filtro label[for="btn-funcional"]{
-    background-color: var(--color-secundario); 
-    color: var(--color-primario); 
-}
-
-/* --- LÓGICA DE FILTRADO DE LA TABLA --- */
-
-#btn-musculacion:checked ~ .tabla-horarios tbody tr:not(.fila-musculacion) {
-    display: none;
-}
-
-#btn-spinning:checked ~ .tabla-horarios tbody tr:not(.fila-spinning) {
-    display: none;
-}
-
-#btn-hiit:checked ~ .tabla-horarios tbody tr:not(.fila-hiit) {
-    display: none;
-}
-
-#btn-pilates:checked ~ .tabla-horarios tbody tr:not(.fila-pilates) {
-    display: none;
-}
-
-#btn-funcional:checked ~ .tabla-horarios tbody tr:not(.fila-funcional) {
-    display: none;
-}
+ .boton-filtro {
+     /* Tamaño y forma más cuadrada */
+     padding: 14px;
+     min-width: 90px;
+     text-align: center;
+     background-color: var(--color-fondo);
+     color: var(--color-texto);
+     border: 2px solid var(--color-secundario);
+     border-radius: 10px;
+     font-weight: bold;
+     font-family: 'Amaranth', sans-serif;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
 
 
-@media (max-width: 900px) {
-    .hero-inicio,
-    .presentacion-inicio {
-        grid-template-columns: 1fr;
-    }
+ /* Efecto cuando el botón está SELECCIONADO */
+ #btn-todas:checked~.botones-filtro label[for="btn-todas"],
+ #btn-musculacion:checked~.botones-filtro label[for="btn-musculacion"],
+ #btn-spinning:checked~.botones-filtro label[for="btn-spinning"],
+ #btn-hiit:checked~.botones-filtro label[for="btn-hiit"],
+ #btn-pilates:checked~.botones-filtro label[for="btn-pilates"],
+ #btn-funcional:checked~.botones-filtro label[for="btn-funcional"] {
+     background-color: var(--color-secundario);
+     color: var(--color-primario);
+ }
 
-    .servicios-inicio,
-    .datos-inicio {
-        grid-template-columns: 1fr;
-    }
+ /* --- LÓGICA DE FILTRADO DE LA TABLA --- */
 
-    .horario-inicio {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
+ #btn-musculacion:checked~.tabla-horarios tbody tr:not(.fila-musculacion) {
+     display: none;
+ }
 
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        display: flex;
-        gap: 1rem;
-    }
+ #btn-spinning:checked~.tabla-horarios tbody tr:not(.fila-spinning) {
+     display: none;
+ }
 
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+ #btn-hiit:checked~.tabla-horarios tbody tr:not(.fila-hiit) {
+     display: none;
+ }
 
-    .hero-inicio,
-    .presentacion-inicio,
-    .horario-inicio,
-    .cta-inicio {
-        padding: 2.5rem 1.25rem;
-    }
+ #btn-pilates:checked~.tabla-horarios tbody tr:not(.fila-pilates) {
+     display: none;
+ }
 
-    .inicio > section > h2 {
-        padding: 2.5rem 1.25rem 1.5rem;
-        font-size: 2rem;
-    }
+ #btn-funcional:checked~.tabla-horarios tbody tr:not(.fila-funcional) {
+     display: none;
+ }
 
-    .servicios-inicio {
-        padding: 0 1.25rem 2.5rem;
-    }
 
-    .hero-inicio h1 {
-        font-size: 3rem;
-    }
+ @media (max-width: 900px) {
 
-    .hero-texto {
-        font-size: 1.05rem;
-    }
-}
+     .hero-inicio,
+     .presentacion-inicio {
+         grid-template-columns: 1fr;
+     }
 
-/* ===== PAGINA RESERVA DE TURNOS ===== */
+     .servicios-inicio,
+     .datos-inicio {
+         grid-template-columns: 1fr;
+     }
 
-.texto-reserva {
-    color: #ddd;
-    line-height: 1.6;
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-}
+     .horario-inicio {
+         flex-direction: column;
+         align-items: flex-start;
+     }
+ }
 
-.form-reserva {
-    max-width: 750px;
-    margin: 3rem auto;
-    background: var(--color-primario);
-    border: 1px solid var(--color-terciario);
-    border-radius: 12px;
-    padding: 2rem;
-}
+ @media (max-width: 768px) {
+     nav {
+         flex-direction: column;
+         display: flex;
+         gap: 1rem;
+     }
 
-.form-reserva h2 {
-    color: var(--color-secundario);
-    margin-bottom: 1.5rem;
-}
+     nav ul {
+         flex-wrap: wrap;
+         justify-content: center;
+     }
 
-.form-reserva label {
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: .5rem;
-    font-weight: bold;
-}
+     .hero-inicio,
+     .presentacion-inicio,
+     .horario-inicio,
+     .cta-inicio {
+         padding: 2.5rem 1.25rem;
+     }
 
-.form-reserva input,
-.form-reserva select {
-    width: 100%;
-    padding: .8rem;
-    border: 1px solid var(--color-terciario);
-    border-radius: 6px;
-    background: var(--color-fondo);
-    color: var(--color-texto);
-    font-family: 'Amaranth', Arial, sans-serif;
-    font-size: 1rem;
-}
+     .inicio>section>h2 {
+         padding: 2.5rem 1.25rem 1.5rem;
+         font-size: 2rem;
+     }
 
-.form-reserva input:focus,
-.form-reserva select:focus {
-    outline: none;
-    border-color: var(--color-secundario);
-}
+     .servicios-inicio {
+         padding: 0 1.25rem 2.5rem;
+     }
 
-.form-reserva .btn-paleta {
-    width: 100%;
-    margin-top: 2rem;
-}
+     .hero-inicio h1 {
+         font-size: 3rem;
+     }
 
-#mensajeReserva {
-    margin-top: 1.5rem;
-}
+     .hero-texto {
+         font-size: 1.05rem;
+     }
+ }
 
-.mensaje-exito {
-    text-align: center;
-    color: #4CAF50;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
+ /* ===== PAGINA RESERVA DE TURNOS ===== */
 
-/* Tabla de turnos */
+ .texto-reserva {
+     color: #ddd;
+     line-height: 1.6;
+     margin-top: 1rem;
+     margin-bottom: 1.5rem;
+ }
 
-.tabla-horarios td:last-child {
-    font-weight: bold;
-}
+ .form-reserva {
+     max-width: 750px;
+     margin: 3rem auto;
+     background: var(--color-primario);
+     border: 1px solid var(--color-terciario);
+     border-radius: 12px;
+     padding: 2rem;
+ }
 
-.tabla-horarios td:last-child:contains("Disponible") {
-    color: #4CAF50;
-}
+ .form-reserva h2 {
+     color: var(--color-secundario);
+     margin-bottom: 1.5rem;
+ }
 
-/* Responsive */
+ .form-reserva label {
+     display: block;
+     margin-top: 1rem;
+     margin-bottom: .5rem;
+     font-weight: bold;
+ }
 
-@media (max-width: 768px) {
+ .form-reserva input,
+ .form-reserva select {
+     width: 100%;
+     padding: .8rem;
+     border: 1px solid var(--color-terciario);
+     border-radius: 6px;
+     background: var(--color-fondo);
+     color: var(--color-texto);
+     font-family: 'Amaranth', Arial, sans-serif;
+     font-size: 1rem;
+ }
 
-    .form-reserva {
-        margin: 2rem 0;
-        padding: 1.5rem;
-    }
+ .form-reserva input:focus,
+ .form-reserva select:focus {
+     outline: none;
+     border-color: var(--color-secundario);
+ }
 
-    .form-reserva h2 {
-        font-size: 2rem;
-    }
+ .form-reserva .btn-paleta {
+     width: 100%;
+     margin-top: 2rem;
+ }
 
-}
+ #mensajeReserva {
+     margin-top: 1.5rem;
+ }
 
-/* ===== REGISTRO DE SOCIOS ===== */
+ .mensaje-exito {
+     text-align: center;
+     color: #4CAF50;
+     font-weight: bold;
+     font-size: 1.1rem;
+ }
 
-.texto-registro {
-    color: #ddd;
-    margin-top: 1rem;
-    line-height: 1.6;
-}
+ /* Tabla de turnos */
 
-.form-registro {
-    max-width: 750px;
-    margin: 2rem auto;
-    background: var(--color-primario);
-    border: 1px solid var(--color-terciario);
-    border-radius: 12px;
-    padding: 2rem;
-}
+ .tabla-horarios td:last-child {
+     font-weight: bold;
+ }
 
-.form-registro h2 {
-    color: var(--color-secundario);
-    margin-bottom: 1.5rem;
-}
+ .tabla-horarios td:last-child:contains("Disponible") {
+     color: #4CAF50;
+ }
 
-.form-registro label {
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: .5rem;
-    font-weight: bold;
-}
+ /* Responsive */
 
-.form-registro input {
-    width: 100%;
-    padding: .8rem;
-    border: 1px solid var(--color-terciario);
-    border-radius: 6px;
-    background: var(--color-fondo);
-    color: var(--color-texto);
-    font-family: 'Amaranth', Arial, sans-serif;
-}
+ @media (max-width: 768px) {
 
-.form-registro input:focus {
-    outline: none;
-    border-color: var(--color-secundario);
-}
+     .form-reserva {
+         margin: 2rem 0;
+         padding: 1.5rem;
+     }
 
-.form-registro .btn-paleta {
-    width: 100%;
-    margin-top: 2rem;
-}
+     .form-reserva h2 {
+         font-size: 2rem;
+     }
 
-.mensaje-exito {
-    color: #4CAF50;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 1rem;
-}
+ }
 
-.mensaje-error {
-    color: #f44336;
-    text-align: center;
-    font-weight: bold;
-    margin-top: 1rem;
-}
+ /* ===== REGISTRO DE SOCIOS ===== */
+
+ .texto-registro {
+     color: #ddd;
+     margin-top: 1rem;
+     line-height: 1.6;
+ }
+
+ .form-registro {
+     max-width: 750px;
+     margin: 2rem auto;
+     background: var(--color-primario);
+     border: 1px solid var(--color-terciario);
+     border-radius: 12px;
+     padding: 2rem;
+ }
+
+ .form-registro h2 {
+     color: var(--color-secundario);
+     margin-bottom: 1.5rem;
+ }
+
+ .form-registro label {
+     display: block;
+     margin-top: 1rem;
+     margin-bottom: .5rem;
+     font-weight: bold;
+ }
+
+ .form-registro input {
+     width: 100%;
+     padding: .8rem;
+     border: 1px solid var(--color-terciario);
+     border-radius: 6px;
+     background: var(--color-fondo);
+     color: var(--color-texto);
+     font-family: 'Amaranth', Arial, sans-serif;
+ }
+
+ .form-registro input:focus {
+     outline: none;
+     border-color: var(--color-secundario);
+ }
+
+ .form-registro .btn-paleta {
+     width: 100%;
+     margin-top: 2rem;
+ }
+
+ .mensaje-exito {
+     color: #4CAF50;
+     text-align: center;
+     font-weight: bold;
+     margin-top: 1rem;
+ }
+
+ .mensaje-error {
+     color: #f44336;
+     text-align: center;
+     font-weight: bold;
+     margin-top: 1rem;
+ }
+
+ /* Galeria de instalaciones */
+ .galeria-grid {
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 1.25rem;
+     margin-top: 1.5rem;
+ }
+
+ .galeria-item {
+     background: var(--color-primario);
+     border-radius: 10px;
+     overflow: hidden;
+     border: 2px solid var(--color-terciario);
+ }
+
+ .galeria-item img {
+     width: 100%;
+     height: 220px;
+     object-fit: cover;
+     display: block;
+ }
+
+ .galeria-item p {
+     text-align: center;
+     padding: 0.7rem;
+     color: var(--color-texto);
+     font-weight: bold;
+ }
+
+ @media (min-width: 768px) {
+     .galeria-grid {
+         grid-template-columns: repeat(3, 1fr);
+         max-width: 1200px;
+         margin-left: auto;
+         margin-right: auto;
+     }
+ }
