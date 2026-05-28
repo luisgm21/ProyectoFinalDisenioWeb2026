@@ -1220,26 +1220,32 @@
      display: block;
  }
 
- .presentacion-inicio,
- .horario-inicio,
- .cta-inicio {
-     padding: 3.5rem 3.125rem;
- }
+.presentacion-inicio,
+.atencion-inicio,
+.horario-inicio,
+.cta-inicio {
+    padding: 3.5rem 3.125rem;
+}
 
- .presentacion-inicio {
-     display: grid;
-     grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
-     gap: 2rem;
-     align-items: center;
+.atencion-inicio {
+    background: #0A0A0A;
+}
+
+.presentacion-inicio {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+    gap: 2rem;
+    align-items: center;
      background: #111;
  }
 
- .presentacion-inicio h2,
- .horario-inicio h2,
- .cta-inicio h2 {
-     color: var(--color-secundario);
-     margin-bottom: 1rem;
- }
+.presentacion-inicio h2,
+.atencion-inicio h2,
+.horario-inicio h2,
+.cta-inicio h2 {
+    color: var(--color-secundario);
+    margin-bottom: 1rem;
+}
 
  .presentacion-inicio p,
  .horario-inicio p,
@@ -1282,7 +1288,7 @@
      padding: 0 3.125rem 3.5rem;
  }
 
- .inicio>section>h2 {
+ .servicios-seccion-inicio>h2 {
      padding: 3.5rem 3.125rem 2rem;
      color: var(--color-secundario);
  }
@@ -1428,17 +1434,18 @@
          justify-content: center;
      }
 
-     .hero-inicio,
-     .presentacion-inicio,
-     .horario-inicio,
-     .cta-inicio {
-         padding: 2.5rem 1.25rem;
-     }
+    .hero-inicio,
+    .presentacion-inicio,
+    .atencion-inicio,
+    .horario-inicio,
+    .cta-inicio {
+        padding: 2.5rem 1.25rem;
+    }
 
-     .inicio>section>h2 {
-         padding: 2.5rem 1.25rem 1.5rem;
-         font-size: 2rem;
-     }
+    .servicios-seccion-inicio>h2 {
+        padding: 2.5rem 1.25rem 1.5rem;
+        font-size: 2rem;
+    }
 
      .servicios-inicio {
          padding: 0 1.25rem 2.5rem;
