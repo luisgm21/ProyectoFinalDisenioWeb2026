@@ -4,18 +4,26 @@
      padding: 0;
  }
 
- :root {
-     --color-primario: #000000;
-     /* Negro */
-     --color-secundario: #FF6A00;
-     /* Naranja intenso */
-     --color-terciario: #2B2B2B;
-     /* Gris oscuro para énfasis/alertas */
-     --color-fondo: #0A0A0A;
-     /* Negro suave */
-     --color-texto: #FFFFFF;
-     /* Blanco */
- }
+:root {
+    --color-primario: #000000;
+    /* Negro */
+    --color-secundario: #FF6A00;
+    /* Naranja intenso */
+    --color-terciario: #2B2B2B;
+    /* Gris oscuro para énfasis/alertas */
+    --color-fondo: #0A0A0A;
+    /* Negro suave */
+    --color-texto: #FFFFFF;
+    /* Blanco */
+    --color-exito: #4CAF50;
+    /* Verde para estados exitosos/pagos al día */
+    --color-peligro: #c62828;
+    /* Rojo oscuro para estados de error/vencidos */
+    --color-error: #f44336;
+    /* Rojo para error/mensaje de error */
+    --color-advertencia: #ef6c00;
+    /* Naranja/rojo para estados pendientes */
+}
 
  body {
      margin: 0;
@@ -271,62 +279,62 @@
      margin-top: 1.5rem;
  }
 
- .card {
-     min-height: 400px;
-     width: 320px;
-     background-color: #0A0A0A;
-     border-radius: 16px;
-     overflow: hidden;
-     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
-     border: 1px solid #2B2B2B;
-     transition: transform 0.3s ease;
- }
+.card {
+    min-height: 400px;
+    width: 320px;
+    background-color: var(--color-fondo);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--color-terciario);
+    transition: transform 0.3s ease;
+}
 
- .card:hover {
-     transform: translateY(-5px);
- }
+.card:hover {
+    transform: translateY(-5px);
+}
 
- .card img {
-     width: 100%;
-     height: 180px;
-     object-fit: cover;
- }
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
 
- .card-content {
-    
+.card-content {
+   
     padding: 20px;
- }
+}
 
- .card-title {
-     color: #FFFFFF;
-     font-family: 'Trade Winds', 'sans-serif';
-     font-size: 22px;
-     font-weight: bold;
-     margin-bottom: 10px;
- }
+.card-title {
+    color: var(--color-texto);
+    font-family: 'Trade Winds', 'sans-serif';
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
- .card-description {
-     color: #ffffff;
-     font-size: 14px;
-     margin-bottom: 20px;
-     line-height: 1.4;
- }
+.card-description {
+    color: var(--color-texto);
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
 
- .card-button {
-     display: inline-block;
-     padding: 10px 16px;
-     background-color: #FF6A00;
-     color: #FFFFFF;
-     text-decoration: none;
-     border-radius: 8px;
-     font-weight: bold;
-     transition: all 0.3s ease;
- }
+.card-button {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
 
- .card-button:hover {
-     background-color: #FFFFFF;
-     color: #000000;
- }
+.card-button:hover {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+}
 
  /* ===== ESTILOS NUEVOS PARA EL FORMULARIO DE CONSULTA ===== */
 
@@ -622,10 +630,10 @@
      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
  }
 
- .consulta-card.respondida {
-     border-left-color: #4CAF50;
-     opacity: 0.85;
- }
+.consulta-card.respondida {
+    border-left-color: var(--color-exito);
+    opacity: 0.85;
+}
 
  .consulta-header {
      display: flex;
@@ -670,23 +678,23 @@
      gap: 0.8rem;
  }
 
- .badge-pendiente {
-     background: #FF6A00;
-     color: #000;
-     padding: 0.2rem 0.6rem;
-     border-radius: 20px;
-     font-size: 0.7rem;
-     font-weight: bold;
- }
+.badge-pendiente {
+    background: var(--color-secundario);
+    color: var(--color-primario);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
 
- .badge-respondida {
-     background: #4CAF50;
-     color: #fff;
-     padding: 0.2rem 0.6rem;
-     border-radius: 20px;
-     font-size: 0.7rem;
-     font-weight: bold;
- }
+.badge-respondida {
+    background: var(--color-exito);
+    color: var(--color-texto);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
 
  .consulta-mensaje-preview {
      color: #ccc;
@@ -697,15 +705,15 @@
      font-size: 0.9rem;
  }
 
- .consulta-respuesta-preview {
-     background: rgba(76, 175, 80, 0.1);
-     border-left: 3px solid #4CAF50;
-     padding: 0.6rem;
-     border-radius: 6px;
-     font-size: 0.85rem;
-     color: #ccc;
-     margin-bottom: 0.8rem;
- }
+.consulta-respuesta-preview {
+    background: rgba(76, 175, 80, 0.1);
+    border-left: 3px solid var(--color-exito);
+    padding: 0.6rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 0.8rem;
+}
 
  .consulta-acciones {
      display: flex;
@@ -734,11 +742,11 @@
      color: var(--color-primario);
  }
 
- .btn-ver-respuesta:hover {
-     background: #4CAF50;
-     border-color: #4CAF50;
-     color: #fff;
- }
+.btn-ver-respuesta:hover {
+    background: var(--color-exito);
+    border-color: var(--color-exito);
+    color: var(--color-texto);
+}
 
  .btn-responder .material-symbols-outlined,
  .btn-ver-respuesta .material-symbols-outlined {
@@ -912,13 +920,13 @@
      transform: translateX(0);
  }
 
- .toast.success {
-     border-left-color: #4CAF50;
- }
+.toast.success {
+    border-left-color: var(--color-exito);
+}
 
- .toast.error {
-     border-left-color: #f44336;
- }
+.toast.error {
+    border-left-color: var(--color-peligro);
+}
 
  /* Responsive */
  @media (max-width: 768px) {
@@ -1235,7 +1243,7 @@
 }
 
 .atencion-inicio {
-    background: #0A0A0A;
+    background: var(--color-fondo);
 }
 
 .presentacion-inicio {
@@ -1336,10 +1344,10 @@
      max-width: 760px;
  }
 
- .cta-inicio {
-     text-align: center;
-     background: #0A0A0A;
- }
+.cta-inicio {
+    text-align: center;
+    background: var(--color-fondo);
+}
 
  .cta-inicio p {
      max-width: 520px;
@@ -1524,12 +1532,12 @@
      margin-top: 1.5rem;
  }
 
- .mensaje-exito {
-     text-align: center;
-     color: #4CAF50;
-     font-weight: bold;
-     font-size: 1.1rem;
- }
+.mensaje-exito {
+    text-align: center;
+    color: var(--color-exito);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
 
  /* Tabla de turnos */
 
@@ -1537,9 +1545,9 @@
      font-weight: bold;
  }
 
- .tabla-horarios td:last-child:contains("Disponible") {
-     color: #4CAF50;
- }
+.tabla-horarios td:last-child:contains("Disponible") {
+    color: var(--color-exito);
+}
 
  /* Responsive */
 
@@ -1605,19 +1613,19 @@
      margin-top: 2rem;
  }
 
- .mensaje-exito {
-     color: #4CAF50;
-     text-align: center;
-     font-weight: bold;
-     margin-top: 1rem;
- }
+.mensaje-exito {
+    color: var(--color-exito);
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+}
 
- .mensaje-error {
-     color: #f44336;
-     text-align: center;
-     font-weight: bold;
-     margin-top: 1rem;
- }
+.mensaje-error {
+    color: var(--color-error);
+    text-align: center;
+    font-weight: bold;
+    margin-top: 1rem;
+}
 
  /* Galeria de instalaciones */
 .titulo-horarios {
@@ -1662,3 +1670,53 @@
          margin-right: auto;
      }
  }
+
+ /* ==== Tarjeta contenedora de la cuota ==== */
+.tarjeta-cuota {
+    background-color: var(--color-terciario); 
+    border-left: 6px solid var(--color-secundario);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.info-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Diseño base de la etiqueta de estado */
+.etiqueta-estado {
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.tarjeta-cuota.al-dia .etiqueta-estado {
+    background-color: var(--color-exito);
+    color: var(--color-texto);
+}
+
+.tarjeta-cuota.vencido .etiqueta-estado {
+    background-color: var(--color-peligro);
+    color: var(--color-texto);
+}
+
+.tarjeta-cuota.pendiente .etiqueta-estado {
+    background-color: var(--color-advertencia);
+    color: var(--color-texto);
+}
+
+.detalles-pago p {
+    margin: 0.5rem 0;
+    line-height: 1.6;
+}
