@@ -971,9 +971,159 @@
      object-fit: cover;
  }
 
+ /* ===== PAGINA ENTRENADORES ===== */
+ .encabezado-entrenadores {
+     max-width: 900px;
+ }
+
+ .encabezado-entrenadores h1 {
+     margin-bottom: 1rem;
+ }
+
+ .encabezado-entrenadores p:last-child {
+     color: #ddd;
+     font-size: 1.12rem;
+     line-height: 1.6;
+ }
+
+ .selector-entrenadores {
+     display: grid;
+     grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.2fr);
+     gap: 2rem;
+     align-items: start;
+ }
+
+ .lista-entrenadores {
+     display: grid;
+     gap: 1rem;
+ }
+
+ .tarjeta-entrenador {
+     display: grid;
+     grid-template-columns: 96px 1fr;
+     gap: 1rem;
+     align-items: center;
+     background: var(--color-primario);
+     border: 1px solid var(--color-terciario);
+     border-left: 4px solid transparent;
+     border-radius: 8px;
+     padding: 0.8rem;
+     cursor: pointer;
+     transition: border-color 0.2s, transform 0.2s, background 0.2s;
+ }
+
+ .tarjeta-entrenador:hover {
+     border-left-color: var(--color-secundario);
+     transform: translateX(4px);
+ }
+
+ .tarjeta-entrenador img {
+     width: 96px;
+     height: 96px;
+     border-radius: 6px;
+     object-fit: cover;
+     grid-row: span 2;
+ }
+
+ .tarjeta-entrenador span {
+     color: #ccc;
+ }
+
+ .nombre-entrenador {
+     color: var(--color-texto) !important;
+     font-size: 1.25rem;
+     font-weight: bold;
+ }
+
+ .detalle-entrenadores {
+     min-height: 460px;
+ }
+
+ .detalle-entrenador {
+     display: none;
+     grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1fr);
+     gap: 1.5rem;
+     background: var(--color-primario);
+     border: 1px solid var(--color-terciario);
+     border-radius: 8px;
+     overflow: hidden;
+ }
+
+ .detalle-entrenador img {
+     width: 100%;
+     height: 100%;
+     min-height: 460px;
+     object-fit: cover;
+ }
+
+ .detalle-entrenador div {
+     padding: 2rem;
+ }
+
+ .detalle-entrenador .material-symbols-outlined {
+     color: var(--color-secundario);
+     font-size: 2.4rem;
+     margin: 0 0 1rem 0;
+ }
+
+ .detalle-entrenador h2 {
+     color: var(--color-secundario);
+     margin-bottom: 1rem;
+ }
+
+ .detalle-entrenador p,
+ .detalle-entrenador li {
+     color: #ddd;
+     line-height: 1.55;
+ }
+
+ .detalle-entrenador ul {
+     display: grid;
+     gap: 0.8rem;
+     margin-top: 1.5rem;
+     padding-left: 1.2rem;
+ }
+
+ .detalle-entrenador a {
+     color: var(--color-secundario);
+     font-weight: bold;
+     text-decoration: none;
+ }
+
+ .detalle-entrenador a:hover {
+     text-decoration: underline;
+ }
+
+ #entrenador-osvaldo:checked~.lista-entrenadores label[for="entrenador-osvaldo"],
+ #entrenador-mirta:checked~.lista-entrenadores label[for="entrenador-mirta"],
+ #entrenador-hector:checked~.lista-entrenadores label[for="entrenador-hector"],
+ #entrenador-nicolas:checked~.lista-entrenadores label[for="entrenador-nicolas"],
+ #entrenador-valentina:checked~.lista-entrenadores label[for="entrenador-valentina"] {
+     background: var(--color-terciario);
+     border-left-color: var(--color-secundario);
+ }
+
+ #entrenador-osvaldo:checked~.detalle-entrenadores .detalle-osvaldo,
+ #entrenador-mirta:checked~.detalle-entrenadores .detalle-mirta,
+ #entrenador-hector:checked~.detalle-entrenadores .detalle-hector,
+ #entrenador-nicolas:checked~.detalle-entrenadores .detalle-nicolas,
+ #entrenador-valentina:checked~.detalle-entrenadores .detalle-valentina {
+     display: grid;
+ }
+
  @media (max-width: 768px) {
      .card-entrenador img {
          height: 280px;
+     }
+
+     .selector-entrenadores,
+     .detalle-entrenador {
+         grid-template-columns: 1fr;
+     }
+
+     .detalle-entrenador img {
+         min-height: 280px;
+         max-height: 320px;
      }
  }
 

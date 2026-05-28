@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrenadores - CATASTRONG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Trade+Winds&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html" class="logo">CATASTRONG</a>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="./HorariosClases.html">Horarios</a></li>
+            <li><a href="./Entrenadores.html">Entrenadores</a></li>
+            <li><a href="./ReservaDeTurno.html">Reservas</a></li>
+            <li><a href="./RegistroSocio.html">Registro</a></li>
+            <li><a href="./formularioDeContacto.html">Contacto</a></li>
+            <li><a href="./formularioDeRespuesta.html">Responder</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="encabezado-entrenadores">
+            <p class="hero-etiqueta">Equipo profesional</p>
+            <h1>Entrenadores</h1>
+            <p>
+                Conocé a los entrenadores disponibles, sus especialidades y los horarios en los que pueden asistirte
+                para elegir mejor tu rutina.
+            </p>
+        </section>
+
+        <section class="selector-entrenadores" aria-label="Lista de entrenadores disponibles">
+            <input type="radio" id="entrenador-osvaldo" name="entrenador" class="radio-oculto" checked>
+            <input type="radio" id="entrenador-mirta" name="entrenador" class="radio-oculto">
+            <input type="radio" id="entrenador-hector" name="entrenador" class="radio-oculto">
+            <input type="radio" id="entrenador-nicolas" name="entrenador" class="radio-oculto">
+            <input type="radio" id="entrenador-valentina" name="entrenador" class="radio-oculto">
+
+            <div class="lista-entrenadores">
+                <label for="entrenador-osvaldo" class="tarjeta-entrenador">
+                    <img src="../img/entrenador1.jpg" alt="Entrenador Osvaldo López">
+                    <span class="nombre-entrenador">Osvaldo López</span>
+                    <span>Funcional y HIIT</span>
+                </label>
+
+                <label for="entrenador-mirta" class="tarjeta-entrenador">
+                    <img src="../img/entrenador2.jpg" alt="Entrenadora Mirta Legrand">
+                    <span class="nombre-entrenador">Mirta Legrand</span>
+                    <span>Pilates y movilidad</span>
+                </label>
+
+                <label for="entrenador-hector" class="tarjeta-entrenador">
+                    <img src="../img/entrenador3.jpg" alt="Entrenador Héctor Martínez">
+                    <span class="nombre-entrenador">Héctor Martínez</span>
+                    <span>Spinning</span>
+                </label>
+
+                <label for="entrenador-nicolas" class="tarjeta-entrenador">
+                    <img src="../img/entrenador4.png" alt="Entrenador Nicolás Rojas">
+                    <span class="nombre-entrenador">Nicolás Rojas</span>
+                    <span>Musculación mañana</span>
+                </label>
+
+                <label for="entrenador-valentina" class="tarjeta-entrenador">
+                    <img src="../img/entrenador5.png" alt="Entrenadora Valentina Suárez">
+                    <span class="nombre-entrenador">Valentina Suárez</span>
+                    <span>Musculación tarde</span>
+                </label>
+            </div>
+
+            <div class="detalle-entrenadores" aria-live="polite">
+                <article class="detalle-entrenador detalle-osvaldo">
+                    <img src="../img/entrenador1.jpg" alt="Osvaldo López">
+                    <div>
+                        <span class="material-symbols-outlined">fitness_center</span>
+                        <h2>Osvaldo López</h2>
+                        <p>
+                            Entrenador especializado en entrenamiento funcional y HIIT. Acompaña rutinas de fuerza,
+                            resistencia y acondicionamiento físico.
+                        </p>
+                        <ul>
+                            <li><strong>Especialidad:</strong> Funcional, HIIT y preparación física.</li>
+                            <li><strong>Horario:</strong> Lunes, miércoles y viernes de 09:00 a 13:00 y de 20:00 a
+                                22:00.</li>
+                            <li><strong>Referencia:</strong> Coincide con los horarios de HIIT y funcional publicados en
+                                <a href="./HorariosClases.html#horarios-clases">Horarios de Clases</a>.</li>
+                            <li><strong>Experiencia:</strong> Más de 8 años guiando entrenamientos progresivos.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="detalle-entrenador detalle-mirta">
+                    <img src="../img/entrenador2.jpg" alt="Mirta Legrand">
+                    <div>
+                        <span class="material-symbols-outlined">self_improvement</span>
+                        <h2>Mirta Legrand</h2>
+                        <p>
+                            Instructora certificada de Pilates, movilidad y trabajo postural. Ideal para mejorar control,
+                            flexibilidad y técnica.
+                        </p>
+                        <ul>
+                            <li><strong>Especialidad:</strong> Pilates, postura y movilidad.</li>
+                            <li><strong>Horario:</strong> Martes y jueves de 10:00 a 12:00 y de 18:00 a 20:00.</li>
+                            <li><strong>Referencia:</strong> Coincide con los horarios de pilates publicados en
+                                <a href="./HorariosClases.html#horarios-clases">Horarios de Clases</a>.</li>
+                            <li><strong>Experiencia:</strong> Seguimiento personalizado para distintos niveles.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="detalle-entrenador detalle-hector">
+                    <img src="../img/entrenador3.jpg" alt="Héctor Martínez">
+                    <div>
+                        <span class="material-symbols-outlined">directions_bike</span>
+                        <h2>Héctor Martínez</h2>
+                        <p>
+                            Profesor de Spinning. Ayuda a mejorar resistencia cardiovascular, ritmo de pedaleo y
+                            constancia en cada clase.
+                        </p>
+                        <ul>
+                            <li><strong>Especialidad:</strong> Spinning.</li>
+                            <li><strong>Horario:</strong> Martes y jueves de 08:00 a 10:00 y sábados de 10:00 a
+                                12:00.</li>
+                            <li><strong>Referencia:</strong> Coincide con los horarios de spinning publicados en
+                                <a href="./HorariosClases.html#horarios-clases">Horarios de Clases</a>.</li>
+                            <li><strong>Experiencia:</strong> Más de 10 años en entrenamiento fitness.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="detalle-entrenador detalle-nicolas">
+                    <img src="../img/entrenador4.png" alt="Nicolás Rojas">
+                    <div>
+                        <span class="material-symbols-outlined">exercise</span>
+                        <h2>Nicolás Rojas</h2>
+                        <p>
+                            Entrenador de sala especializado en musculación durante la mañana. Orienta técnica,
+                            planificación de rutinas y progresión de cargas.
+                        </p>
+                        <ul>
+                            <li><strong>Especialidad:</strong> Musculación, fuerza y técnica de ejercicios.</li>
+                            <li><strong>Horario:</strong> Lunes a viernes de 08:00 a 16:00 y sábados de 09:00 a
+                                14:00.</li>
+                            <li><strong>Referencia:</strong> Cubre la franja inicial de musculación publicada en
+                                <a href="./HorariosClases.html#horarios-clases">Horarios de Clases</a>.</li>
+                            <li><strong>Experiencia:</strong> Acompañamiento para principiantes e intermedios.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="detalle-entrenador detalle-valentina">
+                    <img src="../img/entrenador5.png" alt="Valentina Suárez">
+                    <div>
+                        <span class="material-symbols-outlined">monitoring</span>
+                        <h2>Valentina Suárez</h2>
+                        <p>
+                            Entrenadora de sala especializada en musculación durante la tarde y noche. Trabaja fuerza,
+                            hipertrofia y corrección de técnica.
+                        </p>
+                        <ul>
+                            <li><strong>Especialidad:</strong> Musculación, hipertrofia y seguimiento de progreso.</li>
+                            <li><strong>Horario:</strong> Lunes a viernes de 16:00 a 00:00 y sábados de 14:00 a
+                                20:00.</li>
+                            <li><strong>Referencia:</strong> Cubre la franja final de musculación publicada en
+                                <a href="./HorariosClases.html#horarios-clases">Horarios de Clases</a>.</li>
+                            <li><strong>Experiencia:</strong> Rutinas orientadas a objetivos de fuerza y composición
+                                corporal.</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CataStrong Gym - Transforma tu vida.</p>
+    </footer>
+</body>
+
+</html>
