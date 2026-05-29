@@ -26,7 +26,7 @@
 }
 
  body {
-     margin: 0;
+     
      font-family: 'Amaranth', 'Arial', sans-serif;
      background: var(--color-fondo);
      color: var(--color-texto);
@@ -64,8 +64,8 @@
  }
 
  main {
+    padding-inline: clamp(1rem, 2vw, 2.5rem);
      min-height: 80vh;
-     margin: 3.125rem;
      height: auto;
  }
 
