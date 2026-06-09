@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATASTRONG - Editar Usuario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Trade+Winds&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+    <nav class="w-full px-4 py-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between">
+            <a href="../index.html" class="logo">CATASTRONG</a>
+            <a href="./PanelAdministracion.html" class="btn-contorno">Volver al panel</a>
+        </div>
+    </nav>
+
+    <main class="!m-0 w-full flex-1 px-4 py-8 sm:px-6 lg:px-10">
+        <section class="encabezado-panel-admin">
+            <p class="subtitulo-admin">Edición de usuario</p>
+            <h1>Modificar datos de socio</h1>
+            <p>Maqueta visual con datos ficticios para simular la actualización de perfil.</p>
+        </section>
+
+        <section class="form-admin-wrapper">
+            <form class="form-ejemplo form-admin" action="./PanelAdministracion.html" method="get">
+                <h2>Usuario #SOC-001</h2>
+
+                <label for="nombre">Nombre completo</label>
+                <input id="nombre" name="nombre" type="text" value="Camila Pérez" required>
+
+                <label for="email">Correo electrónico</label>
+                <input id="email" name="email" type="email" value="camila.perez@catastrong.com" required>
+
+                <label for="telefono">Teléfono</label>
+                <input id="telefono" name="telefono" type="tel" value="+54 11 5551 2345" required>
+
+                <label for="plan">Plan</label>
+                <select id="plan" name="plan">
+                    <option selected>Pase Libre</option>
+                    <option>Musculación</option>
+                    <option>Funcional</option>
+                    <option>Spinning</option>
+                </select>
+
+                <label for="estado">Estado</label>
+                <select id="estado" name="estado">
+                    <option selected>Activo</option>
+                    <option>En pausa</option>
+                    <option>Baja solicitada</option>
+                </select>
+
+                <button type="submit" class="btn-paleta">Guardar cambios (maqueta)</button>
+            </form>
+
+            <aside class="ficha-admin">
+                <h3>Datos actuales</h3>
+                <p><strong>DNI:</strong> 34.556.781</p>
+                <p><strong>Fecha de alta:</strong> 12/02/2025</p>
+                <p><strong>Vencimiento:</strong> 14/06/2026</p>
+                <p><strong>Último pago:</strong> 14/05/2026</p>
+                <p><strong>Observación:</strong> Solicita cambiar al turno tarde.</p>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="mt-auto">
+        <p>© 2026 CataStrong Gym - Transforma tu vida.</p>
+    </footer>
+</body>
+</html>
