@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,25 +10,30 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Trade+Winds&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
 <body class="min-h-screen flex flex-col">
     <nav class="w-full px-4 py-4 sm:px-6 lg:px-8">
         <input id="menu-toggle" type="checkbox" class="peer sr-only md:hidden">
         <div class="flex items-center justify-between md:hidden">
             <a href="../index.html" class="logo">CATASTRONG</a>
-            <label for="menu-toggle" class="inline-flex cursor-pointer items-center justify-center rounded-md border border-[#2B2B2B] p-2 text-white">
+            <label for="menu-toggle"
+                class="inline-flex cursor-pointer items-center justify-center rounded-md border border-[#2B2B2B] p-2 text-white">
                 <span class="sr-only">Abrir menú principal</span>
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </label>
         </div>
-        <div id="menu-principal" class="hidden pt-4 peer-checked:flex peer-checked:flex-col peer-checked:gap-4 md:flex md:w-full md:items-center md:justify-between md:gap-6 md:pt-0">
+        <div id="menu-principal"
+            class="hidden pt-4 peer-checked:flex peer-checked:flex-col peer-checked:gap-4 md:flex md:w-full md:items-center md:justify-between md:gap-6 md:pt-0">
             <a href="../index.html" class="logo hidden md:block">CATASTRONG</a>
-            <ul class="flex flex-col items-start gap-3 text-sm sm:text-base md:flex-1 md:flex-row md:flex-wrap md:items-center md:gap-5">
+            <ul
+                class="flex flex-col items-start gap-3 text-sm sm:text-base md:flex-1 md:flex-row md:flex-wrap md:items-center md:gap-5">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="./HorariosClases.html">Horarios</a></li>
                 <li><a href="./Entrenadores.html">Entrenadores</a></li>
@@ -44,8 +50,118 @@
     </nav>
     <main class="!m-0 w-full flex-1 px-4 py-8 sm:px-6 lg:px-10">
         <section class="perfil">
-            <h1>Bienvenido "Usuario"</h1>
+            <h1>Bienvenido "Juan Albarracin"</h1>
             <p>Aquí puedes ver y editar tu información personal, revisar tus reservas y gestionar tu membresía.</p>
+        </section>
+
+        <section class="seccion-gestion-perfil mx-auto md:mx-0 flex flex-col gap-8">
+
+            <div class="tarjeta-cuota !mt-0">
+                <div class="flex items-center gap-2 border-b border-b-[rgba(255,255,255,0.1)] pb-3 mb-4">
+                    <span class="material-symbols-outlined text-[#FF6A00]">account_circle</span>
+                    <h2 class="text-xl font-bold" style="margin: 0;">Mis Datos de Socio</h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm sm:text-base mb-6">
+                    <p><strong>Nombre Completo:</strong> Juan Albarracin</p>
+                    <p><strong>Correo Electrónico:</strong> juan@email.com</p>
+                    <p><strong>Teléfono:</strong> 3834123456</p>
+                    <p><strong>Edad:</strong> 56 años</p>
+                    <p><strong>Peso Actual:</strong> 79 kg</p>
+                    <p><strong>Altura:</strong> 1.78 m</p>
+                    <p><strong>Fecha de Registro:</strong> 09/04/2026</p>
+                    <p><strong>Objetivo:</strong> Ganar masa muscular</p>
+                    <p><strong>Nivel de experiencia:</strong> Medio</p>
+                </div>
+
+                <a href="#formulario-edicion"
+                    class="btn-enviar inline-flex items-center justify-center gap-2 w-fit no-underline">
+                    <span class="material-symbols-outlined">edit</span>
+                    Actualizar Datos
+                </a>
+            </div>
+
+            <div id="formulario-edicion" class="scroll-mt-6">
+                <form class="form-consulta">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="material-symbols-outlined text-[#FF6A00]">edit_note</span>
+                        <h2 style="margin: 0;">Modificar Información</h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4">
+
+                        <!-- Nombre -->
+                        <div><label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="José Argento" required>
+                        </div>
+
+                        <!-- Correo -->
+                        <div>
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="Pepeargento13@email.com" required>
+                        </div>
+
+                        <!-- Telefono -->
+                        <div>
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="3834123456" required>
+                        </div>
+
+                        <!-- Edad -->
+                        <div>
+                            <label for="edad">Edad</label>
+                            <input type="number" id="edad" name="edad" placeholder="66" required>
+                        </div>
+
+                        <!-- Peso -->
+                        <div>
+                            <label for="peso">Peso (kg)</label>
+                            <input type="number" id="peso" name="peso" placeholder="75" required>
+                        </div>
+
+                        <!-- Altura -->
+                        <div>
+                            <label for="altura">Altura (m)</label>
+                            <input type="text" id="altura" name="altura" placeholder="1.78" required>
+                        </div>
+
+                        <!-- Fecha de registro -->
+                        <div>
+                            <label for="fecha_registro">Fecha de Registro</label>
+                            <input type="text" id="fecha_registro" name="fecha_registro" value="09/04/2026" readonly
+                                class="bg-[#2B2B2B] cursor-not-allowed">
+                        </div>
+
+                        <!-- Objetivo -->
+                        <div>
+                            <label for="objetivo">Objetivo</label>
+                            <select id="objetivo" name="objetivo">
+                                <option value="ganar_masa" selected>Ganar masa muscular</option>
+                                <option value="perder_peso">Perder peso</option>
+                                <option value="mejorar_resistencia">Mejorar resistencia</option>
+                                <option value="tonificar">Tonificar</option>
+                                <option value="bienestar_general">Bienestar general</option>
+                            </select>
+                        </div>
+
+                        <!-- Nivel de experiencia -->
+                        <div>
+                            <label for="experiencia">Nivel de experiencia</label>
+                            <select id="experiencia" name="experiencia">
+                                <option value="principiante">Principiante</option>
+                                <option value="medio" selected>Medio</option>
+                                <option value="avanzado">Avanzado</option>
+                            </select>
+                        </div>
+
+
+                        <button type="submit" class="btn-enviar">
+                            <span class="material-symbols-outlined">save</span>
+                            Guardar Cambios
+                        </button>
+                    </div>
+                </form>
+            </div>
         </section>
 
         <section class="seccion-cuenta">
@@ -57,37 +173,36 @@
                 <span class="etiqueta-estado">Al Día</span>
             </div>
             <div class="detalles-pago">
-                    <p><strong>Próximo vencimiento:</strong> 10 de Junio de 2026</p>
-                    <p><strong>Monto mensual:</strong> $35.000</p>
-                    <p><strong>Último pago registrado:</strong> 10 de Mayo de 2026 - Tarjeta de Débito</p>
-                </div>
+                <p><strong>Próximo vencimiento:</strong> 10 de Junio de 2026</p>
+                <p><strong>Monto mensual:</strong> $35.000</p>
+                <p><strong>Último pago registrado:</strong> 10 de Mayo de 2026 - Tarjeta de Débito</p>
             </div>
 
             <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Historial Reciente</h3>
             <div class="overflow-x-auto">
                 <table class="tabla-horarios min-w-[640px]">
-                <thead>
-                    <tr>
-                        <th>Período</th>
-                        <th>Fecha de Pago</th>
-                        <th>Monto</th>
-                        <th>Método</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Mayo 2026</td>
-                        <td>10/05/2026</td>
-                        <td>$35.000</td>
-                        <td>Débito Automático</td>
-                    </tr>
-                    <tr>
-                        <td>Abril 2026</td>
-                        <td>09/04/2026</td>
-                        <td>$30.000</td>
-                        <td>Efectivo</td>
-                    </tr>
-                </tbody>
+                    <thead>
+                        <tr>
+                            <th>Período</th>
+                            <th>Fecha de Pago</th>
+                            <th>Monto</th>
+                            <th>Método</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mayo 2026</td>
+                            <td>10/05/2026</td>
+                            <td>$35.000</td>
+                            <td>Débito Automático</td>
+                        </tr>
+                        <tr>
+                            <td>Abril 2026</td>
+                            <td>09/04/2026</td>
+                            <td>$30.000</td>
+                            <td>Efectivo</td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </section>
@@ -98,4 +213,5 @@
         <p>© 2026 CataStrong Gym - Transforma tu vida.</p>
     </footer>
 </body>
+
 </html>
