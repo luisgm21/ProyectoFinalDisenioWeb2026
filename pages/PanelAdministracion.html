@@ -1,136 +1,186 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CATASTRONG - Panel de Administración</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Trade+Winds&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CATASTRONG - Panel de Administración</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Trade+Winds&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-  <body class="min-h-screen flex flex-col">
-    <nav class="w-full px-4 py-4 sm:px-6 lg:px-8">
-      <input id="menu-toggle" type="checkbox" class="peer sr-only md:hidden">
-      <div class="flex items-center justify-between md:hidden">
-        <a href="../index.html" class="logo">CATASTRONG</a>
-        <label for="menu-toggle" class="inline-flex cursor-pointer items-center justify-center rounded-md border border-[#2B2B2B] p-2 text-white">
-          <span class="sr-only">Abrir menú principal</span>
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </label>
+
+<body class="min-h-screen flex flex-col">
+  <nav class="w-full px-4 py-4 sm:px-6 lg:px-8">
+    <input id="menu-toggle" type="checkbox" class="peer sr-only md:hidden">
+    <div class="flex items-center justify-between md:hidden">
+      <a href="../index.html" class="logo">CATASTRONG</a>
+      <label for="menu-toggle"
+        class="inline-flex cursor-pointer items-center justify-center rounded-md border border-[#2B2B2B] p-2 text-white">
+        <span class="sr-only">Abrir menú principal</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </label>
+    </div>
+    <div id="menu-principal"
+      class="hidden pt-4 peer-checked:flex peer-checked:flex-col peer-checked:gap-4 md:flex md:w-full md:items-center md:justify-between md:gap-6 md:pt-0">
+      <a href="../index.html" class="logo hidden md:block">CATASTRONG</a>
+      <ul
+        class="flex flex-col items-start gap-3 text-sm sm:text-base md:flex-1 md:flex-row md:flex-wrap md:items-center md:gap-5">
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="./HorariosClases.html">Horarios</a></li>
+        <li><a href="./Entrenadores.html">Entrenadores</a></li>
+        <li><a href="./ReservaDeTurno.html">Reservas</a></li>
+        <li><a href="./formularioDeContacto.html">Contacto</a></li>
+        <li><a href="./formularioDeRespuesta.html">Responder</a></li>
+        <li class="hidden md:block md:flex-1" aria-hidden="true"></li>
+        <li class="md:pl-6 lg:pl-10"><a href="./InicioSesion.html">Iniciar sesión</a></li>
+        <li><a href="./RegistroSocio.html">Registrarse</a></li>
+        <li><a href="./MiPerfil.html">Mi Perfil</a></li>
+        <li><a href="./PanelAdministracion.html">Panel de Administración</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="panel-admin-page !m-0 w-full flex-1 px-4 py-8 sm:px-6 lg:px-10">
+    <section class="encabezado-panel-admin">
+      <p class="subtitulo-admin">Gestión interna</p>
+      <h1>Panel de Administración</h1>
+      <p>
+        Maqueta de gestión de socios para simular acciones de administración sin usar JavaScript.
+      </p>
+    </section>
+
+    <section class="resumen-admin">
+      <article>
+        <h2>128</h2>
+        <p>Socios activos</p>
+      </article>
+      <article>
+        <h2>6</h2>
+        <p>Nuevos esta semana</p>
+      </article>
+      <article>
+        <h2>3</h2>
+        <p>Solicitudes pendientes</p>
+      </article>
+    </section>
+
+    <section class="bloque-usuarios-admin overflow-x-auto">
+      <div class="cabecera-tabla-admin">
+        <h2>Usuarios de maqueta</h2>
+        <a href="./RegistroSocio.html" class="btn-contorno">Agregar socio</a>
       </div>
-      <div id="menu-principal" class="hidden pt-4 peer-checked:flex peer-checked:flex-col peer-checked:gap-4 md:flex md:w-full md:items-center md:justify-between md:gap-6 md:pt-0">
-        <a href="../index.html" class="logo hidden md:block">CATASTRONG</a>
-        <ul class="flex flex-col items-start gap-3 text-sm sm:text-base md:flex-1 md:flex-row md:flex-wrap md:items-center md:gap-5">
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="./HorariosClases.html">Horarios</a></li>
-          <li><a href="./Entrenadores.html">Entrenadores</a></li>
-          <li><a href="./ReservaDeTurno.html">Reservas</a></li>
-          <li><a href="./formularioDeContacto.html">Contacto</a></li>
-          <li><a href="./formularioDeRespuesta.html">Responder</a></li>
-          <li class="hidden md:block md:flex-1" aria-hidden="true"></li>
-          <li class="md:pl-6 lg:pl-10"><a href="./InicioSesion.html">Iniciar sesión</a></li>
-          <li><a href="./RegistroSocio.html">Registrarse</a></li>
-          <li><a href="./MiPerfil.html">Mi Perfil</a></li>
-          <li><a href="./PanelAdministracion.html">Panel de Administración</a></li>
-        </ul>
+
+      <table class="tabla-horarios tabla-admin min-w-[860px]">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Plan</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>#SOC-001</td>
+            <td>Camila Pérez</td>
+            <td>camila.perez@catastrong.com</td>
+            <td>Pase Libre</td>
+            <td><span class="badge-estado-admin activo">Activo</span></td>
+            <td>
+              <div class="acciones-admin">
+                <a href="./EditarUsuario.html" class="btn-accion-admin editar">Editar</a>
+                <a href="./EliminarUsuario.html" class="btn-accion-admin eliminar">Eliminar</a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>#SOC-002</td>
+            <td>Martín Gómez</td>
+            <td>martin.gomez@catastrong.com</td>
+            <td>Musculación</td>
+            <td><span class="badge-estado-admin activo">Activo</span></td>
+            <td>
+              <div class="acciones-admin">
+                <a href="./EditarUsuario.html" class="btn-accion-admin editar">Editar</a>
+                <a href="./EliminarUsuario.html" class="btn-accion-admin eliminar">Eliminar</a>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>#SOC-003</td>
+            <td>Lucía Herrera</td>
+            <td>lucia.herrera@catastrong.com</td>
+            <td>Funcional</td>
+            <td><span class="badge-estado-admin pausa">En pausa</span></td>
+            <td>
+              <div class="acciones-admin">
+                <a href="./EditarUsuario.html" class="btn-accion-admin editar">Editar</a>
+                <a href="./EliminarUsuario.html" class="btn-accion-admin eliminar">Eliminar</a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="permisos-de-usuario overflow-x-auto">
+      <div class="cabecera-tabla-admin">
+        <h2>Permisos de usuario</h2>
       </div>
-    </nav>
+      <div>
+        <p>Gestiona y Administra los permisos de los usuarios del sistema.</p>
+        <form class="form-permisos-admin">
+          <label for="usuario">Seleccionar Usuario:</label>
+          <select id="usuario" name="usuario" class="select-usuario-admin">
+            <option value="camila.perez">Camila Pérez</option>
+            <option value="martin.gomez">Martín Gómez</option>
+            <option value="lucia.herrera">Lucía Herrera</option>
+          </select>
 
-    <main class="panel-admin-page !m-0 w-full flex-1 px-4 py-8 sm:px-6 lg:px-10">
-      <section class="encabezado-panel-admin">
-        <p class="subtitulo-admin">Gestión interna</p>
-        <h1>Panel de Administración</h1>
-        <p>
-          Maqueta de gestión de socios para simular acciones de administración sin usar JavaScript.
-        </p>
-      </section>
+          <h3>Datos del Usuario:</h3>
+          <div class="checkbox-permisos">
+            <label><input type="checkbox" name="permiso" value="editar_perfil"> Editar Perfil</label>
+            <label><input type="checkbox" name="permiso" value="ver_perfil"> Ver Perfil</label>
+            <label><input type="checkbox" name="permiso" value="ver_historial"> Ver Historial de Seguimiento</label>
+          </div>
+          <h3>Clases:</h3>
+          <div class="checkbox-permisos">
+            <label><input type="checkbox" name="permiso" value="ver_horarios"> Ver Horarios de Clase</label>
+            <label><input type="checkbox" name="permiso" value="reserva_clases"> Reserva de Clases</label>
+            <label><input type="checkbox" name="permiso" value="cancelacion_clase"> Cancelación de Clase</label>
+          </div>
+          <h3>Pagos:</h3>
+          <div class="checkbox-permisos">
+            <label><input type="checkbox" name="permiso" value="ver_cuota"> Ver Estado de Cuota</label>
+            <label><input type="checkbox" name="permiso" value="registrar_pago"> Registrar Pago Manual</label>
+            <label><input type="checkbox" name="permiso" value="modificar_precios"> Modificar Precios</label>
+          </div>
+          <h3>Datos Generales:</h3>
+          <div class="checkbox-permisos">
+            <label><input type="checkbox" name="permiso" value="modificar_staff"> Modificar Staff</label>
+            <label><input type="checkbox" name="permiso" value="actualizar_galeria"> Actualizar Galeria</label>
+            <label><input type="checkbox" name="permiso" value="editar_usuarios"> Editar Usuarios</label>
+          </div>
+          <button type="submit" class="btn-paleta">
+            Guardar Permisos
+          </button>
+      </div>
+    </section>
+  </main>
 
-      <section class="resumen-admin">
-        <article>
-          <h2>128</h2>
-          <p>Socios activos</p>
-        </article>
-        <article>
-          <h2>6</h2>
-          <p>Nuevos esta semana</p>
-        </article>
-        <article>
-          <h2>3</h2>
-          <p>Solicitudes pendientes</p>
-        </article>
-      </section>
-
-      <section class="bloque-usuarios-admin overflow-x-auto">
-        <div class="cabecera-tabla-admin">
-          <h2>Usuarios de maqueta</h2>
-          <a href="./RegistroSocio.html" class="btn-contorno">Agregar socio</a>
-        </div>
-
-        <table class="tabla-horarios tabla-admin min-w-[860px]">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Nombre</th>
-              <th>Email</th>
-              <th>Plan</th>
-              <th>Estado</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>#SOC-001</td>
-              <td>Camila Pérez</td>
-              <td>camila.perez@catastrong.com</td>
-              <td>Pase Libre</td>
-              <td><span class="badge-estado-admin activo">Activo</span></td>
-              <td>
-                <div class="acciones-admin">
-                  <a href="./EditarUsuario.html" class="btn-accion-admin editar">Editar</a>
-                  <a href="./EliminarUsuario.html" class="btn-accion-admin eliminar">Eliminar</a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>#SOC-002</td>
-              <td>Martín Gómez</td>
-              <td>martin.gomez@catastrong.com</td>
-              <td>Musculación</td>
-              <td><span class="badge-estado-admin activo">Activo</span></td>
-              <td>
-                <div class="acciones-admin">
-                  <a href="./EditarUsuario.html" class="btn-accion-admin editar">Editar</a>
-                  <a href="./EliminarUsuario.html" class="btn-accion-admin eliminar">Eliminar</a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>#SOC-003</td>
-              <td>Lucía Herrera</td>
-              <td>lucia.herrera@catastrong.com</td>
-              <td>Funcional</td>
-              <td><span class="badge-estado-admin pausa">En pausa</span></td>
-              <td>
-                <div class="acciones-admin">
-                  <a href="./EditarUsuario.html" class="btn-accion-admin editar">Editar</a>
-                  <a href="./EliminarUsuario.html" class="btn-accion-admin eliminar">Eliminar</a>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-    </main>
-
-    <footer class="mt-auto">
-      <p>© 2026 CataStrong Gym - Transforma tu vida.</p>
-    </footer>
+  <footer class="mt-auto">
+    <p>© 2026 CataStrong Gym - Transforma tu vida.</p>
+  </footer>
 </body>
+
 </html>
