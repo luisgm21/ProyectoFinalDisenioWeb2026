@@ -2019,3 +2019,67 @@
     margin-bottom: 0.8rem;
     padding-top: 1rem;
 }
+/* Perfil de entrenador */
+
+.tarjeta-foto-entrenador{
+
+    background:#1E1E1E;
+
+    padding:2rem;
+
+    border-radius:16px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    max-width:350px;
+
+    margin:auto;
+}
+
+.tarjeta-foto-entrenador img{
+
+    width:180px;
+
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    margin-bottom:1rem;
+}
+
+.tarjeta-foto-entrenador h2{
+
+    margin-bottom:.5rem;
+}
+
+.form-consulta select{
+
+    background:#2B2B2B;
+
+    border:1px solid #444;
+
+    color:white;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    width:100%;
+}
+
+.form-consulta input[type="file"]{
+
+    background:#2B2B2B;
+
+    border:1px solid #444;
+
+    padding:12px;
+
+    border-radius:8px;
+}

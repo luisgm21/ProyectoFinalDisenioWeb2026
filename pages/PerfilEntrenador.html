@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATASTRONG - Perfil del Entrenador</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Trade+Winds&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <!-- NAVBAR -->
+
+    <nav class="w-full px-4 py-4 sm:px-6 lg:px-8">
+        <input id="menu-toggle" type="checkbox" class="peer sr-only md:hidden">
+
+        <div class="flex items-center justify-between md:hidden">
+            <a href="../index.html" class="logo">CATASTRONG</a>
+
+            <label for="menu-toggle"
+                class="inline-flex cursor-pointer items-center justify-center rounded-md border border-[#2B2B2B] p-2 text-white">
+
+                <span class="sr-only">Abrir menú principal</span>
+
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+
+            </label>
+        </div>
+
+        <div id="menu-principal"
+            class="hidden pt-4 peer-checked:flex peer-checked:flex-col peer-checked:gap-4 md:flex md:w-full md:items-center md:justify-between md:gap-6 md:pt-0">
+
+            <a href="../index.html" class="logo hidden md:block">
+                CATASTRONG
+            </a>
+
+            <ul
+                class="flex flex-col items-start gap-3 text-sm sm:text-base md:flex-1 md:flex-row md:flex-wrap md:items-center md:gap-5">
+
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./HorariosClases.html">Horarios</a></li>
+                <li><a href="./Entrenadores.html">Entrenadores</a></li>
+                <li><a href="./ReservaDeTurno.html">Reservas</a></li>
+                <li><a href="./formularioDeContacto.html">Contacto</a></li>
+                <li><a href="./formularioDeRespuesta.html">Responder</a></li>
+
+                <li class="hidden md:block md:flex-1"></li>
+
+                <li><a href="./InicioSesion.html">Iniciar sesión</a></li>
+                <li><a href="./RegistroSocio.html">Registrarse</a></li>
+                <li><a href="./MiPerfil.html">Mi Perfil</a></li>
+                <li><a href="./PanelAdministracion.html">Panel de Administración</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO -->
+
+    <main class="!m-0 w-full flex-1 px-4 py-8 sm:px-6 lg:px-10">
+
+        <section class="perfil">
+            <h1>Gestión de Perfil del Entrenador</h1>
+
+            <p>
+                Mantén actualizada tu información profesional para que los socios
+                puedan conocer tus especialidades, horarios y clases asignadas.
+            </p>
+        </section>
+
+        <section class="seccion-gestion-perfil mx-auto md:mx-0 flex flex-col gap-8">
+
+            <!-- FOTO -->
+
+            <div class="tarjeta-foto-entrenador">
+
+                <img src="../assets/img/entrenador1.jpg"
+                    alt="Osvaldo López">
+
+                <h2>Osvaldo López</h2>
+
+                <p>Entrenador de Funcional y HIIT.</p>
+
+            </div>
+
+            <!-- INFORMACIÓN ACTUAL -->
+
+            <div class="tarjeta-cuota !mt-0">
+
+                <div
+                    class="flex items-center gap-2 border-b border-b-[rgba(255,255,255,0.1)] pb-3 mb-4">
+
+                    <span class="material-symbols-outlined text-[#FF6A00]">
+                        fitness_center
+                    </span>
+
+                    <h2 class="text-xl font-bold" style="margin:0;">
+                        Información Actual.
+                    </h2>
+
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm sm:text-base">
+
+                    <p><strong>Nombre:</strong> Osvaldo López</p>
+
+                    <p><strong>Especialidad:</strong> Funcional, HIIT y preparación física general.</p>
+
+                    <p><strong>Experiencia:</strong> Más de 8 años guiando entrenamientos progresivos.</p>
+
+                    <p><strong>Clases:</strong> Funcional y HIIT</p>
+
+                    <p><strong>Días:</strong> Lunes, Miércoles y Viernes.</p>
+
+                    <p><strong>Horario:</strong> 09:00 a 13:00 y 20:00 a 22:00.</p>
+
+                </div>
+
+            </div>
+
+            <!-- FORMULARIO -->
+
+            <form class="form-consulta">
+
+                <div class="flex items-center gap-2 mb-4">
+
+                    <span class="material-symbols-outlined text-[#FF6A00]">
+                        edit_note
+                    </span>
+
+                    <h2 style="margin:0;">
+                        Modificar Información.
+                    </h2>
+
+                </div>
+
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4">
+
+                    <div>
+
+                        <label for="nombre">
+                            Nombre Completo.
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            value="Osvaldo López.">
+
+                    </div>
+
+                    <div>
+
+                        <label for="especialidad">
+                            Especialidad.
+                        </label>
+
+                        <input
+                            type="text"
+                            id="especialidad"
+                            name="especialidad"
+                            value="Funcional, HIIT y preparación física general.">
+
+                    </div>
+
+                    <div>
+
+                        <label for="experiencia">
+                            Experiencia.
+                        </label>
+
+                        <input
+                            type="text"
+                            id="experiencia"
+                            name="experiencia"
+                            value="Más de 8 años guiando entrenamientos progresivos.">
+
+                    </div>
+
+                    <div>
+
+                        <label for="clases">
+                            Clases. 
+                        </label>
+
+                        <input
+                            type="text"
+                            id="clases"
+                            name="clases"
+                            value="Funcional y HIIT.">
+
+                    </div>
+
+                    <div>
+
+                        <label for="dias">
+                            Días de Atención.
+                        </label>
+
+                        <input
+                            type="text"
+                            id="dias"
+                            name="dias"
+                            value="Lunes, Miércoles y Viernes.">
+
+                    </div>
+
+                    <div>
+
+                        <label for="horario">
+                            Horario de Atención.
+                        </label>
+
+                        <input
+                            type="text"
+                            id="horario"
+                            name="horario"
+                            value="09:00 a 13:00 y 20:00 a 22:00.">
+
+                    </div>
+
+                    <div class="sm:col-span-2">
+
+                        <label for="foto">
+                            Actualizar Foto Profesional.
+                        </label>
+
+                        <input
+                            type="file"
+                            id="foto"
+                            name="foto">
+
+                    </div>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn-enviar mt-4">
+
+                    <span class="material-symbols-outlined">
+                        save
+                    </span>
+
+                    Guardar Cambios.
+
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="mt-auto">
+        <p>
+            © 2026 CataStrong Gym - Transformá tu vida.
+        </p>
+    </footer>
+
+</body>
+
+</html>
