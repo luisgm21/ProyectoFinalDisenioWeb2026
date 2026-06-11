@@ -181,10 +181,10 @@
             <form id="formReserva">
 
                 <label for="nombre">Nombre completo</label>
-                <input type="text" id="nombre" required>
+                <input type="text" id="nombre" required pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios">
 
                 <label for="email">Correo electrónico</label>
-                <input type="email" id="email" required>
+                <input type="email" id="email" required="@">
 
                 <label for="actividad">Actividad</label>
                 <select id="actividad" required>
@@ -218,8 +218,6 @@
 
             </form>
 
-            <div id="mensajeReserva"></div>
-
         </section>
 
     </main>
@@ -227,20 +225,6 @@
     <footer class="mt-auto">
         <p>© 2026 CataStrong Gym - Transformá tu vida.</p>
     </footer>
-
-    <!-- Javascript minimo -->
-    <script>
-        document.getElementById("formReserva")
-            .addEventListener("submit", function (e) {
-
-                e.preventDefault();
-
-                document.getElementById("mensajeReserva").innerHTML =
-                    "<p class='mensaje-exito'>✅ Turno reservado correctamente.</p>";
-
-                this.reset();
-            });
-    </script>
 
 </body>
 
