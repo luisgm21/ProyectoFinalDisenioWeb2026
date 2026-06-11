@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATASTRONG - Mi Progreso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Trade+Winds&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="min-h-screen flex flex-col">
+    <main class="!m-0 w-full flex-1 px-4 py-8 sm:px-6 lg:px-10 progreso-page">
+        <div class="acciones-detalle">
+            <a href="./MiPerfil.html" class="btn-secundario inline-flex items-center justify-center gap-2 w-fit no-underline">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Volver a Mi Perfil
+            </a>
+        </div>
+
+        <section class="perfil progreso-hero">
+            <p class="progreso-etiqueta">Seguimiento personal</p>
+            <h1>Tu evolución en CATASTRONG</h1>
+            <p>Un resumen visual y estático de tus avances físicos, tu constancia semanal y los logros alcanzados hasta hoy.</p>
+        </section>
+
+        <section class="progreso-resumen-grid">
+            <article class="progreso-kpi-card">
+                <span class="material-symbols-outlined">workspace_premium</span>
+                <strong>9 semanas</strong>
+                <p>Entrenando sin pausas largas</p>
+            </article>
+            <article class="progreso-kpi-card">
+                <span class="material-symbols-outlined">fitness_center</span>
+                <strong>+4 kg</strong>
+                <p>Ganancia muscular estimada</p>
+            </article>
+            <article class="progreso-kpi-card">
+                <span class="material-symbols-outlined">event_available</span>
+                <strong>86%</strong>
+                <p>Asistencia del último mes</p>
+            </article>
+            <article class="progreso-kpi-card">
+                <span class="material-symbols-outlined">bolt</span>
+                <strong>3 marcas</strong>
+                <p>Récords personales superados</p>
+            </article>
+        </section>
+
+        <section class="progreso-panel-grid">
+            <article class="tarjeta-cuota !mt-0 progreso-card-destacado">
+                <div class="flex items-center gap-2 border-b border-b-[rgba(255,255,255,0.1)] pb-3 mb-4">
+                    <span class="material-symbols-outlined text-[#FF6A00]">show_chart</span>
+                    <h2 class="text-xl font-bold" style="margin: 0;">Indicadores físicos</h2>
+                </div>
+                <div class="progreso-metricas-lista">
+                    <div class="progreso-metrica-item">
+                        <span>Peso corporal</span>
+                        <strong>75 kg → 79 kg</strong>
+                    </div>
+                    <div class="progreso-barra"><span style="width: 78%;"></span></div>
+
+                    <div class="progreso-metrica-item">
+                        <span>Masa muscular</span>
+                        <strong>+5.2%</strong>
+                    </div>
+                    <div class="progreso-barra exito"><span style="width: 72%;"></span></div>
+
+                    <div class="progreso-metrica-item">
+                        <span>Grasa corporal</span>
+                        <strong>-2.1%</strong>
+                    </div>
+                    <div class="progreso-barra alerta"><span style="width: 36%;"></span></div>
+                </div>
+            </article>
+
+            <article class="tarjeta-cuota !mt-0 progreso-card-destacado">
+                <div class="flex items-center gap-2 border-b border-b-[rgba(255,255,255,0.1)] pb-3 mb-4">
+                    <span class="material-symbols-outlined text-[#FF6A00]">emoji_events</span>
+                    <h2 class="text-xl font-bold" style="margin: 0;">Logros recientes</h2>
+                </div>
+                <ul class="progreso-logros-lista">
+                    <li>Completaste 5 semanas consecutivas con 4 entrenamientos o más.</li>
+                    <li>Subiste tu press de banca de 60 kg a 72.5 kg.</li>
+                    <li>Mejoraste tu resistencia en bicicleta fija de 10 a 15 minutos por serie.</li>
+                    <li>Mantienes tu cuota al día desde el inicio del plan.</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="seccion-cuenta progreso-tabla-section">
+            <h2>📈 Evolución mensual</h2>
+            <p>Comparativa estática de tus mediciones y rendimiento durante los últimos meses.</p>
+            <div class="overflow-x-auto">
+                <table class="tabla-horarios min-w-[720px]">
+                    <thead>
+                        <tr>
+                            <th>Mes</th>
+                            <th>Peso</th>
+                            <th>Pecho</th>
+                            <th>Brazo</th>
+                            <th>Cintura</th>
+                            <th>Asistencia</th>
+                            <th>Observación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Abril 2026</td>
+                            <td>75 kg</td>
+                            <td>99 cm</td>
+                            <td>34 cm</td>
+                            <td>91 cm</td>
+                            <td>72%</td>
+                            <td>Inicio del plan de volumen</td>
+                        </tr>
+                        <tr>
+                            <td>Mayo 2026</td>
+                            <td>77 kg</td>
+                            <td>101 cm</td>
+                            <td>35 cm</td>
+                            <td>89 cm</td>
+                            <td>86%</td>
+                            <td>Mayor consistencia semanal</td>
+                        </tr>
+                        <tr>
+                            <td>Junio 2026</td>
+                            <td>79 kg</td>
+                            <td>103 cm</td>
+                            <td>36 cm</td>
+                            <td>88 cm</td>
+                            <td>88%</td>
+                            <td>Mejora marcada en fuerza general</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="progreso-habitos-grid">
+            <article class="progreso-habito-card">
+                <h3>Constancia semanal</h3>
+                <div class="progreso-semana-bloques" aria-label="Asistencia semanal">
+                    <span class="activo">L</span>
+                    <span class="activo">M</span>
+                    <span class="activo">X</span>
+                    <span>J</span>
+                    <span class="activo">V</span>
+                    <span class="activo">S</span>
+                    <span>D</span>
+                </div>
+                <p>5 días entrenados esta semana. Tu mejor racha actual es de 18 días activos.</p>
+            </article>
+
+            <article class="progreso-habito-card">
+                <h3>Objetivo actual</h3>
+                <p><strong>Ganar masa muscular</strong></p>
+                <p>Tu entrenador destaca una mejora sostenida en pecho, hombros y brazos. Mantén el superávit calórico y el descanso de 7 a 8 horas.</p>
+            </article>
+
+            <article class="progreso-habito-card">
+                <h3>Próxima revisión</h3>
+                <p><strong>18/06/2026</strong></p>
+                <p>Control de medidas, actualización de rutina y ajuste del volumen de entrenamiento según rendimiento.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="mt-auto">
+        <p>© 2026 CataStrong Gym - Transforma tu vida.</p>
+    </footer>
+</body>
+
+</html>
