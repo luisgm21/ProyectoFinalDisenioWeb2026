@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATASTRONG - Detalle de Consulta</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Trade+Winds&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,1">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="min-h-screen flex flex-col">
+    <nav class="w-full px-4 py-4 sm:px-6 lg:px-8">
+        <input id="menu-toggle" type="checkbox" class="peer sr-only md:hidden">
+        <div class="flex items-center justify-between md:hidden">
+            <a href="../index.html" class="logo">CATASTRONG</a>
+            <label for="menu-toggle" class="inline-flex cursor-pointer items-center justify-center rounded-md border border-[#2B2B2B] p-2 text-white">
+                <span class="sr-only">Abrir menú principal</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </label>
+        </div>
+        <div id="menu-principal" class="hidden pt-4 peer-checked:flex peer-checked:flex-col peer-checked:gap-4 md:flex md:w-full md:items-center md:justify-between md:gap-6 md:pt-0">
+            <a href="../index.html" class="logo hidden md:block">CATASTRONG</a>
+            <ul class="flex flex-col items-start gap-3 text-sm sm:text-base md:flex-1 md:flex-row md:flex-wrap md:items-center md:gap-5">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="./HorariosClases.html">Horarios</a></li>
+                <li><a href="./Entrenadores.html">Entrenadores</a></li>
+                <li><a href="./ReservaDeTurno.html">Reservas</a></li>
+                <li><a href="./formularioDeContacto.html">Contacto</a></li>
+                <li><a href="./formularioDeRespuesta.html">Responder</a></li>
+                <li class="hidden md:block md:flex-1" aria-hidden="true"></li>
+                <li class="md:pl-6 lg:pl-10"><a href="./InicioSesion.html">Iniciar sesión</a></li>
+                <li><a href="./RegistroSocio.html">Registrarse</a></li>
+                <li><a href="./MiPerfil.html">Mi Perfil</a></li>
+                <li><a href="./PerfilEntrenador.html">Perfil Entrenador</a></li>
+                <li><a href="./PanelAdministracion.html">Panel de Administración</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="!m-0 w-full flex-1 px-4 py-8 sm:px-6 lg:px-10">
+        <div class="acciones-detalle">
+            <a class="btn-secundario" href="./formularioDeRespuesta.html">
+                <span class="material-symbols-outlined">arrow_back</span> Volver a la bandeja
+            </a>
+        </div>
+
+        <h1>Responder consultas</h1>
+        <p style="margin-bottom: 2rem;">Cada bloque contiene los datos de la consulta y un espacio de respuesta ya generado en HTML.</p>
+
+        <div class="detalle-consultas">
+            <section id="consulta-1" class="detalle-consulta">
+                <div class="modal-header">
+                    <h2>Consulta de Juan Pérez</h2>
+                    <span class="badge-pendiente">⏳ Pendiente</span>
+                </div>
+                <div class="modal-body">
+                    <div class="consulta-original">
+                        <p><strong>De:</strong> Juan Pérez (juan.perez@email.com)</p>
+                        <p><strong>Teléfono:</strong> +54 11 2345-6789</p>
+                        <p><strong>Tipo:</strong> 💰 Precios y horarios</p>
+                        <p><strong>Fecha:</strong> 2026-05-23 10:30</p>
+                        <p><strong>Mensaje:</strong></p>
+                        <div class="mensaje-original">Hola, quería saber los precios de la membresía mensual y los horarios de apertura. También si hay descuentos para estudiantes.</div>
+                    </div>
+                    <div class="respuesta-area">
+                        <label for="respuesta-1">Tu respuesta</label>
+                        <textarea id="respuesta-1" rows="5" placeholder="Escribí acá tu respuesta..."></textarea>
+                        <div class="opciones-respuesta">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked> Enviar copia al email del cliente
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked> Marcar como respondida
+                            </label>
+                        </div>
+                        <div class="modal-botones">
+                            <button type="button" class="btn-enviar-respuesta">
+                                <span class="material-symbols-outlined">send</span> Responder
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="consulta-2" class="detalle-consulta">
+                <div class="modal-header">
+                    <h2>Consulta de María González</h2>
+                    <span class="badge-pendiente">⏳ Pendiente</span>
+                </div>
+                <div class="modal-body">
+                    <div class="consulta-original">
+                        <p><strong>De:</strong> María González (maria.g@email.com)</p>
+                        <p><strong>Teléfono:</strong> +54 11 3456-7890</p>
+                        <p><strong>Tipo:</strong> 🏋️ Clase gratis</p>
+                        <p><strong>Fecha:</strong> 2026-05-22 15:45</p>
+                        <p><strong>Mensaje:</strong></p>
+                        <div class="mensaje-original">Me interesaría probar una clase de funcional. ¿Cómo hago para reservar? ¿Hay algún requisito?</div>
+                    </div>
+                    <div class="respuesta-area">
+                        <label for="respuesta-2">Tu respuesta</label>
+                        <textarea id="respuesta-2" rows="5" placeholder="Escribí acá tu respuesta..."></textarea>
+                        <div class="opciones-respuesta">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked> Enviar copia al email del cliente
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked> Marcar como respondida
+                            </label>
+                        </div>
+                        <div class="modal-botones">
+                            <button type="button" class="btn-enviar-respuesta">
+                                <span class="material-symbols-outlined">send</span> Responder
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="consulta-3" class="detalle-consulta respondida-detalle">
+                <div class="modal-header">
+                    <h2>Consulta de Carlos Rodríguez</h2>
+                    <span class="badge-respondida">✓ Respondida</span>
+                </div>
+                <div class="modal-body">
+                    <div class="consulta-original">
+                        <p><strong>De:</strong> Carlos Rodríguez (carlos.rodri@email.com)</p>
+                        <p><strong>Teléfono:</strong> +54 11 4567-8901</p>
+                        <p><strong>Tipo:</strong> 👥 Socio / incidencia</p>
+                        <p><strong>Fecha:</strong> 2026-05-21 09:15</p>
+                        <p><strong>Mensaje:</strong></p>
+                        <div class="mensaje-original">Soy socio hace 2 meses y tengo un problema con la app, no me deja reservar clases. ¿Me pueden ayudar? Mi número de socio es 12345.</div>
+                    </div>
+                    <div class="respuesta-enviada">
+                        <h3>Respuesta enviada</h3>
+                        <p>Hola Carlos, te ayudamos con la app. Por favor reiniciá sesión y si sigue el problema, escribinos a soporte@gym.com con tu número de socio.</p>
+                        <p><strong>Fecha de respuesta:</strong> 2026-05-21 14:30</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="consulta-4" class="detalle-consulta">
+                <div class="modal-header">
+                    <h2>Consulta de Laura Fernández</h2>
+                    <span class="badge-pendiente">⏳ Pendiente</span>
+                </div>
+                <div class="modal-body">
+                    <div class="consulta-original">
+                        <p><strong>De:</strong> Laura Fernández (laura.f@email.com)</p>
+                        <p><strong>Teléfono:</strong> +54 11 5678-9012</p>
+                        <p><strong>Tipo:</strong> 🤝 Convenios</p>
+                        <p><strong>Fecha:</strong> 2026-05-23 08:20</p>
+                        <p><strong>Mensaje:</strong></p>
+                        <div class="mensaje-original">Tengo una empresa con 15 empleados. ¿Tienen convenios corporativos? Quisiera recibir información sobre tarifas especiales.</div>
+                    </div>
+                    <div class="respuesta-area">
+                        <label for="respuesta-4">Tu respuesta</label>
+                        <textarea id="respuesta-4" rows="5" placeholder="Escribí acá tu respuesta..."></textarea>
+                        <div class="opciones-respuesta">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked> Enviar copia al email del cliente
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked> Marcar como respondida
+                            </label>
+                        </div>
+                        <div class="modal-botones">
+                            <button type="button" class="btn-enviar-respuesta">
+                                <span class="material-symbols-outlined">send</span> Responder
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="consulta-5" class="detalle-consulta">
+                <div class="modal-header">
+                    <h2>Consulta de Diego Martínez</h2>
+                    <span class="badge-pendiente">⏳ Pendiente</span>
+                </div>
+                <div class="modal-body">
+                    <div class="consulta-original">
+                        <p><strong>De:</strong> Diego Martínez (diego.m@email.com)</p>
+                        <p><strong>Teléfono:</strong> +54 11 6789-0123</p>
+                        <p><strong>Tipo:</strong> ❌ Baja</p>
+                        <p><strong>Fecha:</strong> 2026-05-20 18:00</p>
+                        <p><strong>Mensaje:</strong></p>
+                        <div class="mensaje-original">Por motivos personales necesito dar de baja mi membresía. ¿Cuál es el procedimiento?</div>
+                    </div>
+                    <div class="respuesta-area">
+                        <label for="respuesta-5">Tu respuesta</label>
+                        <textarea id="respuesta-5" rows="5" placeholder="Escribí acá tu respuesta..."></textarea>
+                        <div class="opciones-respuesta">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked> Enviar copia al email del cliente
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked> Marcar como respondida
+                            </label>
+                        </div>
+                        <div class="modal-botones">
+                            <button type="button" class="btn-enviar-respuesta">
+                                <span class="material-symbols-outlined">send</span> Responder
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="consulta-6" class="detalle-consulta">
+                <div class="modal-header">
+                    <h2>Consulta de Sofía López</h2>
+                    <span class="badge-pendiente">⏳ Pendiente</span>
+                </div>
+                <div class="modal-body">
+                    <div class="consulta-original">
+                        <p><strong>De:</strong> Sofía López (sofia.l@email.com)</p>
+                        <p><strong>Teléfono:</strong> +54 11 7890-1234</p>
+                        <p><strong>Tipo:</strong> ⭐ Sugerencia</p>
+                        <p><strong>Fecha:</strong> 2026-05-22 20:30</p>
+                        <p><strong>Mensaje:</strong></p>
+                        <div class="mensaje-original">Muy contenta con las clases de yoga, pero sugeriría que haya más horarios a la noche, a las 20hs se llena mucho.</div>
+                    </div>
+                    <div class="respuesta-area">
+                        <label for="respuesta-6">Tu respuesta</label>
+                        <textarea id="respuesta-6" rows="5" placeholder="Escribí acá tu respuesta..."></textarea>
+                        <div class="opciones-respuesta">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked> Enviar copia al email del cliente
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked> Marcar como respondida
+                            </label>
+                        </div>
+                        <div class="modal-botones">
+                            <button type="button" class="btn-enviar-respuesta">
+                                <span class="material-symbols-outlined">send</span> Responder
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="mt-auto">
+        <p>© 2026 CataStrong Gym - Panel de administración de consultas</p>
+    </footer>
+</body>
+</html>
