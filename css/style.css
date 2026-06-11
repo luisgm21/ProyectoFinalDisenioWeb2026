@@ -320,6 +320,49 @@
     color: var(--color-secundario);
 }
 
+.rutina-desplegable {
+    margin-top: 0.5rem;
+}
+
+.rutina-desplegable summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.rutina-desplegable summary::-webkit-details-marker {
+    display: none;
+}
+
+.rutina-desplegable[open] summary {
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+}
+
+.rutina-card {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--color-terciario);
+    border-radius: 8px;
+    background-color: var(--color-primario);
+}
+
+.rutina-card h4 {
+    color: var(--color-secundario);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.rutina-card ul {
+    padding-left: 1.1rem;
+}
+
+.rutina-card li {
+    color: var(--color-texto);
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin-bottom: 0.45rem;
+}
+
  /* ===== ESTILOS NUEVOS PARA EL FORMULARIO DE CONSULTA ===== */
 
  /* Contenedor principal del formulario + info */
