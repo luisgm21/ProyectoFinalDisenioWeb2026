@@ -22,16 +22,20 @@
         <input id="menu-toggle" type="checkbox" class="peer sr-only md:hidden">
         <div class="flex items-center justify-between md:hidden">
             <a href="../index.html" class="logo">CATASTRONG</a>
-            <label for="menu-toggle" class="inline-flex cursor-pointer items-center justify-center rounded-md border border-[#2B2B2B] p-2 text-white">
+            <label for="menu-toggle"
+                class="inline-flex cursor-pointer items-center justify-center rounded-md border border-[#2B2B2B] p-2 text-white">
                 <span class="sr-only">Abrir menú principal</span>
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </label>
         </div>
-        <div id="menu-principal" class="hidden pt-4 peer-checked:flex peer-checked:flex-col peer-checked:gap-4 md:flex md:w-full md:items-center md:justify-between md:gap-6 md:pt-0">
+        <div id="menu-principal"
+            class="hidden pt-4 peer-checked:flex peer-checked:flex-col peer-checked:gap-4 md:flex md:w-full md:items-center md:justify-between md:gap-6 md:pt-0">
             <a href="../index.html" class="logo hidden md:block">CATASTRONG</a>
-            <ul class="flex flex-col items-start gap-3 text-sm sm:text-base md:flex-1 md:flex-row md:flex-wrap md:items-center md:gap-5">
+            <ul
+                class="flex flex-col items-start gap-3 text-sm sm:text-base md:flex-1 md:flex-row md:flex-wrap md:items-center md:gap-5">
                 <li><a href="../index.html">Inicio</a></li>
                 <li><a href="./HorariosClases.html">Horarios</a></li>
                 <li><a href="./Entrenadores.html">Entrenadores</a></li>
@@ -67,27 +71,25 @@
             <form id="formRegistro">
 
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre">
+                <input type="text" id="nombre" required pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios">
 
                 <label for="apellido">Apellido</label>
-                <input type="text" id="apellido">
+                <input type="text" id="apellido" required pattern="[A-Za-z\s]+" title="Solo se permiten letras y espacios">
 
                 <label for="correo">Correo Electrónico</label>
-                <input type="email" id="correo">
+                <input type="email" id="correo" required="@">
 
                 <label for="contrasena">Contraseña</label>
-                <input type="password" id="contrasena">
+                <input type="password" id="contrasena" required minlength="8" maxlength="12">
 
                 <label for="confirmar">Confirmar Contraseña</label>
-                <input type="password" id="confirmar">
+                <input type="password" id="confirmar" required>
 
                 <button type="submit" class="btn-paleta">
                     Registrarme
                 </button>
 
             </form>
-
-            <div id="mensajeRegistro"></div>
 
         </section>
 
@@ -96,94 +98,6 @@
     <footer class="mt-auto">
         <p>© 2026 CataStrong Gym - Transformá tu vida.</p>
     </footer>
-
-    <script>
-        let usuarioRegistrado = null;
-
-        // REGISTRO
-
-        document.getElementById("formRegistro")
-            .addEventListener("submit", function (e) {
-
-                e.preventDefault();
-
-                const nombre = document.getElementById("nombre").value;
-                const apellido = document.getElementById("apellido").value;
-                const correo = document.getElementById("correo").value;
-                const contrasena = document.getElementById("contrasena").value;
-                const confirmar = document.getElementById("confirmar").value;
-
-                if (
-                    nombre === "" ||
-                    apellido === "" ||
-                    correo === "" ||
-                    contrasena === "" ||
-                    confirmar === ""
-                ) {
-
-                    document.getElementById("mensajeRegistro").innerHTML =
-                        "<p class='mensaje-error'>⚠ Debe completar todos los campos obligatorios.</p>";
-
-                    return;
-                }
-
-                if (correo === "socio@catastrong.com") {
-
-                    document.getElementById("mensajeRegistro").innerHTML =
-                        "<p class='mensaje-error'>⚠ El usuario ya existe.</p>";
-
-                    return;
-                }
-
-                if (contrasena !== confirmar) {
-
-                    document.getElementById("mensajeRegistro").innerHTML =
-                        "<p class='mensaje-error'>⚠ Las contraseñas no coinciden.</p>";
-
-                    return;
-                }
-
-                usuarioRegistrado = {
-                    correo: correo,
-                    contrasena: contrasena
-                };
-
-                document.getElementById("mensajeRegistro").innerHTML =
-                    "<p class='mensaje-exito'>✅ Registro realizado correctamente.</p>";
-
-                this.reset();
-
-            });
-
-        // LOGIN
-
-        document.getElementById("formLogin")
-            .addEventListener("submit", function (e) {
-
-                e.preventDefault();
-
-                const correo = document.getElementById("loginCorreo").value;
-                const contrasena = document.getElementById("loginContrasena").value;
-
-                if (
-                    usuarioRegistrado &&
-                    correo === usuarioRegistrado.correo &&
-                    contrasena === usuarioRegistrado.contrasena
-                ) {
-
-                    document.getElementById("mensajeLogin").innerHTML =
-                        "<p class='mensaje-exito'>✅ Bienvenido socio. Acceso concedido.</p>";
-
-                } else {
-
-                    document.getElementById("mensajeLogin").innerHTML =
-                        "<p class='mensaje-error'>⚠ Credenciales incorrectas.</p>";
-
-                }
-
-            });
-
-    </script>
 
 </body>
 
