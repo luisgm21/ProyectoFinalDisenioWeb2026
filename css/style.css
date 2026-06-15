@@ -2193,6 +2193,11 @@
     height: 100%;
 }
 
+.progreso-titulo-icono {
+    color: var(--color-secundario);
+    font-size: 2rem;
+}
+
 .progreso-metricas-lista {
     display: flex;
     flex-direction: column;
