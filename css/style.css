@@ -157,7 +157,12 @@
      min-height: 240px;
  }
 
- .evento-card1 , .evento-card2, .evento-card3 h3, p{
+.evento-card1 h3,
+.evento-card2 h3,
+.evento-card3 h3,
+.evento-card1 p,
+.evento-card2 p,
+.evento-card3 p {
     background: rgba(0, 0, 0, 0.3);
     width: fit-content;
  }
