@@ -69,11 +69,6 @@
      height: auto;
  }
 
- h1 {
-     color: var(--color-secundario);
-     margin-bottom: 3.125rem;
- }
-
  section {
      margin-bottom: 2.5rem;
  }
@@ -178,20 +173,14 @@
 
  .evento-card1 {
     background-image: url('../assets/img/entrenamientos-al-aire-libre.webp');
-    background-size: cover;
-    background-position: center;
  }
 
  .evento-card2 {
     background-image: url('../assets/img/nutricionista.jpg');
-    background-size: cover;
-    background-position: center;
  }
 
  .evento-card3 {
      background-image: url('../assets/img/arnold.webp');
-     background-size: cover;
-     background-position: center;
  }
 
  .evento-meta {
@@ -199,9 +188,21 @@
      font-size: 0.95rem;
  }
 
+ /* Consolidated h1 definition */
  h1 {
-    font-family: 'Trade Winds', 'sans-serif';
-    font-size: 66px;
+     color: var(--color-secundario);
+     margin-bottom: 3.125rem;
+     font-family: 'Trade Winds', 'sans-serif';
+     font-size: 66px;
+ }
+ 
+ /* Consolidated .mensaje-exito definition */
+ .mensaje-exito {
+    color: var(--color-exito);
+    text-align: center;
+     font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 1rem;
  }
 
  h2 {
@@ -1882,21 +1883,37 @@
      margin-bottom: 1.5rem;
  }
 
- .form-reserva {
+ .texto-registro {
+     color: #ddd;
+     margin-top: 1rem;
+     line-height: 1.6;
+ }
+
+ .form-reserva,
+ .form-registro {
      max-width: 750px;
-     margin: 3rem auto;
      background: var(--color-primario);
      border: 1px solid var(--color-terciario);
      border-radius: 12px;
      padding: 2rem;
  }
 
- .form-reserva h2 {
+ .form-reserva {
+     margin: 3rem auto;
+ }
+
+ .form-registro {
+     margin: 2rem auto;
+ }
+
+ .form-reserva h2,
+ .form-registro h2 {
      color: var(--color-secundario);
      margin-bottom: 1.5rem;
  }
 
- .form-reserva label {
+ .form-reserva label,
+ .form-registro label {
      display: block;
      margin-top: 1rem;
      margin-bottom: .5rem;
@@ -1904,7 +1921,8 @@
  }
 
  .form-reserva input,
- .form-reserva select {
+ .form-reserva select,
+ .form-registro input {
      width: 100%;
      padding: .8rem;
      border: 1px solid var(--color-terciario);
@@ -1916,12 +1934,14 @@
  }
 
  .form-reserva input:focus,
- .form-reserva select:focus {
+ .form-reserva select:focus,
+ .form-registro input:focus {
      outline: none;
      border-color: var(--color-secundario);
  }
 
- .form-reserva .btn-paleta {
+ .form-reserva .btn-paleta,
+ .form-registro .btn-paleta {
      width: 100%;
      margin-top: 2rem;
  }
@@ -1930,12 +1950,6 @@
      margin-top: 1.5rem;
  }
 
-.mensaje-exito {
-    text-align: center;
-    color: var(--color-exito);
-    font-weight: bold;
-    font-size: 1.1rem;
-}
 
  /* Tabla de turnos */
 
@@ -1963,60 +1977,6 @@
  }
 
  /* ===== REGISTRO DE SOCIOS ===== */
-
- .texto-registro {
-     color: #ddd;
-     margin-top: 1rem;
-     line-height: 1.6;
- }
-
- .form-registro {
-     max-width: 750px;
-     margin: 2rem auto;
-     background: var(--color-primario);
-     border: 1px solid var(--color-terciario);
-     border-radius: 12px;
-     padding: 2rem;
- }
-
- .form-registro h2 {
-     color: var(--color-secundario);
-     margin-bottom: 1.5rem;
- }
-
- .form-registro label {
-     display: block;
-     margin-top: 1rem;
-     margin-bottom: .5rem;
-     font-weight: bold;
- }
-
- .form-registro input {
-     width: 100%;
-     padding: .8rem;
-     border: 1px solid var(--color-terciario);
-     border-radius: 6px;
-     background: var(--color-fondo);
-     color: var(--color-texto);
-     font-family: 'Amaranth', Arial, sans-serif;
- }
-
- .form-registro input:focus {
-     outline: none;
-     border-color: var(--color-secundario);
- }
-
- .form-registro .btn-paleta {
-     width: 100%;
-     margin-top: 2rem;
- }
-
-.mensaje-exito {
-    color: var(--color-exito);
-    text-align: center;
-    font-weight: bold;
-    margin-top: 1rem;
-}
 
 .mensaje-error {
     color: var(--color-error);
