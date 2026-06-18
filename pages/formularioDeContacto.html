@@ -127,31 +127,8 @@
     </main>
 
     <footer class="mt-auto">
-        <p>© 2026 PowerFit Gym - Transformá tu vida.</p>
+        <p>© 2026 CataStrong Gym - Transformá tu vida.</p>
     </footer>
 
-    <!-- JavaScript mínimo para feedback -->
-    <script>
-        document.getElementById('formContacto').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nombre = document.getElementById('nombre').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const tipo = document.getElementById('tipoConsulta').value;
-            const mensaje = document.getElementById('mensaje').value.trim();
-            const privacidad = document.querySelector('input[name="privacidad"]').checked;
-            const honeypot = document.getElementById('website').value;
-
-            if (honeypot) {
-                document.getElementById('formFeedback').innerHTML = '<span style="color:#FF6A00;">Error, reintentá.</span>';
-                return;
-            }
-            if (!nombre || !email || !tipo || !mensaje || !privacidad) {
-                document.getElementById('formFeedback').innerHTML = '<span style="color:#FF6A00;">⚠️ Completá todos los campos obligatorios.</span>';
-                return;
-            }
-            document.getElementById('formFeedback').innerHTML = '<span style="color:#A5D6A5;">✅ ¡Consulta enviada! Te contactaremos pronto.</span>';
-            this.reset();
-        });
-    </script>
 </body>
 </html>
