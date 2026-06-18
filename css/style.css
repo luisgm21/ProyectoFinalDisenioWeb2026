@@ -529,14 +529,8 @@
 
  /* Botón enviar */
  .btn-enviar {
-     background: var(--color-secundario);
-     color: var(--color-primario);
-     border: none;
      padding: 0.8rem 1.5rem;
-     border-radius: 6px;
      font-size: 1rem;
-     font-weight: bold;
-     cursor: pointer;
      margin-top: 1.8rem;
      width: 100%;
      transition: all 0.2s ease;
@@ -554,6 +548,22 @@
  .btn-enviar .material-symbols-outlined {
      color: inherit;
      font-size: 1.2rem;
+ }
+
+ .btn-enviar,
+ .btn-enviar-respuesta {
+     background: var(--color-secundario);
+     color: var(--color-primario);
+     border: none;
+     border-radius: 6px;
+     font-weight: bold;
+     cursor: pointer;
+ }
+
+ .btn-enviar:hover,
+ .btn-enviar-respuesta:hover {
+     background: var(--color-terciario);
+     color: var(--color-secundario);
  }
 
  /* Aviso legal pequeño */
@@ -854,18 +864,23 @@
 
  .btn-responder,
  .btn-ver-respuesta {
-     background: transparent;
-     border: 1px solid var(--color-terciario);
-     color: var(--color-texto);
      padding: 0.5rem 1rem;
-     border-radius: 6px;
-     cursor: pointer;
      display: flex;
      align-items: center;
      gap: 0.4rem;
      font-family: 'Amaranth', Arial, sans-serif;
      transition: all 0.2s;
      text-decoration: none;
+ }
+
+ .btn-responder,
+ .btn-ver-respuesta,
+ .btn-cancelar {
+     background: transparent;
+     border: 1px solid var(--color-terciario);
+     color: var(--color-texto);
+     border-radius: 6px;
+     cursor: pointer;
  }
 
  .btn-responder:hover {
@@ -1002,12 +1017,7 @@
  }
 
  .btn-cancelar {
-     background: transparent;
-     border: 1px solid var(--color-terciario);
-     color: var(--color-texto);
      padding: 0.6rem 1.5rem;
-     border-radius: 6px;
-     cursor: pointer;
  }
 
  .btn-cancelar:hover {
@@ -1015,21 +1025,10 @@
  }
 
  .btn-enviar-respuesta {
-     background: var(--color-secundario);
-     border: none;
-     color: var(--color-primario);
      padding: 0.6rem 1.5rem;
-     border-radius: 6px;
-     font-weight: bold;
-     cursor: pointer;
      display: flex;
      align-items: center;
      gap: 0.5rem;
- }
-
- .btn-enviar-respuesta:hover {
-     background: var(--color-terciario);
-     color: var(--color-secundario);
  }
 
  /* TOAST (notificaciones) */
@@ -1927,7 +1926,8 @@
 
  .form-reserva input,
  .form-reserva select,
- .form-registro input {
+ .form-registro input,
+ .select-usuario-admin {
      width: 100%;
      padding: .8rem;
      border: 1px solid var(--color-terciario);
@@ -1935,6 +1935,11 @@
      background: var(--color-fondo);
      color: var(--color-texto);
      font-family: 'Amaranth', Arial, sans-serif;
+ }
+
+ .form-reserva input,
+ .form-reserva select,
+ .form-registro input {
      font-size: 1rem;
  }
 
@@ -2261,14 +2266,7 @@
 }
 
 .select-usuario-admin {
-    width: 100%;
-    padding: 0.8rem;
     margin-top: 1rem;
-    border: 1px solid var(--color-terciario);
-    border-radius: 6px;
-    background: var(--color-fondo);
-    color: var(--color-texto);
-    font-family: 'Amaranth', Arial, sans-serif;
 }
 
 .checkbox-permisos {
